@@ -1,3 +1,4 @@
+// Bu proje tamamen Whykthor GSV taraf─▒ndan yap─▒lm─▒┼ƒt─▒r.
 import React, { Profiler, useCallback } from 'react';
 
 const DEFAULT_MIN_DURATION_MS = 8;

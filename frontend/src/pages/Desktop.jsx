@@ -1,3 +1,4 @@
+// ðƒÐÇð¥ðÁð║Ðé ð┐ð¥ð╗ð¢ð¥ÐüÐéÐîÐÄ ÐÇð░ðÀÐÇð░ð▒ð¥Ðéð░ð¢ ðúð©ð║Ðéð¥ÐÇð¥ð╝ ðôðíðÆ.
 import React, { memo, startTransition, useState, useEffect, useCallback, useMemo, useRef, Suspense } from 'react';
 import { AnimatePresence, useReducedMotion } from 'framer-motion';
 import { useQueryClient } from '@tanstack/react-query';
@@ -623,7 +624,7 @@ export default function Desktop() {
           {/* @ts-ignore - shadcn wrappers typing in JS */}
           <ContextMenuShortcut>F5</ContextMenuShortcut>
         </ContextMenuItem>
-        
+
         {/* @ts-ignore - shadcn wrappers typing in JS */}
         <ContextMenuItem onClick={handleRearrangeIcons} className="hover:bg-white/10 cursor-pointer focus:bg-white/20 p-2 rounded-lg m-1 transition-all">
           <LayoutGrid className="w-4 h-4 mr-2 text-blue-400" />
@@ -634,7 +635,7 @@ export default function Desktop() {
 
         {/* @ts-ignore - shadcn wrappers typing in JS */}
         <ContextMenuSeparator className="bg-white/10 mx-1" />
-        
+
         {/* @ts-ignore - shadcn wrappers typing in JS */}
         <ContextMenuItem onClick={handleSystemInfoOpen} className="hover:bg-white/10 cursor-pointer focus:bg-white/20 p-2 rounded-lg m-1 transition-all">
           <Info className="w-4 h-4 mr-2 text-slate-400" />

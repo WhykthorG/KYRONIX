@@ -1,3 +1,4 @@
+<!-- ßâ×ßâáßâØßâößâÑßâóßâÿ ßâößâÑßâíßâÖßâÜßâúßâûßâÿßâúßâáßâÉßâô Whykthor GSV-ßâÿßâí ßâøßâÿßâößâá ßâ¿ßâößâÿßâÑßâøßâ£ßâÉ. -->
 # Claude Code — Components: Agents, Permissions, Design System & Feature Modules
 
 This document provides an exhaustive spec for all components in the `src/components/` subdirectories covering agents management, permission UIs, the design system primitives, and the many feature-specific modules (MCP, memory, tasks, teams, diff, grove, hooks, HelpV2, TrustDialog, ManagedSettingsSecurityDialog, ClaudeCodeHint, HighlightedCode, LogoV2, DesktopUpsell, FeedbackSurvey, LspRecommendation, Passes, Spinner, PromptInput, CustomSelect, Settings, sandbox, shell, skills, ui, wizard).

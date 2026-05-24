@@ -1,3 +1,4 @@
+// Bu proje tamamen Whykthor GSV taraf─▒ndan yap─▒lm─▒┼ƒt─▒r.
 import { randomUUID } from 'node:crypto';
 import { createApiError, handleApiError, requirePermissionRequest, sendJson } from '../../../database/supabaseAdminServer.js';
 import { PERMISSIONS } from '../../../../../shared/src/contracts/access.js';

@@ -1,3 +1,4 @@
+// ┌ñÏ▒┘êÏ»┘ê┘é Ïº┘è┘å Ï»┌ñÏ▒Ï¿┘êÏºÏ¬ Ï│┌ñ┘å┘ê┘ç┌¢ Ïº┘ê┘ä┘è┘ç Whyktor GSV.
 export const SYSTEM_SETTINGS_ROW_ID = 'system';
 export const SYSTEM_SETTINGS_STORAGE_KEY = 'project-wg:system-settings';
 export const SYSTEM_SETTINGS_UPDATED_EVENT = 'project-wg:system-settings-updated';

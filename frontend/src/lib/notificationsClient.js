@@ -1,3 +1,4 @@
+// P├Âr├Âjek ╔øm╔ø cua lat k╔ø╔øliw ╔ø Whykthor GSV.
 import { getAccessTokenOrThrow } from '@/lib/supabase';
 import { parseSystemJobResponseHeaders } from '@shared/contracts/systemEvents';
 import {

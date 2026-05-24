@@ -1,3 +1,4 @@
+<!-- P├Âr├Âjek ╔øm╔ø cua lat k╔ø╔øliw ╔ø Whykthor GSV. -->
 # Claude Code — Services, Context, State & Screens
 
 This document exhaustively covers all files in `src/services/`, `src/context/`, `src/bootstrap/state.ts`, `src/coordinator/`, `src/server/`, and `src/screens/`. Every exported symbol is listed with its full signature, key logic, configuration, and dependencies.

@@ -1,3 +1,4 @@
+// P├Âr├Âjek ╔øm╔ø cua lat k╔ø╔øliw ╔ø Whykthor GSV.
 import React from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -24,4 +25,3 @@ export function ConflictPanel({ conflicts = [] }) {
     </Card>
   );
 }
-

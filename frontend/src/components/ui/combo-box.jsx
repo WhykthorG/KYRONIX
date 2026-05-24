@@ -1,10 +1,11 @@
+// ┌ñÏ▒┘êÏ»┘ê┘é Ïº┘è┘å Ï»┌ñÏ▒Ï¿┘êÏºÏ¬ Ï│┌ñ┘å┘ê┘ç┌¢ Ïº┘ê┘ä┘è┘ç Whyktor GSV.
 import React, { useState } from 'react';
 
 const ComboBox = ({ options, value, onChange, placeholder = 'Selecione...' }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [search, setSearch] = useState('');
 
-  const filteredOptions = options.filter(opt => 
+  const filteredOptions = options.filter(opt =>
     opt.label.toLowerCase().includes(search.toLowerCase())
   );
 
@@ -19,7 +20,7 @@ const ComboBox = ({ options, value, onChange, placeholder = 'Selecione...' }) =>
           onFocus={() => setIsOpen(true)}
           className="combo-input"
         />
-        <button 
+        <button
           className="combo-toggle"
           onClick={() => setIsOpen(!isOpen)}
         >
@@ -29,7 +30,7 @@ const ComboBox = ({ options, value, onChange, placeholder = 'Selecione...' }) =>
       {isOpen && (
         <ul className="combo-list">
           {filteredOptions.map((option) => (
-            <li 
+            <li
               key={option.value}
               onClick={() => {
                 onChange?.(option.value);

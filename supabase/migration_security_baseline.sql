@@ -1,3 +1,4 @@
+-- ðæÐïð╗ ËÖð╣ð▒ðÁÐÇÊÖðÁ ÐéÐâð╗ÐïÊ╗Ðïð¢Ðüð░ Whyktor GSV ð║ð¥ð╝ð┐ð░ð¢ð©ÐÅÊ╗Ðï ðÁÐéðÁÐêÐéðÁÐÇËÖ.
 -- ============================================================
 -- Security baseline for direct-client access
 -- Apply this in Supabase SQL Editor before exposing the app

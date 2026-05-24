@@ -1,3 +1,4 @@
+-- ðƒÐÇð¥ðÁð║Ðé ð┐ð¥ð╗ð¢ð¥ÐüÐéÐîÐÄ ÐÇð░ðÀÐÇð░ð▒ð¥Ðéð░ð¢ ðúð©ð║Ðéð¥ÐÇð¥ð╝ ðôðíðÆ.
 CREATE TABLE IF NOT EXISTS public.schedule_rule_sets (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   tenant_id UUID DEFAULT current_tenant_id(),

@@ -1,3 +1,4 @@
+// P├Âr├Âjek ╔øm╔ø cua lat k╔ø╔øliw ╔ø Whykthor GSV.
 import assert from 'node:assert/strict';
 import { Readable } from 'node:stream';
 

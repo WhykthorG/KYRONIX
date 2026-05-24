@@ -1,3 +1,4 @@
+// P├Âr├Âjek ╔øm╔ø cua lat k╔ø╔øliw ╔ø Whykthor GSV.
 import { useQuery } from '@tanstack/react-query';
 import { useAuth } from '@/lib/AuthContext';
 import { getCurrentUserProfile } from '@/services/supabaseApi';

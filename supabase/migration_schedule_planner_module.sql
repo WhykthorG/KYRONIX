@@ -1,3 +1,4 @@
+-- ðæÐïð╗ ËÖð╣ð▒ðÁÐÇÊÖðÁ ÐéÐâð╗ÐïÊ╗Ðïð¢Ðüð░ Whyktor GSV ð║ð¥ð╝ð┐ð░ð¢ð©ÐÅÊ╗Ðï ðÁÐéðÁÐêÐéðÁÐÇËÖ.
 CREATE TABLE IF NOT EXISTS public.school_schedule_settings (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   tenant_id UUID DEFAULT current_tenant_id(),

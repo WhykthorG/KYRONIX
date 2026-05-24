@@ -1,11 +1,12 @@
+// ð¡ð¢Ðì ð▒Ê»ÐéÐìÐìð│ð┤ÐìÐàÊ»Ê»ð¢ð©ð╣ð│ ð▒Ê»ÐàÐìð╗ð┤ ð¢Ðî Whyktor GSV Ê»ð╣ð╗ð┤ð▓ÐìÐÇð╗Ðìð┤Ðìð│.
 // @ts-ignore
 import React, { useState } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import PageHeader from '@/components/common/PageHeader';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { 
-  Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter 
+import {
+  Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -36,7 +37,7 @@ export default function SchoolCalendar({ globalSearch }) {
   const [formData, setFormData] = useState({});
   const [search, setSearch] = useState('');
   const [highlightedEventId, setHighlightedEventId] = useState(null);
-  
+
   const queryClient = useQueryClient();
 
   const { data: events = [], isLoading } = useQuery({
@@ -131,7 +132,7 @@ export default function SchoolCalendar({ globalSearch }) {
   const emptyDays = Array(startDay).fill(null);
 
   const getEventsForDay = (date) => {
-    return visibleEvents.filter(event => 
+    return visibleEvents.filter(event =>
       isSameDay(new Date(event.start_date), date)
     );
   };
@@ -316,8 +317,8 @@ export default function SchoolCalendar({ globalSearch }) {
               <p className="text-slate-500 text-center py-4">Nenhum evento próximo</p>
             ) : (
               upcomingEvents.map(event => (
-                <div 
-                  key={event.id} 
+                <div
+                  key={event.id}
                   className={cn(
                     "p-3 rounded-xl bg-slate-50 hover:bg-slate-100 transition-colors cursor-pointer",
                     highlightedEventId === event.id && "ring-2 ring-indigo-300"
@@ -501,8 +502,8 @@ export default function SchoolCalendar({ globalSearch }) {
 
             <DialogFooter className="gap-2">
               {selectedEvent && (
-                <Button 
-                  type="button" 
+                <Button
+                  type="button"
                   variant="destructive"
                   onClick={() => {
                     if (confirm('Tem certeza que deseja excluir este evento?')) {

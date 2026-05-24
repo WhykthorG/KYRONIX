@@ -1,11 +1,12 @@
+// ðæÐïð╗ ËÖð╣ð▒ðÁÐÇÊÖðÁ ÐéÐâð╗ÐïÊ╗Ðïð¢Ðüð░ Whyktor GSV ð║ð¥ð╝ð┐ð░ð¢ð©ÐÅÊ╗Ðï ðÁÐéðÁÐêÐéðÁÐÇËÖ.
 import React, { useState, useMemo } from 'react';
 import { countByStatus } from '@/lib/utils';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Search } from 'lucide-react';
-import { 
+import {
   BarChart, Bar, LineChart, Line, PieChart, Pie, Cell,
-  XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer 
+  XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer
 } from 'recharts';
 
 const COLORS = ['#6366f1', '#8b5cf6', '#ec4899', '#f59e0b', '#10b981', '#3b82f6'];
@@ -17,7 +18,7 @@ export default function TeacherAnalytics({ stats }) {
 
   const filteredGrades = useMemo(() => {
     if (!normalizedSearch) return stats.grades;
-    return stats.grades.filter(g => 
+    return stats.grades.filter(g =>
       (g.student_name?.toLowerCase().includes(normalizedSearch) || false) ||
       (g.subject_name?.toLowerCase().includes(normalizedSearch) || false) ||
       g.score?.toString().includes(normalizedSearch)
@@ -26,7 +27,7 @@ export default function TeacherAnalytics({ stats }) {
 
   const filteredSubmissions = useMemo(() => {
     if (!normalizedSearch) return stats.submissions;
-    return stats.submissions.filter(s => 
+    return stats.submissions.filter(s =>
       (s.student_name?.toLowerCase().includes(normalizedSearch) || false) ||
       (s.assignment_title?.toLowerCase().includes(normalizedSearch) || false)
     );
@@ -34,14 +35,14 @@ export default function TeacherAnalytics({ stats }) {
 
   const filteredAttendance = useMemo(() => {
     if (!normalizedSearch) return stats.attendance;
-    return stats.attendance.filter(a => 
+    return stats.attendance.filter(a =>
       (a.student_name?.toLowerCase().includes(normalizedSearch) || false)
     );
   }, [stats.attendance, normalizedSearch]);
 
   const filteredAssignments = useMemo(() => {
     if (!normalizedSearch) return stats.assignments;
-    return stats.assignments.filter(a => 
+    return stats.assignments.filter(a =>
       a.title?.toLowerCase().includes(normalizedSearch)
     );
   }, [stats.assignments, normalizedSearch]);
@@ -90,7 +91,7 @@ export default function TeacherAnalytics({ stats }) {
       <div className="max-w-lg">
         <div className="relative flex items-center overflow-hidden rounded-[28px] border border-white/15 bg-slate-950/70 shadow-2xl shadow-black/35 backdrop-blur-3xl">
           <Search className="ml-4 h-4 w-4 flex-shrink-0 text-slate-400" />
-          <Input 
+          <Input
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder="Filtrar por aluno, disciplina ou atividade..."

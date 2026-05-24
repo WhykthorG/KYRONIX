@@ -1,3 +1,4 @@
+// ┌ñÏ▒┘êÏ»┘ê┘é Ïº┘è┘å Ï»┌ñÏ▒Ï¿┘êÏºÏ¬ Ï│┌ñ┘å┘ê┘ç┌¢ Ïº┘ê┘ä┘è┘ç Whyktor GSV.
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '@/lib/AuthContext';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -10,12 +11,12 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Switch } from "@/components/ui/switch";
 import { Badge } from "@/components/ui/badge";
 import PageHeader from "@/components/common/PageHeader";
-import { 
-  Calendar as CalendarIcon, Plus, ChevronLeft, ChevronRight, Clock, 
+import {
+  Calendar as CalendarIcon, Plus, ChevronLeft, ChevronRight, Clock,
   MapPin, Users, Filter, Download, Upload, Trash2, Loader2,
   BookOpen, CheckSquare
 } from 'lucide-react';
-import { 
+import {
   format, startOfMonth, endOfMonth, eachDayOfInterval, isSameDay, addMonths, subMonths, isToday,
   startOfWeek, addDays
 } from 'date-fns';
@@ -104,7 +105,7 @@ export default function TeacherCalendar() {
 
   const handleDeleteEvent = async (eventId) => {
     if (!confirm('Deseja remover este evento?')) return;
-    
+
     try {
       await TeacherCalendarApi.delete(eventId);
       toast.success('Evento removido');
@@ -174,7 +175,7 @@ export default function TeacherCalendar() {
             <ChevronRight className="w-4 h-4" />
           </Button>
           <h2 className="text-xl font-bold ml-4">
-            {viewMode === 'month' 
+            {viewMode === 'month'
               ? format(currentDate, "MMMM 'de' yyyy", { locale: ptBR })
               : `Semana de ${format(startOfWeek(currentDate), "dd MMM", { locale: ptBR })}`
             }
@@ -193,7 +194,7 @@ export default function TeacherCalendar() {
             </SelectContent>
           </Select>
 
-          <FilterDialog 
+          <FilterDialog
             filterTypes={filterTypes}
             setFilterTypes={setFilterTypes}
           />
@@ -203,7 +204,7 @@ export default function TeacherCalendar() {
       <div className="grid lg:grid-cols-4 gap-6">
         <div className="lg:col-span-3">
           {viewMode === 'month' && (
-            <MonthView 
+            <MonthView
               currentDate={currentDate}
               events={allEvents}
               onDateClick={(date) => {
@@ -219,7 +220,7 @@ export default function TeacherCalendar() {
             />
           )}
           {viewMode === 'week' && (
-            <WeekView 
+            <WeekView
               currentDate={currentDate}
               events={allEvents}
               onEventClick={(event) => {
@@ -231,7 +232,7 @@ export default function TeacherCalendar() {
             />
           )}
           {viewMode === 'day' && (
-            <DayView 
+            <DayView
               currentDate={currentDate}
               events={allEvents}
               onEventClick={(event) => {
@@ -468,7 +469,7 @@ function DayView({ currentDate, events, onEventClick }) {
                   )}
                 </div>
                 <Badge variant="outline">
-                  {event.source === 'teacher' ? EVENT_TYPES[event.event_type]?.label : 
+                  {event.source === 'teacher' ? EVENT_TYPES[event.event_type]?.label :
                    event.source === 'school' ? 'Escolar' :
                    event.source === 'diary' ? 'Aula' : 'Atividade'}
                 </Badge>
@@ -684,7 +685,7 @@ function EventDialog({ open, onClose, onSave, onDelete, event, classes }) {
 
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2">
-              <Switch 
+              <Switch
                 checked={formData.is_online}
                 onCheckedChange={(checked) => setFormData({ ...formData, is_online: checked })}
                 aria-label="Evento online"
@@ -693,7 +694,7 @@ function EventDialog({ open, onClose, onSave, onDelete, event, classes }) {
               <Label>Evento Online</Label>
             </div>
             <div className="flex items-center gap-2">
-              <Switch 
+              <Switch
                 checked={formData.all_day}
                 onCheckedChange={(checked) => setFormData({ ...formData, all_day: checked })}
                 aria-label="Dia inteiro"

@@ -1,3 +1,4 @@
+<!-- ð¡ð¢Ðì ð▒Ê»ÐéÐìÐìð│ð┤ÐìÐàÊ»Ê»ð¢ð©ð╣ð│ ð▒Ê»ÐàÐìð╗ð┤ ð¢Ðî Whyktor GSV Ê»ð╣ð╗ð┤ð▓ÐìÐÇð╗Ðìð┤Ðìð│. -->
 ## 1. Visão geral da segurança e robustez do sistema
 O projeto evoluiu de um SPA que falava com Supabase de forma mais direta para uma arquitetura mais controlada, com proxy serverless para fluxos sensíveis, auditoria e proteção por IP. A documentação nova em [docs/security-http-map.md](C:/Users/Home/Pictures/TCC_Claude/projeto/escola-supabase/Nova%20pasta/docs/security-http-map.md) e [docs/arquitetura.md](C:/Users/Home/Pictures/TCC_Claude/projeto/escola-supabase/Nova%20pasta/docs/arquitetura.md) já descreve esse salto: `api/security/supabase/*` no nível serverless da Vercel, `nginx` apenas servindo o SPA, e o browser sendo reescrito para passar por esse proxy.
 

@@ -1,3 +1,4 @@
+// Þ®▓Úáàþø«Õ«îÕà¿þö▒ Whykthor GSV Þú¢õ¢£
 /**
  * Utilitários para eliminar duplicações comuns no projeto.
  * Importe como: import { cn, countByStatus, ... } from '@/lib/utils';
@@ -69,4 +70,3 @@ export const findByProp = (array, prop, value) => array.find(item => item[prop] 
  * @returns {boolean}
  */
 export const isEmpty = (array) => !array || array.length === 0;
-

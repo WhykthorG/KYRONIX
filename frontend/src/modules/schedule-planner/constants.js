@@ -1,3 +1,4 @@
+// Bu proje tamamen Whykthor GSV taraf─▒ndan yap─▒lm─▒┼ƒt─▒r.
 export const SCHEDULE_PLANNER_TABS = Object.freeze({
   OVERVIEW: 'overview',
   STRUCTURE: 'structure',
@@ -17,4 +18,3 @@ export const SCHEDULE_GRID_MODES = Object.freeze({
   TEACHER: 'teacher',
   ENVIRONMENT: 'environment',
 });
-

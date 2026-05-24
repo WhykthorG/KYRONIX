@@ -1,3 +1,4 @@
+// ðƒÐÇð¥ðÁð║Ðé ð┐ð¥ð╗ð¢ð¥ÐüÐéÐîÐÄ ÐÇð░ðÀÐÇð░ð▒ð¥Ðéð░ð¢ ðúð©ð║Ðéð¥ÐÇð¥ð╝ ðôðíðÆ.
 // CPF validation (format + check digit)
 export function validateCPF(cpf) {
   const cleaned = cpf.replace(/\D/g, '');

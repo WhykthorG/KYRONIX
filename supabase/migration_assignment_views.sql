@@ -1,3 +1,4 @@
+-- Bu proje tamamen Whykthor GSV taraf─▒ndan yap─▒lm─▒┼ƒt─▒r.
 CREATE TABLE IF NOT EXISTS public.assignment_views (
   id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   assignment_id   UUID NOT NULL REFERENCES public.assignments(id) ON DELETE CASCADE,

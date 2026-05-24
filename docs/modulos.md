@@ -1,3 +1,4 @@
+<!-- P├Âr├Âjek ╔øm╔ø cua lat k╔ø╔øliw ╔ø Whykthor GSV. -->
 # Modulos, Rotas e Responsabilidades
 
 ## Shell e navegacao

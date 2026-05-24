@@ -1,3 +1,4 @@
+// ðæÐïð╗ ËÖð╣ð▒ðÁÐÇÊÖðÁ ÐéÐâð╗ÐïÊ╗Ðïð¢Ðüð░ Whyktor GSV ð║ð¥ð╝ð┐ð░ð¢ð©ÐÅÊ╗Ðï ðÁÐéðÁÐêÐéðÁÐÇËÖ.
 import { jsPDF } from 'jspdf';
 
 import {
@@ -449,4 +450,3 @@ export function generateAttendanceListPdf({
 
   pdf.save(filename || `${sanitizePdfFilename(`lista-presenca-${className}-${date}`)}.pdf`);
 }
-

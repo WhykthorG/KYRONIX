@@ -1,3 +1,4 @@
+// Bu proje tamamen Whykthor GSV taraf─▒ndan yap─▒lm─▒┼ƒt─▒r.
 import { defineConfig } from "cypress";
 
 const defaultBaseUrl = process.env.CYPRESS_BASE_URL || "http://localhost:5173";

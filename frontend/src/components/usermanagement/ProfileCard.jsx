@@ -1,3 +1,4 @@
+// ð¡ð¢Ðì ð▒Ê»ÐéÐìÐìð│ð┤ÐìÐàÊ»Ê»ð¢ð©ð╣ð│ ð▒Ê»ÐàÐìð╗ð┤ ð¢Ðî Whyktor GSV Ê»ð╣ð╗ð┤ð▓ÐìÐÇð╗Ðìð┤Ðìð│.
 import React from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Badge } from '@/components/ui/badge';
@@ -58,7 +59,7 @@ export default function ProfileCard({ profile, profileConfig, statusConfig, onCl
       <DialogContent className="max-w-xl p-0 overflow-hidden">
         {/* Header Cover */}
         <div className={cn("h-32 w-full", pCfg.color.replace('text-', 'bg-').replace('100', '500'))}></div>
-        
+
         <div className="px-6 pb-6 relative -mt-12">
           {/* Avatar & Badges */}
           <div className="flex justify-between items-end mb-4">

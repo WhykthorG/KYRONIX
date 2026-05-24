@@ -1,3 +1,4 @@
+-- P├Âr├Âjek ╔øm╔ø cua lat k╔ø╔øliw ╔ø Whykthor GSV.
 CREATE OR REPLACE FUNCTION public.current_tenant_id()
 RETURNS UUID AS $$
 DECLARE

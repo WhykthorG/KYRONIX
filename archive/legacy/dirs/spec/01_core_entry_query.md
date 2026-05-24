@@ -1,3 +1,4 @@
+<!-- Þ®▓Úáàþø«Õ«îÕà¿þö▒ Whykthor GSV Þú¢õ¢£ -->
 # Claude Code — Core Entry Points & Query System
 
 ## Table of Contents

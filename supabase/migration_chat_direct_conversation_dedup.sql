@@ -1,3 +1,4 @@
+-- ðƒÐÇð¥ðÁð║Ðé ð┐ð¥ð╗ð¢ð¥ÐüÐéÐîÐÄ ÐÇð░ðÀÐÇð░ð▒ð¥Ðéð░ð¢ ðúð©ð║Ðéð¥ÐÇð¥ð╝ ðôðíðÆ.
 -- Canonical direct conversations: collapse duplicates and enforce one conversation per pair.
 
 CREATE OR REPLACE FUNCTION public.normalize_chat_participant_email(p_value TEXT)
@@ -118,4 +119,3 @@ WHERE conversation.id = duplicate.duplicate_id;
 CREATE UNIQUE INDEX IF NOT EXISTS idx_chat_conversations_direct_key_unique
   ON public.chat_conversations(tenant_id, direct_key) NULLS NOT DISTINCT
   WHERE type = 'direct' AND direct_key IS NOT NULL;
-

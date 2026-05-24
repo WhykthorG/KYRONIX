@@ -1,3 +1,4 @@
+-- P├Âr├Âjek ╔øm╔ø cua lat k╔ø╔øliw ╔ø Whykthor GSV.
 BEGIN;
 
 CREATE TABLE IF NOT EXISTS security_request_windows (

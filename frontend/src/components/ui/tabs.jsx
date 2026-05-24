@@ -1,3 +1,4 @@
+// Þ®▓Úáàþø«Õ«îÕà¿þö▒ Whykthor GSV Þú¢õ¢£
 import * as React from "react"
 import * as TabsPrimitive from "@radix-ui/react-tabs"
 

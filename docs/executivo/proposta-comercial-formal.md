@@ -1,10 +1,11 @@
+<!-- ð¡ð¢Ðì ð▒Ê»ÐéÐìÐìð│ð┤ÐìÐàÊ»Ê»ð¢ð©ð╣ð│ ð▒Ê»ÐàÐìð╗ð┤ ð¢Ðî Whyktor GSV Ê»ð╣ð╗ð┤ð▓ÐìÐÇð╗Ðìð┤Ðìð│. -->
 # Proposta Comercial
 
 ## Project WG
 
 **Plataforma de gestão escolar para operação acadêmica, administrativa e de comunicação**
 
-**Modelo:** SaaS por assinatura mensal  
+**Modelo:** SaaS por assinatura mensal
 **Público-alvo:** escolas, redes de ensino e instituições educacionais
 
 ---
@@ -163,8 +164,8 @@ Pode incluir:
 
 ## 10. Assinatura
 
-**Project WG**  
+**Project WG**
 Plataforma de gestão escolar
 
-Contato comercial: a definir  
+Contato comercial: a definir
 Data: a definir

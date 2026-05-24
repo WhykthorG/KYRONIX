@@ -1,3 +1,4 @@
+// ┌ñÏ▒┘êÏ»┘ê┘é Ïº┘è┘å Ï»┌ñÏ▒Ï¿┘êÏºÏ¬ Ï│┌ñ┘å┘ê┘ç┌¢ Ïº┘ê┘ä┘è┘ç Whyktor GSV.
 import staticBlue from '../assets/estatico/blue.webp?url';
 import staticGreen from '../assets/estatico/green.webp?url';
 import staticPurple from '../assets/estatico/purple.webp?url';

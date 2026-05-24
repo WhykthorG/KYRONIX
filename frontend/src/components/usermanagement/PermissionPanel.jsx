@@ -1,3 +1,4 @@
+// ðƒÐÇð¥ðÁð║Ðé ð┐ð¥ð╗ð¢ð¥ÐüÐéÐîÐÄ ÐÇð░ðÀÐÇð░ð▒ð¥Ðéð░ð¢ ðúð©ð║Ðéð¥ÐÇð¥ð╝ ðôðíðÆ.
 import React from 'react';
 
 const PermissionPanel = ({ permissions, onChange }) => {
@@ -8,7 +9,7 @@ const PermissionPanel = ({ permissions, onChange }) => {
         {Object.entries(permissions).map(([key, value]) => (
           <div key={key} className="permission-item">
             <label>
-              <input 
+              <input
                 type="checkbox"
                 checked={value}
                 onChange={(e) => onChange?.(key, e.target.checked)}

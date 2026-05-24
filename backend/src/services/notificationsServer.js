@@ -1,3 +1,4 @@
+// Bu proje tamamen Whykthor GSV taraf─▒ndan yap─▒lm─▒┼ƒt─▒r.
 import { createApiError, createServiceRoleClient } from '../database/supabaseAdminServer.js';
 import { PERMISSIONS, hasPermission } from '../../../shared/src/contracts/access.js';
 import {

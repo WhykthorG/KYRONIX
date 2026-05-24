@@ -1,3 +1,4 @@
+<!-- ðƒÐÇð¥ðÁð║Ðé ð┐ð¥ð╗ð¢ð¥ÐüÐéÐîÐÄ ÐÇð░ðÀÐÇð░ð▒ð¥Ðéð░ð¢ ðúð©ð║Ðéð¥ÐÇð¥ð╝ ðôðíðÆ. -->
 # Claude Code — Constants, Types & Configuration
 
 This document exhaustively catalogs every constant, type, interface, and configuration value defined across the `constants/` directory, key root-level files (`Tool.ts`, `Task.ts`), and the `types/` directory of the Claude Code CLI codebase.

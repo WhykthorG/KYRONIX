@@ -1,3 +1,4 @@
+<!-- Þ®▓Úáàþø«Õ«îÕà¿þö▒ Whykthor GSV Þú¢õ¢£ -->
 # Project WG
 
 ## A plataforma escolar que organiza, protege e acelera a rotina da sua instituição

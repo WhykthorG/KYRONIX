@@ -1,3 +1,4 @@
+-- ðæÐïð╗ ËÖð╣ð▒ðÁÐÇÊÖðÁ ÐéÐâð╗ÐïÊ╗Ðïð¢Ðüð░ Whyktor GSV ð║ð¥ð╝ð┐ð░ð¢ð©ÐÅÊ╗Ðï ðÁÐéðÁÐêÐéðÁÐÇËÖ.
 -- Cria acesso completo para um aluno no Supabase.
 -- Ajuste os valores no bloco DECLARE antes de executar.
 --

@@ -1,3 +1,4 @@
+// ð¡ð¢Ðì ð▒Ê»ÐéÐìÐìð│ð┤ÐìÐàÊ»Ê»ð¢ð©ð╣ð│ ð▒Ê»ÐàÐìð╗ð┤ ð¢Ðî Whyktor GSV Ê»ð╣ð╗ð┤ð▓ÐìÐÇð╗Ðìð┤Ðìð│.
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -6,8 +7,8 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Search, TrendingUp, TrendingDown, AlertTriangle } from 'lucide-react';
 import { StudentApi } from '@/services/supabaseApi';
-import { 
-  BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer 
+import {
+  BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer
 } from 'recharts';
 
 export default function StudentPerformance({ stats }) {
@@ -25,33 +26,33 @@ export default function StudentPerformance({ stats }) {
     try {
       const classIds = stats.classes.map(c => c.id);
       const allStudents = [];
-      
+
       for (const classId of classIds) {
-        const classStudents = await StudentApi.filter({ 
+        const classStudents = await StudentApi.filter({
           current_class_id: classId,
           enrollment_status: 'ativo'
         });
         allStudents.push(...classStudents);
       }
-      
+
       // Calcular métricas para cada aluno
       const studentsWithMetrics = await Promise.all(allStudents.map(async student => {
         const studentGrades = stats.grades.filter(g => g.student_id === student.id);
         const studentAttendance = stats.attendance.filter(a => a.student_id === student.id);
         const studentSubmissions = stats.submissions.filter(s => s.student_id === student.id);
-        
+
         const avgGrade = studentGrades.length > 0
           ? (studentGrades.reduce((sum, g) => sum + (g.score || 0), 0) / studentGrades.length).toFixed(1)
           : 0;
-        
+
         const attendanceRate = studentAttendance.length > 0
           ? ((studentAttendance.filter(a => a.status === 'presente').length / studentAttendance.length) * 100).toFixed(0)
           : 0;
-        
+
         const submissionRate = stats.assignments.length > 0
           ? ((studentSubmissions.length / stats.assignments.length) * 100).toFixed(0)
           : 0;
-        
+
         // Calcular trend (comparar últimas 5 notas com as 5 anteriores)
         const recentGrades = studentGrades.slice(-5);
         const previousGrades = studentGrades.slice(-10, -5);
@@ -61,12 +62,12 @@ export default function StudentPerformance({ stats }) {
         const previousAvg = previousGrades.length > 0
           ? previousGrades.reduce((sum, g) => sum + (g.score || 0), 0) / previousGrades.length
           : recentAvg;
-        
+
         const trend = recentAvg > previousAvg ? 'up' : recentAvg < previousAvg ? 'down' : 'stable';
-        
+
         // Identificar alunos em risco
         const atRisk = avgGrade < 5 || attendanceRate < 75 || submissionRate < 50;
-        
+
         return {
           ...student,
           avgGrade: parseFloat(avgGrade),
@@ -77,7 +78,7 @@ export default function StudentPerformance({ stats }) {
           totalGrades: studentGrades.length
         };
       }));
-      
+
       setStudents(studentsWithMetrics);
       setFilteredStudents(studentsWithMetrics);
     } catch (error) {
@@ -89,17 +90,17 @@ export default function StudentPerformance({ stats }) {
 
   useEffect(() => {
     let filtered = students;
-    
+
     if (searchTerm) {
-      filtered = filtered.filter(s => 
+      filtered = filtered.filter(s =>
         s.full_name.toLowerCase().includes(searchTerm.toLowerCase())
       );
     }
-    
+
     if (selectedClass) {
       filtered = filtered.filter(s => s.current_class_id === selectedClass);
     }
-    
+
     setFilteredStudents(filtered);
   }, [searchTerm, selectedClass, students]);
 
@@ -166,8 +167,8 @@ export default function StudentPerformance({ stats }) {
         <CardContent>
           <div className="space-y-3">
             {filteredStudents.map(student => (
-              <div 
-                key={student.id} 
+              <div
+                key={student.id}
                 className={`p-4 rounded-lg border ${student.atRisk ? 'border-red-200 bg-red-50' : 'border-slate-200 bg-white'} hover:shadow-md transition-shadow`}
               >
                 <div className="flex items-center gap-4">
@@ -177,7 +178,7 @@ export default function StudentPerformance({ stats }) {
                       {student.full_name.split(' ').map(n => n[0]).join('').substring(0, 2)}
                     </AvatarFallback>
                   </Avatar>
-                  
+
                   <div className="flex-1">
                     <div className="flex items-center gap-2">
                       <h4 className="font-semibold text-slate-900">{student.full_name}</h4>
@@ -196,7 +197,7 @@ export default function StudentPerformance({ stats }) {
                     </div>
                     <p className="text-sm text-slate-600">{student.registration_number}</p>
                   </div>
-                  
+
                   <div className="grid grid-cols-3 gap-6 text-center">
                     <div>
                       <p className="text-xs text-slate-600 mb-1">Média</p>
@@ -209,7 +210,7 @@ export default function StudentPerformance({ stats }) {
                       </p>
                       <p className="text-xs text-slate-500">({student.totalGrades} notas)</p>
                     </div>
-                    
+
                     <div>
                       <p className="text-xs text-slate-600 mb-1">Presença</p>
                       <p className={`text-xl font-bold ${
@@ -220,7 +221,7 @@ export default function StudentPerformance({ stats }) {
                         {student.attendanceRate}%
                       </p>
                     </div>
-                    
+
                     <div>
                       <p className="text-xs text-slate-600 mb-1">Entregas</p>
                       <p className={`text-xl font-bold ${
@@ -235,7 +236,7 @@ export default function StudentPerformance({ stats }) {
                 </div>
               </div>
             ))}
-            
+
             {filteredStudents.length === 0 && (
               <div className="text-center py-12 text-slate-500">
                 Nenhum aluno encontrado

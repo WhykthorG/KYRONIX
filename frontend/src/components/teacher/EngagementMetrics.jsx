@@ -1,10 +1,11 @@
+// ┌ñÏ▒┘êÏ»┘ê┘é Ïº┘è┘å Ï»┌ñÏ▒Ï¿┘êÏºÏ¬ Ï│┌ñ┘å┘ê┘ç┌¢ Ïº┘ê┘ä┘è┘ç Whyktor GSV.
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
-import { 
-  LineChart, Line, BarChart, Bar, XAxis, YAxis, 
-  CartesianGrid, Tooltip, ResponsiveContainer 
+import {
+  LineChart, Line, BarChart, Bar, XAxis, YAxis,
+  CartesianGrid, Tooltip, ResponsiveContainer
 } from 'recharts';
 import { Award, Target, Clock, CheckCircle } from 'lucide-react';
 import { format, subDays } from 'date-fns';
@@ -15,10 +16,10 @@ export default function EngagementMetrics({ stats }) {
   const last7Days = [...Array(7)].map((_, i) => {
     const date = format(subDays(new Date(), 6 - i), 'yyyy-MM-dd');
     const dayAttendance = stats.attendance.filter(a => a.date === date);
-    const daySubmissions = stats.submissions.filter(s => 
+    const daySubmissions = stats.submissions.filter(s =>
       s.submitted_at && s.submitted_at.startsWith(date)
     );
-    
+
     return {
       date: format(subDays(new Date(), 6 - i), 'dd/MM', { locale: ptBR }),
       presencas: dayAttendance.filter(a => a.status === 'presente').length,
@@ -30,7 +31,7 @@ export default function EngagementMetrics({ stats }) {
   const assignmentEffectiveness = stats.assignments.map(assignment => {
     const subs = stats.submissions.filter(s => s.assignment_id === assignment.id);
     const rate = Math.round((subs.length / (stats.totalStudents || 1)) * 100);
-    
+
     return {
       title: assignment.title,
       type: assignment.type,
@@ -50,11 +51,11 @@ export default function EngagementMetrics({ stats }) {
       const assignment = stats.assignments.find(a => a.id === s.assignment_id);
       return assignment && assignment.class_id === classData.id;
     });
-    
+
     const attendanceRate = classAttendance.length > 0
       ? ((classAttendance.filter(a => a.status === 'presente').length / classAttendance.length) * 100).toFixed(0)
       : 0;
-    
+
     return {
       name: classData.name,
       presenca: parseFloat(attendanceRate),
@@ -203,7 +204,7 @@ export default function EngagementMetrics({ stats }) {
                 <Progress value={assignment.submissionRate} className="h-2" />
               </div>
             ))}
-            
+
             {assignmentEffectiveness.length === 0 && (
               <div className="text-center py-8 text-slate-500">
                 Nenhuma atividade cadastrada ainda

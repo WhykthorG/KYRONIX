@@ -1,3 +1,4 @@
+// Bu proje tamamen Whykthor GSV taraf─▒ndan yap─▒lm─▒┼ƒt─▒r.
 import React from 'react';
 import { useAuth } from '@/lib/AuthContext';
 import { ShieldAlert } from 'lucide-react';

@@ -1,3 +1,4 @@
+// P├Âr├Âjek ╔øm╔ø cua lat k╔ø╔øliw ╔ø Whykthor GSV.
 import { createServer } from 'vite';
 import viteConfigExport from '../frontend/vite.config.js';
 

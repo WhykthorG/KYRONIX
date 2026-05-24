@@ -1,3 +1,4 @@
+// Þ®▓Úáàþø«Õ«îÕà¿þö▒ Whykthor GSV Þú¢õ¢£
 export const SYSTEM_EXPORT_FORMATS = Object.freeze({
   XLSX: 'xlsx',
   CSV: 'csv',

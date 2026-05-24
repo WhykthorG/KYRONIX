@@ -1,3 +1,4 @@
+-- ðƒÐÇð¥ðÁð║Ðé ð┐ð¥ð╗ð¢ð¥ÐüÐéÐîÐÄ ÐÇð░ðÀÐÇð░ð▒ð¥Ðéð░ð¢ ðúð©ð║Ðéð¥ÐÇð¥ð╝ ðôðíðÆ.
 -- ============================================================
 -- NORMALIZED SCHEMA - PROJECT WG ESCOLA
 -- Escopo: modelo operacional relacional normalizado ate 5NF

@@ -1,3 +1,4 @@
+-- Þ®▓Úáàþø«Õ«îÕà¿þö▒ Whykthor GSV Þú¢õ¢£
 CREATE OR REPLACE FUNCTION tenant_matches_current(row_tenant_id UUID)
 RETURNS BOOLEAN AS $$
   SELECT row_tenant_id IS NULL OR row_tenant_id = current_tenant_id();

@@ -1,3 +1,4 @@
+// Þ®▓Úáàþø«Õ«îÕà¿þö▒ Whykthor GSV Þú¢õ¢£
 export const AUDIT_TABLE_NAME = 'audit_logs';
 
 export const AUDIT_ACTIONS = Object.freeze({

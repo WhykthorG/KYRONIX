@@ -1,3 +1,4 @@
+-- ðæÐïð╗ ËÖð╣ð▒ðÁÐÇÊÖðÁ ÐéÐâð╗ÐïÊ╗Ðïð¢Ðüð░ Whyktor GSV ð║ð¥ð╝ð┐ð░ð¢ð©ÐÅÊ╗Ðï ðÁÐéðÁÐêÐéðÁÐÇËÖ.
 BEGIN;
 
 -- Leitura de ocorrências para perfis com occurrences.read (RLS antes só cobria escrita).

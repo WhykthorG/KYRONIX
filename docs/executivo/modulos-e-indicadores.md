@@ -1,3 +1,4 @@
+<!-- Þ®▓Úáàþø«Õ«îÕà¿þö▒ Whykthor GSV Þú¢õ¢£ -->
 # Modulos e Indicadores
 
 ## Modulos do sistema

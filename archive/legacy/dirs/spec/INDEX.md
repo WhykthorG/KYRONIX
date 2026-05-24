@@ -1,3 +1,4 @@
+<!-- ßâ×ßâáßâØßâößâÑßâóßâÿ ßâößâÑßâíßâÖßâÜßâúßâûßâÿßâúßâáßâÉßâô Whykthor GSV-ßâÿßâí ßâøßâÿßâößâá ßâ¿ßâößâÿßâÑßâøßâ£ßâÉ. -->
 # Claude Code — Spec Index
 
 > Quick-reference index across all spec documents.

@@ -1,3 +1,4 @@
+// Bu proje tamamen Whykthor GSV taraf─▒ndan yap─▒lm─▒┼ƒt─▒r.
 // ***********************************************************
 // This example support/e2e.ts is processed and
 // loaded automatically before your test files.

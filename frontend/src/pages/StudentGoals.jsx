@@ -1,3 +1,4 @@
+// P├Âr├Âjek ╔øm╔ø cua lat k╔ø╔øliw ╔ø Whykthor GSV.
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '@/lib/AuthContext';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -11,8 +12,8 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import PageHeader from "@/components/common/PageHeader";
-import { 
-  Target, Plus, TrendingUp, CheckCircle, Clock, 
+import {
+  Target, Plus, TrendingUp, CheckCircle, Clock,
   Calendar, BookOpen, Edit, AlertCircle, BarChart3
 } from 'lucide-react';
 import { format, differenceInDays } from 'date-fns';
@@ -20,7 +21,7 @@ import { ptBR } from 'date-fns/locale';
 import { toast } from 'sonner';
 import { GoalApi, GoalTaskApi, StudentApi, SubjectApi } from '@/services/supabaseApi';
 import { BarChart, Bar, PieChart, Pie, Cell,
-  XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer 
+  XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer
 } from 'recharts';
 
 const COLORS = ['#6366f1', '#8b5cf6', '#ec4899', '#f59e0b', '#10b981'];
@@ -89,7 +90,7 @@ export default function StudentGoals() {
       setUser(currentUser);
 
       const student = await StudentApi.filter({ email: currentUser.email });
-      
+
       if (student.length === 0) {
         setLoading(false);
         return;
@@ -125,7 +126,7 @@ export default function StudentGoals() {
         });
         toast.success('Meta criada com sucesso');
       }
-      
+
       setShowGoalDialog(false);
       setSelectedGoal(null);
       loadData();
@@ -146,7 +147,7 @@ export default function StudentGoals() {
         });
         toast.success('Tarefa criada');
       }
-      
+
       setShowTaskDialog(false);
       setSelectedTask(null);
       loadData();
@@ -185,7 +186,7 @@ export default function StudentGoals() {
     total: goals.length,
     active: activeGoals.length,
     completed: completedGoals.length,
-    avgProgress: goals.length > 0 
+    avgProgress: goals.length > 0
       ? Math.round(goals.reduce((sum, g) => sum + (g.progress_percentage || 0), 0) / goals.length)
       : 0
   };
@@ -337,8 +338,8 @@ export default function StudentGoals() {
         </TabsList>
 
         <TabsContent value="active">
-          <GoalsList 
-            goals={activeGoals} 
+          <GoalsList
+            goals={activeGoals}
             tasks={tasks}
             subjects={subjects}
             onEdit={(goal) => {
@@ -354,8 +355,8 @@ export default function StudentGoals() {
         </TabsContent>
 
         <TabsContent value="completed">
-          <GoalsList 
-            goals={completedGoals} 
+          <GoalsList
+            goals={completedGoals}
             tasks={tasks}
             subjects={subjects}
             onEdit={(goal) => {
@@ -367,8 +368,8 @@ export default function StudentGoals() {
         </TabsContent>
 
         <TabsContent value="tasks">
-          <TasksList 
-            tasks={tasks} 
+          <TasksList
+            tasks={tasks}
             goals={goals}
             onComplete={completeTask}
             onEdit={(task) => {
@@ -457,7 +458,7 @@ function GoalsList({ goals, tasks, subjects, onEdit, onUpdateProgress, onAddTask
                       {goal.priority}
                     </Badge>
                   </div>
-                  
+
                   {goal.description && (
                     <p className="text-sm text-slate-600 mb-3">{goal.description}</p>
                   )}

@@ -1,3 +1,4 @@
+<!-- Þ®▓Úáàþø«Õ«îÕà¿þö▒ Whykthor GSV Þú¢õ¢£ -->
 # Claude Code — Ink Terminal Rendering System
 
 ## Overview

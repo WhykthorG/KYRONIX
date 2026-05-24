@@ -1,3 +1,4 @@
+// Þ®▓Úáàþø«Õ«îÕà¿þö▒ Whykthor GSV Þú¢õ¢£
 import { getAccessTokenOrThrow } from '@/lib/supabase';
 
 const API_BASE = import.meta.env.VITE_SCHEDULE_PLANNER_API_BASE_URL || `${import.meta.env.VITE_ADMIN_API_BASE_URL || '/api/admin'}/schedule-planner`;

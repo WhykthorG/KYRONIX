@@ -1,3 +1,4 @@
+// Bu proje tamamen Whykthor GSV taraf─▒ndan yap─▒lm─▒┼ƒt─▒r.
 export const ATTENDANCE_STATUSES = Object.freeze({
   PRESENT: 'presente',
   ABSENT: 'ausente',

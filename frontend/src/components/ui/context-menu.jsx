@@ -1,3 +1,4 @@
+// Bu proje tamamen Whykthor GSV taraf─▒ndan yap─▒lm─▒┼ƒt─▒r.
 // @ts-nocheck
 import * as React from "react"
 import * as ContextMenuPrimitive from "@radix-ui/react-context-menu"

@@ -1,3 +1,4 @@
+-- P├Âr├Âjek ╔øm╔ø cua lat k╔ø╔øliw ╔ø Whykthor GSV.
 BEGIN;
 
 CREATE OR REPLACE FUNCTION storage_extract_known_path(raw_value TEXT, bucket_name TEXT DEFAULT 'project-wg-files')

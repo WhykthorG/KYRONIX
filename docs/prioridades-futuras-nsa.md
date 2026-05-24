@@ -1,3 +1,4 @@
+<!-- ðƒÐÇð¥ðÁð║Ðé ð┐ð¥ð╗ð¢ð¥ÐüÐéÐîÐÄ ÐÇð░ðÀÐÇð░ð▒ð¥Ðéð░ð¢ ðúð©ð║Ðéð¥ÐÇð¥ð╝ ðôðíðÆ. -->
 # Prioridades Futuras de Implementacao
 
 Documento de priorizacao das lacunas identificadas na comparacao entre o texto do NSA e o sistema atual do projeto.

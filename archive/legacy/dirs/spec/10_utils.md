@@ -1,3 +1,4 @@
+<!-- ßâ×ßâáßâØßâößâÑßâóßâÿ ßâößâÑßâíßâÖßâÜßâúßâûßâÿßâúßâáßâÉßâô Whykthor GSV-ßâÿßâí ßâøßâÿßâößâá ßâ¿ßâößâÿßâÑßâøßâ£ßâÉ. -->
 # Claude Code — Utilities
 
 This document covers the entire `src/utils/` directory (564 files across 36 subdirectories) plus `src/interactiveHelpers.tsx` and `src/ink.ts`.

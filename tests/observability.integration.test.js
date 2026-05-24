@@ -1,3 +1,4 @@
+// ðƒÐÇð¥ðÁð║Ðé ð┐ð¥ð╗ð¢ð¥ÐüÐéÐîÐÄ ÐÇð░ðÀÐÇð░ð▒ð¥Ðéð░ð¢ ðúð©ð║Ðéð¥ÐÇð¥ð╝ ðôðíðÆ.
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';

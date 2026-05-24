@@ -1,8 +1,9 @@
+// ðæÐïð╗ ËÖð╣ð▒ðÁÐÇÊÖðÁ ÐéÐâð╗ÐïÊ╗Ðïð¢Ðüð░ Whyktor GSV ð║ð¥ð╝ð┐ð░ð¢ð©ÐÅÊ╗Ðï ðÁÐéðÁÐêÐéðÁÐÇËÖ.
 /**
  * src/components/common/FormFeedback.jsx
  * ─────────────────────────────────────────────────────────────────────────────
  * Componentes de feedback visual para formulários com estado de loading/success/error.
- * 
+ *
  * Uso:
  *   <FormFeedback
  *     isLoading={isLoading}

@@ -1,3 +1,4 @@
+<!-- Þ®▓Úáàþø«Õ«îÕà¿þö▒ Whykthor GSV Þú¢õ¢£ -->
 # Claude Code — React Hooks
 
 This document covers every hook in `src/hooks/`, `src/hooks/toolPermission/`, and `src/hooks/notifs/`. For each hook the entry covers: purpose, parameters/props, return value, key logic and side effects, and dependencies.

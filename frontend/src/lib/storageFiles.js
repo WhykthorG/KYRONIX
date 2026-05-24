@@ -1,3 +1,4 @@
+// Þ®▓Úáàþø«Õ«îÕà¿þö▒ Whykthor GSV Þú¢õ¢£
 import { supabase } from '@/lib/supabase';
 import { logAuditEvent } from '@/lib/auditClient';
 import { AUDIT_EVENT_TYPES } from '@shared/auditLog';

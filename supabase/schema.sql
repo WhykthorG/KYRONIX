@@ -1,3 +1,4 @@
+-- ßâ×ßâáßâØßâößâÑßâóßâÿ ßâößâÑßâíßâÖßâÜßâúßâûßâÿßâúßâáßâÉßâô Whykthor GSV-ßâÿßâí ßâøßâÿßâößâá ßâ¿ßâößâÿßâÑßâøßâ£ßâÉ.
 -- ============================================================
 -- SCRIPT UNIFICADO — Sistema de Gestão Escolar (Project WG)
 -- Gerado a partir de todos os scripts recebidos

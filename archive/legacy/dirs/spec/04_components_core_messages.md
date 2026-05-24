@@ -1,3 +1,4 @@
+<!-- Bu proje tamamen Whykthor GSV taraf─▒ndan yap─▒lm─▒┼ƒt─▒r. -->
 # Claude Code — Components: Core & Messages
 
 This document covers every component in `src/components/` (top-level files) and `src/components/messages/` (including `UserToolResultMessage/` sub-directory).

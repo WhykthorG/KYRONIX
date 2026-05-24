@@ -1,3 +1,4 @@
+// Bu proje tamamen Whykthor GSV taraf─▒ndan yap─▒lm─▒┼ƒt─▒r.
 
 import React, { useState, useEffect, useRef } from 'react';
 import { useSearchParams } from 'react-router-dom';
@@ -566,9 +567,9 @@ function UserProfileFlow({ onSuccess, onBack }) {
   const [selectedRole, setSelectedRole] = useState(null);
   const [selectedSubRole, setSelectedSubRole] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [form, setForm] = useState({ 
-    full_name: '', email: '', phone: '', birth_date: '', 
-    document_id: '', address: '', department: '', notes: '' 
+  const [form, setForm] = useState({
+    full_name: '', email: '', phone: '', birth_date: '',
+    document_id: '', address: '', department: '', notes: ''
   });
 
   const { data: classes = [] } = useQuery({
@@ -580,15 +581,15 @@ function UserProfileFlow({ onSuccess, onBack }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!form.email?.trim()) { 
+    if (!form.email?.trim()) {
       toast.error('E-mail é obrigatório.');
-      return; 
+      return;
     }
-    if (!form.full_name?.trim()) { 
+    if (!form.full_name?.trim()) {
       toast.error('Nome completo é obrigatório.');
-      return; 
+      return;
     }
-    
+
     setLoading(true);
     try {
       const selectedClass = classes.find((c) => c.id === form.department);
@@ -605,7 +606,7 @@ function UserProfileFlow({ onSuccess, onBack }) {
         notes: form.notes ? form.notes + ' [primeiro_acesso]' : '[primeiro_acesso]',
         profile_type: getFinalRole(),
       });
-      
+
       onSuccess({
         successTitle: 'Usuário Criado!',
         successMsg: `Acesso criado para ${form.full_name} (${getFinalRole()}). A senha temporária gerada é: ${tempPassword} — Por favor, anote-a agora e repasse ao usuário, pois ela não será exibida novamente.`,

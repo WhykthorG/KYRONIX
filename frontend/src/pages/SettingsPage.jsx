@@ -1,3 +1,4 @@
+// P├Âr├Âjek ╔øm╔ø cua lat k╔ø╔øliw ╔ø Whykthor GSV.
 import React, { useEffect, useState } from 'react';
 import PageHeader from '@/components/common/PageHeader';
 import { Button } from "@/components/ui/button";
@@ -13,7 +14,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { 
+import {
   School, Bell, Shield, Save, Loader2, AlertTriangle, Download, FileSpreadsheet, FileText, Database
 } from 'lucide-react';
 import { toast } from 'sonner';
@@ -496,8 +497,8 @@ export default function SettingsPage() {
 
       {/* Save Button */}
       <div className="flex justify-end">
-        <Button 
-          onClick={handleSave} 
+        <Button
+          onClick={handleSave}
           disabled={saving || loadingSettings}
           className="bg-indigo-600 hover:bg-indigo-700"
         >

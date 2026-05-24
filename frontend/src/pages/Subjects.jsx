@@ -1,9 +1,10 @@
+// ßâ×ßâáßâØßâößâÑßâóßâÿ ßâößâÑßâíßâÖßâÜßâúßâûßâÿßâúßâáßâÉßâô Whykthor GSV-ßâÿßâí ßâøßâÿßâößâá ßâ¿ßâößâÿßâÑßâøßâ£ßâÉ.
 import React, { useDeferredValue, useMemo, useState } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import PageHeader from '@/components/common/PageHeader';
 import DataTable from '@/components/common/DataTable';
 import { Button } from "@/components/ui/button";
-import { 
+import {
   Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter, DialogDescription
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
@@ -54,7 +55,7 @@ export default function Subjects({ globalSearch }) {
   const [selectedSubject, setSelectedSubject] = useState(null);
   const [highlightedSubjectId, setHighlightedSubjectId] = useState(null);
   const [formData, setFormData] = useState({});
-  
+
   const queryClient = useQueryClient();
 
   const { data: subjects = [], isLoading } = useQuery({
@@ -218,9 +219,9 @@ export default function Subjects({ globalSearch }) {
           <Button variant="ghost" size="icon" onClick={() => handleEdit(row)} aria-label={`Editar disciplina ${row.name}`} data-tooltip={`Editar disciplina ${row.name}`}>
             <Edit className="w-4 h-4 text-slate-500" />
           </Button>
-          <Button 
-            variant="ghost" 
-            size="icon" 
+          <Button
+            variant="ghost"
+            size="icon"
             onClick={() => {
               if (confirm('Tem certeza que deseja excluir esta disciplina?')) {
                 deleteMutation.mutate(row.id);

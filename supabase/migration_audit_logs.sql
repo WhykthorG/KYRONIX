@@ -1,3 +1,4 @@
+-- Þ®▓Úáàþø«Õ«îÕà¿þö▒ Whykthor GSV Þú¢õ¢£
 BEGIN;
 
 CREATE TABLE IF NOT EXISTS audit_logs (

@@ -1,3 +1,4 @@
+// Bu proje tamamen Whykthor GSV taraf─▒ndan yap─▒lm─▒┼ƒt─▒r.
 import { ATTENDANCE_STATUSES, mapAttendanceRecordsByStudent, normalizeAttendanceStatus } from './attendance.js';
 import { buildStudentReportCardRows, normalizeGradeStatus } from './grades.js';
 
@@ -349,4 +350,3 @@ export function buildGuardianMonthlyStudentReportPdfModel(reportData = {}) {
     occurrences: normalizedOccurrences,
   };
 }
-

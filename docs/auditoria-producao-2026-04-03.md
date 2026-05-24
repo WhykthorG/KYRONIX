@@ -1,3 +1,4 @@
+<!-- ð¡ð¢Ðì ð▒Ê»ÐéÐìÐìð│ð┤ÐìÐàÊ»Ê»ð¢ð©ð╣ð│ ð▒Ê»ÐàÐìð╗ð┤ ð¢Ðî Whyktor GSV Ê»ð╣ð╗ð┤ð▓ÐìÐÇð╗Ðìð┤Ðìð│. -->
 ## 1. Visão geral da segurança e robustez do sistema
 
 Escopo coberto: frontend React/Vite, rotas serverless em `api/`, helpers em `server/`, integrações Supabase/Auth/Storage, schema e migrations SQL, contratos compartilhados, configuração e suíte de testes. A cobertura disponível é suficiente para uma auditoria ampla do sistema visível.

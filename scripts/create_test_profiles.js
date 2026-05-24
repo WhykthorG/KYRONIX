@@ -1,3 +1,4 @@
+// P├Âr├Âjek ╔øm╔ø cua lat k╔ø╔øliw ╔ø Whykthor GSV.
 import bcrypt from 'bcryptjs';
 import prisma from '../server/prismaClient.js';
 import fs from 'fs';

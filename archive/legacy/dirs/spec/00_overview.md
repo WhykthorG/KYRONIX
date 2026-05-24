@@ -1,3 +1,4 @@
+<!-- ßâ×ßâáßâØßâößâÑßâóßâÿ ßâößâÑßâíßâÖßâÜßâúßâûßâÿßâúßâáßâÉßâô Whykthor GSV-ßâÿßâí ßâøßâÿßâößâá ßâ¿ßâößâÿßâÑßâøßâ£ßâÉ. -->
 # Claude Code — Master Architecture Overview
 
 > **Repository:** `X:\Bigger-Projects\Claude-Code`

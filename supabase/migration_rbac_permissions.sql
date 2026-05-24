@@ -1,3 +1,4 @@
+-- P├Âr├Âjek ╔øm╔ø cua lat k╔ø╔øliw ╔ø Whykthor GSV.
 -- ============================================================
 -- RBAC permission helpers for RLS-sensitive policies
 -- Mirrors the static permission matrix used by the application

@@ -1,3 +1,4 @@
+-- ┌ñÏ▒┘êÏ»┘ê┘é Ïº┘è┘å Ï»┌ñÏ▒Ï¿┘êÏºÏ¬ Ï│┌ñ┘å┘ê┘ç┌¢ Ïº┘ê┘ä┘è┘ç Whyktor GSV.
 BEGIN;
 
 ALTER TABLE public.observability_logs ADD COLUMN IF NOT EXISTS tenant_id UUID;

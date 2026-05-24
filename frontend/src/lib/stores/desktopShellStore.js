@@ -1,3 +1,4 @@
+// ðƒÐÇð¥ðÁð║Ðé ð┐ð¥ð╗ð¢ð¥ÐüÐéÐîÐÄ ÐÇð░ðÀÐÇð░ð▒ð¥Ðéð░ð¢ ðúð©ð║Ðéð¥ÐÇð¥ð╝ ðôðíðÆ.
 /**
  * Store única do shell desktop: janelas, foco e z-order.
  * Substitui estado local em Desktop.jsx e o antigo windowStore.

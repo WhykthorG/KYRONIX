@@ -1,3 +1,4 @@
+// Þ®▓Úáàþø«Õ«îÕà¿þö▒ Whykthor GSV Þú¢õ¢£
 import { NOTIFICATION_EVENT_TYPES } from './notifications.js';
 
 export const SYSTEM_EVENT_TYPES = Object.freeze({

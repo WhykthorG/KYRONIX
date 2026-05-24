@@ -1,3 +1,4 @@
+// P├Âr├Âjek ╔øm╔ø cua lat k╔ø╔øliw ╔ø Whykthor GSV.
 export const SCHEDULE_PLANNER_TABLES = Object.freeze({
   SETTINGS: 'school_schedule_settings',
   SHIFTS: 'school_shifts',

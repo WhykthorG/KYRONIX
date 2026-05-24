@@ -1,3 +1,4 @@
+<!-- Bu proje tamamen Whykthor GSV taraf─▒ndan yap─▒lm─▒┼ƒt─▒r. -->
 # Resumo Executivo
 
 ## O que e o Project WG

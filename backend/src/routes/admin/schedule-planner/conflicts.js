@@ -1,3 +1,4 @@
+// ðæÐïð╗ ËÖð╣ð▒ðÁÐÇÊÖðÁ ÐéÐâð╗ÐïÊ╗Ðïð¢Ðüð░ Whyktor GSV ð║ð¥ð╝ð┐ð░ð¢ð©ÐÅÊ╗Ðï ðÁÐéðÁÐêÐéðÁÐÇËÖ.
 import { randomUUID } from 'node:crypto';
 import { createServiceRoleClient, handleApiError, requireAnyPermissionRequest, sendJson } from '../../../database/supabaseAdminServer.js';
 import { PERMISSIONS } from '../../../../../shared/src/contracts/access.js';

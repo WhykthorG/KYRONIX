@@ -1,3 +1,4 @@
+// ðƒÐÇð¥ðÁð║Ðé ð┐ð¥ð╗ð¢ð¥ÐüÐéÐîÐÄ ÐÇð░ðÀÐÇð░ð▒ð¥Ðéð░ð¢ ðúð©ð║Ðéð¥ÐÇð¥ð╝ ðôðíðÆ.
 import React, { useDeferredValue, useEffect, useMemo, useRef, useState } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import PageHeader from '@/components/common/PageHeader';
@@ -5,8 +6,8 @@ import RenderProfiler from '@/components/common/RenderProfiler';
 import StatusBadge from '@/components/common/StatusBadge';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { 
-  Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter 
+import {
+  Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -292,8 +293,8 @@ export default function Assignments({ globalSearch }) {
 
   const handlePublish = (assignment) => {
     if (!canManageAssignments) return;
-    updateMutation.mutate({ 
-      id: assignment.id, 
+    updateMutation.mutate({
+      id: assignment.id,
       data: buildPublishedAssignmentUpdate(assignment),
     });
   };
@@ -780,7 +781,7 @@ export default function Assignments({ globalSearch }) {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {filteredAssignments.map((assignment) => {
           const isOverdue = isPast(new Date(assignment.due_date));
-          
+
           return (
             <Card
               key={assignment.id}
@@ -818,7 +819,7 @@ export default function Assignments({ globalSearch }) {
                   )}>
                     <Calendar className="w-4 h-4" />
                     <span>
-                      {assignment.due_date 
+                      {assignment.due_date
                         ? format(new Date(assignment.due_date), "dd/MM/yyyy 'às' HH:mm", { locale: ptBR })
                         : '-'
                       }
@@ -834,8 +835,8 @@ export default function Assignments({ globalSearch }) {
 
                 <div className="flex items-center gap-2 pt-2 border-t">
                   {canManageAssignments && assignment.status === ASSIGNMENT_STATUSES.DRAFT && (
-                    <Button 
-                      size="sm" 
+                    <Button
+                      size="sm"
                       onClick={() => handlePublish(assignment)}
                       className="bg-emerald-600 hover:bg-emerald-700"
                     >
@@ -891,9 +892,9 @@ export default function Assignments({ globalSearch }) {
                       >
                         <Edit className="w-4 h-4 text-slate-500" />
                       </Button>
-                      <Button 
-                        variant="ghost" 
-                        size="icon" 
+                      <Button
+                        variant="ghost"
+                        size="icon"
                         onClick={() => {
                           if (confirm('Tem certeza que deseja excluir esta atividade?')) {
                             deleteMutation.mutate(assignment.id);

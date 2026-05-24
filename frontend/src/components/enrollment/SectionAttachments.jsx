@@ -1,3 +1,4 @@
+// ðƒÐÇð¥ðÁð║Ðé ð┐ð¥ð╗ð¢ð¥ÐüÐéÐîÐÄ ÐÇð░ðÀÐÇð░ð▒ð¥Ðéð░ð¢ ðúð©ð║Ðéð¥ÐÇð¥ð╝ ðôðíðÆ.
 import React, { useRef, useState } from 'react';
 import { Input } from '@/components/ui/input';
 import { Upload, X, FileText } from 'lucide-react';
@@ -28,17 +29,17 @@ export default function SectionAttachments({ attachments, onChange, errors }) {
     const files = Array.from(e.target.files);
     setUploadError('');
     for (const file of files) {
-      if (!ALLOWED_TYPES.includes(file.type)) { 
-        setUploadError(`Tipo não permitido: ${file.name}`); 
-        continue; 
+      if (!ALLOWED_TYPES.includes(file.type)) {
+        setUploadError(`Tipo não permitido: ${file.name}`);
+        continue;
       }
       if (OPTIMIZABLE_IMAGE_MIME_TYPES.includes(file.type) && file.size > MAX_IMAGE_UPLOAD_SOURCE_BYTES) {
         setUploadError(`Imagem muito grande: ${file.name}. Máx ${Math.round(MAX_IMAGE_UPLOAD_SOURCE_BYTES / (1024 * 1024))}MB antes da otimização.`);
         continue;
       }
-      if (!OPTIMIZABLE_IMAGE_MIME_TYPES.includes(file.type) && file.size > MAX_SIZE) { 
-        setUploadError(`Arquivo muito grande: ${file.name}. Máx 5MB`); 
-        continue; 
+      if (!OPTIMIZABLE_IMAGE_MIME_TYPES.includes(file.type) && file.size > MAX_SIZE) {
+        setUploadError(`Arquivo muito grande: ${file.name}. Máx 5MB`);
+        continue;
       }
       setUploading(true);
       try {
@@ -52,10 +53,10 @@ export default function SectionAttachments({ attachments, onChange, errors }) {
             description: '',
           }),
         ]);
-      } catch (err) { 
-        setUploadError(`Erro ao enviar ${file.name}: ${err.message}`); 
-      } finally { 
-        setUploading(false); 
+      } catch (err) {
+        setUploadError(`Erro ao enviar ${file.name}: ${err.message}`);
+      } finally {
+        setUploading(false);
       }
     }
     e.target.value = '';
@@ -98,11 +99,11 @@ export default function SectionAttachments({ attachments, onChange, errors }) {
               </div>
               <div className="flex-1 min-w-0 space-y-2">
                 <p className="text-sm font-medium text-slate-700 truncate">{getStoredFileName(att, BUCKET)}</p>
-                <Input 
-                  placeholder="Descrição do documento *" 
-                  value={att.description || ''} 
-                  onChange={(e) => updateDescription(i, e.target.value)} 
-                  className={`text-sm ${errors?.[`attachment_${i}`] ? 'border-red-400' : ''}`} 
+                <Input
+                  placeholder="Descrição do documento *"
+                  value={att.description || ''}
+                  onChange={(e) => updateDescription(i, e.target.value)}
+                  className={`text-sm ${errors?.[`attachment_${i}`] ? 'border-red-400' : ''}`}
                 />
                 {errors?.[`attachment_${i}`] && <p className="text-xs text-red-500 mt-1">{errors[`attachment_${i}`]}</p>}
               </div>
@@ -123,4 +124,3 @@ export default function SectionAttachments({ attachments, onChange, errors }) {
     </div>
   );
 }
-

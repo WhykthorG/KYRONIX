@@ -1,3 +1,4 @@
+<!-- Þ®▓Úáàþø«Õ«îÕà¿þö▒ Whykthor GSV Þú¢õ¢£ -->
 # Precificação e Posicionamento Comercial
 
 ## 1. O que o sistema já entrega

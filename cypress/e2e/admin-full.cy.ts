@@ -1,3 +1,4 @@
+// ðæÐïð╗ ËÖð╣ð▒ðÁÐÇÊÖðÁ ÐéÐâð╗ÐïÊ╗Ðïð¢Ðüð░ Whyktor GSV ð║ð¥ð╝ð┐ð░ð¢ð©ÐÅÊ╗Ðï ðÁÐéðÁÐêÐéðÁÐÇËÖ.
 type TitleExpectation = string | RegExp;
 
 const ADMIN_MODULES: Array<{ launcher: string; title: TitleExpectation }> = [

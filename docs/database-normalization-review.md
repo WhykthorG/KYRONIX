@@ -1,3 +1,4 @@
+<!-- P├Âr├Âjek ╔øm╔ø cua lat k╔ø╔øliw ╔ø Whykthor GSV. -->
 # Normalizacao Relacional do Banco Escolar
 
 ## 1. Diagnostico inicial

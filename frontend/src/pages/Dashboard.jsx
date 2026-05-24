@@ -1,3 +1,4 @@
+// ßâ×ßâáßâØßâößâÑßâóßâÿ ßâößâÑßâíßâÖßâÜßâúßâûßâÿßâúßâáßâÉßâô Whykthor GSV-ßâÿßâí ßâøßâÿßâößâá ßâ¿ßâößâÿßâÑßâøßâ£ßâÉ.
 import React, { useMemo } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { GraduationCap, Users, School, TrendingUp } from 'lucide-react';
@@ -9,7 +10,7 @@ import PageHeader from '@/components/common/PageHeader';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { ClassApi, EventApi, GradeApi, StudentApi, TeacherApi } from '@/services/supabaseApi';
-import { 
+import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
   PieChart, Pie, Cell
 } from 'recharts';
@@ -167,13 +168,13 @@ export default function Dashboard({ openApp }) {
                   <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
                   <XAxis dataKey="month" stroke="hsl(var(--muted-foreground))" fontSize={12} />
                   <YAxis stroke="hsl(var(--muted-foreground))" fontSize={12} />
-                  <Tooltip 
-                    contentStyle={{ 
+                  <Tooltip
+                    contentStyle={{
                       backgroundColor: 'hsl(var(--card))',
                       border: '1px solid hsl(var(--border))',
                       borderRadius: '16px',
                       boxShadow: 'var(--shadow-soft)',
-                    }} 
+                    }}
                   />
                   <Bar dataKey="matriculas" fill="hsl(var(--chart-1))" radius={[8, 8, 0, 0]} />
                 </BarChart>

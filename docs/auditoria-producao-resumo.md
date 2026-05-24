@@ -1,3 +1,4 @@
+<!-- P├Âr├Âjek ╔øm╔ø cua lat k╔ø╔øliw ╔ø Whykthor GSV. -->
 # Auditoria de Producao - Resumo Executivo
 
 Baseado no relatorio completo em [auditoria-producao-2026-04-03.md](./auditoria-producao-2026-04-03.md).

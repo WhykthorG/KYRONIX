@@ -1,10 +1,11 @@
+// ðƒÐÇð¥ðÁð║Ðé ð┐ð¥ð╗ð¢ð¥ÐüÐéÐîÐÄ ÐÇð░ðÀÐÇð░ð▒ð¥Ðéð░ð¢ ðúð©ð║Ðéð¥ÐÇð¥ð╝ ðôðíðÆ.
 import React, { useDeferredValue, useMemo, useState } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import PageHeader from '@/components/common/PageHeader';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { 
-  Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter 
+import {
+  Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -14,8 +15,8 @@ import {
 } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { 
-  Book, BookOpen, Search, Plus, Edit, Trash2, User, Loader2, 
+import {
+  Book, BookOpen, Search, Plus, Edit, Trash2, User, Loader2,
   FileText, Disc, Headphones
 } from 'lucide-react';
 import { toast } from 'sonner';
@@ -35,7 +36,7 @@ export default function LibraryPage({ globalSearch }) {
   const [loanData, setLoanData] = useState({});
   const [activeTab, setActiveTab] = useState('acervo');
   const [highlightedItemId, setHighlightedItemId] = useState(null);
-  
+
   const queryClient = useQueryClient();
 
   const { data: items = [], isLoading } = useQuery({
@@ -111,8 +112,8 @@ export default function LibraryPage({ globalSearch }) {
 
   const handleLoanSubmit = (e) => {
     e.preventDefault();
-    createLoanMutation.mutate({ 
-      ...loanData, 
+    createLoanMutation.mutate({
+      ...loanData,
       loan_date: format(new Date(), 'yyyy-MM-dd'),
       status: 'emprestado'
     });
@@ -267,7 +268,7 @@ export default function LibraryPage({ globalSearch }) {
           </div>
         </Card>
         <Card className="p-4">
-          <Button 
+          <Button
             className="w-full h-full bg-indigo-600 hover:bg-indigo-700"
             onClick={() => setShowLoanForm(true)}
           >
@@ -288,7 +289,7 @@ export default function LibraryPage({ globalSearch }) {
           <div className="mb-4 flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
             <div className="flex items-center gap-2 bg-slate-100 rounded-xl px-4 py-2 max-w-sm">
               <Search className="w-4 h-4 text-slate-400" />
-              <Input 
+              <Input
                 placeholder="Buscar por título, autor, ISBN ou tipo..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
@@ -352,8 +353,8 @@ export default function LibraryPage({ globalSearch }) {
                         <Edit className="w-4 h-4 mr-1" />
                         Editar
                       </Button>
-                      <Button 
-                        variant="ghost" 
+                      <Button
+                        variant="ghost"
                         size="sm"
                         onClick={() => {
                           if (confirm('Tem certeza que deseja excluir este item?')) {
@@ -398,8 +399,8 @@ export default function LibraryPage({ globalSearch }) {
                       </div>
                     </div>
                   </div>
-                  <Button 
-                    size="sm" 
+                  <Button
+                    size="sm"
                     onClick={() => handleReturn(loan)}
                     className="bg-emerald-600 hover:bg-emerald-700"
                   >
@@ -491,8 +492,8 @@ export default function LibraryPage({ globalSearch }) {
                 <Input
                   type="number"
                   value={formData.total_copies || 1}
-                  onChange={(e) => setFormData({ 
-                    ...formData, 
+                  onChange={(e) => setFormData({
+                    ...formData,
                     total_copies: Number(e.target.value),
                     available_copies: Number(e.target.value)
                   })}

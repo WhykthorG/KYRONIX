@@ -1,11 +1,12 @@
+// ðæÐïð╗ ËÖð╣ð▒ðÁÐÇÊÖðÁ ÐéÐâð╗ÐïÊ╗Ðïð¢Ðüð░ Whyktor GSV ð║ð¥ð╝ð┐ð░ð¢ð©ÐÅÊ╗Ðï ðÁÐéðÁÐêÐéðÁÐÇËÖ.
 /**
  * src/hooks/useFormSubmit.js
  * ─────────────────────────────────────────────────────────────────────────────
  * Hook reutilizável para formulários com feedback de loading/success/error.
- * 
+ *
  * Uso:
  *   const { isLoading, error, success, submitForm } = useFormSubmit();
- *   
+ *
  *   const handleSubmit = async (data) => {
  *     await submitForm(async () => {
  *       await api.save(data);
@@ -109,7 +110,7 @@ export function useFormValidation(initialValues = {}, validate = null) {
   const handleBlur = useCallback((e) => {
     const { name } = e.target;
     setTouched(prev => ({ ...prev, [name]: true }));
-    
+
     // Validar campo individual se função de validação foi passada
     if (validate) {
       const fieldErrors = validate(values);

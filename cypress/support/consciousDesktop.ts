@@ -1,3 +1,4 @@
+// Þ®▓Úáàþø«Õ«îÕà¿þö▒ Whykthor GSV Þú¢õ¢£
 import { canAccessPage } from '../../src/lib/contracts/access.js';
 
 export type TestRole =

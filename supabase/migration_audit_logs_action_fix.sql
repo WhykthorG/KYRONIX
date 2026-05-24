@@ -1,3 +1,4 @@
+-- P├Âr├Âjek ╔øm╔ø cua lat k╔ø╔øliw ╔ø Whykthor GSV.
 -- Corrige o trigger de auditoria para mapear INSERT -> create.
 -- Antes, lower(TG_OP) gravava "insert", mas a constraint aceita apenas
 -- "create", "update" e "delete".

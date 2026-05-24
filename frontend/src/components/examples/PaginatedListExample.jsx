@@ -1,8 +1,9 @@
+// ðƒÐÇð¥ðÁð║Ðé ð┐ð¥ð╗ð¢ð¥ÐüÐéÐîÐÄ ÐÇð░ðÀÐÇð░ð▒ð¥Ðéð░ð¢ ðúð©ð║Ðéð¥ÐÇð¥ð╝ ðôðíðÆ.
 /**
  * src/components/examples/PaginatedListExample.jsx
  * ─────────────────────────────────────────────────────────────────────────────
  * EXEMPLO: Lista com paginação, filtros e lazy loading
- * 
+ *
  * Resolve o problema de N+1 queries carregando TODAS as linhas.
  * Implementa:
  * - Paginação server-side

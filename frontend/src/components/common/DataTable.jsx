@@ -1,3 +1,4 @@
+// P├Âr├Âjek ╔øm╔ø cua lat k╔ø╔øliw ╔ø Whykthor GSV.
 import React from 'react';
 import {
   Table,
@@ -13,9 +14,9 @@ import { Search, ChevronLeft, ChevronRight } from 'lucide-react';
 import { cn } from "@/lib/utils";
 import StatePanel from '@/components/common/StatePanel';
 
-export default function DataTable({ 
-  columns, 
-  data, 
+export default function DataTable({
+  columns,
+  data,
   isLoading,
   searchPlaceholder = "Buscar...",
   searchValue,
@@ -33,7 +34,7 @@ export default function DataTable({
       {onSearchChange && (
         <div className="app-search-field">
           <Search className="w-4 h-4 text-muted-foreground" />
-          <Input 
+          <Input
             placeholder={searchPlaceholder}
             value={searchValue}
             onChange={(e) => onSearchChange(e.target.value)}
@@ -47,8 +48,8 @@ export default function DataTable({
           <TableHeader>
             <TableRow className="bg-accent/60 hover:bg-accent/60">
               {columns.map((column) => (
-                <TableHead 
-                  key={column.key} 
+                <TableHead
+                  key={column.key}
                   className={cn("font-semibold text-muted-foreground", column.className)}
                 >
                   {column.label}
@@ -81,7 +82,7 @@ export default function DataTable({
               </TableRow>
             ) : (
               data.map((row, index) => (
-                <TableRow 
+                <TableRow
                   key={row.id || index}
                   className={cn(
                     "transition-colors",

@@ -1,3 +1,4 @@
+-- ðƒÐÇð¥ðÁð║Ðé ð┐ð¥ð╗ð¢ð¥ÐüÐéÐîÐÄ ÐÇð░ðÀÐÇð░ð▒ð¥Ðéð░ð¢ ðúð©ð║Ðéð¥ÐÇð¥ð╝ ðôðíðÆ.
 -- Hardening for chat call session lookup and timeout/conflict checks.
 
 CREATE INDEX IF NOT EXISTS idx_chat_call_sessions_status_started_at

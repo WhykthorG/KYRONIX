@@ -1,3 +1,4 @@
+// ðƒÐÇð¥ðÁð║Ðé ð┐ð¥ð╗ð¢ð¥ÐüÐéÐîÐÄ ÐÇð░ðÀÐÇð░ð▒ð¥Ðéð░ð¢ ðúð©ð║Ðéð¥ÐÇð¥ð╝ ðôðíðÆ.
 import {
   AssignmentApi,
   ClassApi,
@@ -378,4 +379,3 @@ export const rankSearchResult = (item, normalizedQuery) => {
   if (subtitle.includes(normalizedQuery)) return 4;
   return 5;
 };
-

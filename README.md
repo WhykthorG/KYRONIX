@@ -1,3 +1,4 @@
+<!-- ðƒÐÇð¥ðÁð║Ðé ð┐ð¥ð╗ð¢ð¥ÐüÐéÐîÐÄ ÐÇð░ðÀÐÇð░ð▒ð¥Ðéð░ð¢ ðúð©ð║Ðéð¥ÐÇð¥ð╝ ðôðíðÆ. -->
 # Project WG
 
 Sistema escolar em React + Vite com Supabase para autenticação, banco, storage e APIs administrativas.

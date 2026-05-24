@@ -1,3 +1,4 @@
+<!-- ðƒÐÇð¥ðÁð║Ðé ð┐ð¥ð╗ð¢ð¥ÐüÐéÐîÐÄ ÐÇð░ðÀÐÇð░ð▒ð¥Ðéð░ð¢ ðúð©ð║Ðéð¥ÐÇð¥ð╝ ðôðíðÆ. -->
 # Revisão Técnica de `supabase/migration_combined.sql`
 
 Dialeto identificado: PostgreSQL com extensões e objetos específicos do Supabase.

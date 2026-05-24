@@ -1,3 +1,4 @@
+// Bu proje tamamen Whykthor GSV taraf─▒ndan yap─▒lm─▒┼ƒt─▒r.
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Plus, ArrowLeft } from 'lucide-react';
@@ -5,17 +6,17 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { usePermissions } from '@/components/hooks/usePermissions';
 import { canAccessDashboard as canAccessDashboardByPermission } from '@shared/contracts/access';
 
-export default function PageHeader({ 
-  title, 
-  subtitle, 
-  action, 
-  actionLabel = "Novo", 
+export default function PageHeader({
+  title,
+  subtitle,
+  action,
+  actionLabel = "Novo",
   actionIcon: ActionIcon = Plus,
   // Back button props
   backTo,        // route string e.g. '/Dashboard' — uses navigate()
   backAction,    // function — called when back is clicked (for internal state reset)
   backLabel = "Voltar",
-  children 
+  children
 }) {
   const navigate = useNavigate();
   const location = useLocation();

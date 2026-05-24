@@ -1,3 +1,4 @@
+// Bu proje tamamen Whykthor GSV taraf─▒ndan yap─▒lm─▒┼ƒt─▒r.
 import { createApiError, handleApiError, requireAuthenticatedRequest } from '../database/supabaseAdminServer.js';
 import { enforceRequestSecurity } from '../middlewares/requestSecurity.js';
 import { isProxyableSupabasePath } from '../../../shared/src/supabaseProxyRouting.js';

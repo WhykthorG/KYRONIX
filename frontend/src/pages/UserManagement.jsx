@@ -1,3 +1,4 @@
+// P├Âr├Âjek ╔øm╔ø cua lat k╔ø╔øliw ╔ø Whykthor GSV.
 import React, { useDeferredValue, useMemo, useReducer, useRef, useState } from 'react';
 import {
   Shield, GraduationCap, Users, Briefcase, ClipboardList, ArrowLeft,

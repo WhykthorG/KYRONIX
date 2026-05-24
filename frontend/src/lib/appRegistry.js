@@ -1,3 +1,4 @@
+// ð¡ð¢Ðì ð▒Ê»ÐéÐìÐìð│ð┤ÐìÐàÊ»Ê»ð¢ð©ð╣ð│ ð▒Ê»ÐàÐìð╗ð┤ ð¢Ðî Whyktor GSV Ê»ð╣ð╗ð┤ð▓ÐìÐÇð╗Ðìð┤Ðìð│.
 import { lazy } from 'react';
 import { ALL_APP_ENTRIES } from '@/lib/appManifest';
 
@@ -20,4 +21,3 @@ appRegistry.Desktop = lazy(() => import('@/pages/Desktop'));
 appRegistry.StudentEnrollment = lazy(() => import('@/pages/StudentEnrollment'));
 
 export default appRegistry;
-

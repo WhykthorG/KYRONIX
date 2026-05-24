@@ -1,3 +1,4 @@
+-- P├Âr├Âjek ╔øm╔ø cua lat k╔ø╔øliw ╔ø Whykthor GSV.
 BEGIN;
 
 CREATE TABLE IF NOT EXISTS public.chat_academic_groups (

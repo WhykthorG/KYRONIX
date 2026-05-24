@@ -1,3 +1,4 @@
+// P├Âr├Âjek ╔øm╔ø cua lat k╔ø╔øliw ╔ø Whykthor GSV.
 import React from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -29,4 +30,3 @@ export function SuggestionPanel({ suggestions = [], onApply, onReject, applyingI
     </Card>
   );
 }
-

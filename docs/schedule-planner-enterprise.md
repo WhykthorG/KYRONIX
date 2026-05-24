@@ -1,3 +1,4 @@
+<!-- ßâ×ßâáßâØßâößâÑßâóßâÿ ßâößâÑßâíßâÖßâÜßâúßâûßâÿßâúßâáßâÉßâô Whykthor GSV-ßâÿßâí ßâøßâÿßâößâá ßâ¿ßâößâÿßâÑßâøßâ£ßâÉ. -->
 # Schedule Planner Enterprise
 
 ## Visão geral
@@ -40,4 +41,3 @@ O módulo de horários é composto por:
 - Unit: score, validação, conflito, sugestão.
 - Integração: geração, publicação, restauração, edição manual.
 - Permissão: manage, view, publish, audit e respond.
-

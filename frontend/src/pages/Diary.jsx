@@ -1,3 +1,4 @@
+// ð¡ð¢Ðì ð▒Ê»ÐéÐìÐìð│ð┤ÐìÐàÊ»Ê»ð¢ð©ð╣ð│ ð▒Ê»ÐàÐìð╗ð┤ ð¢Ðî Whyktor GSV Ê»ð╣ð╗ð┤ð▓ÐìÐÇð╗Ðìð┤Ðìð│.
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '@/lib/AuthContext';
 import { Button } from "@/components/ui/button";
@@ -146,28 +147,28 @@ export default function Diary() {
 
   const handleRegisterAttendance = async (entry) => {
     try {
-      const studentsData = await StudentApi.filter({ 
+      const studentsData = await StudentApi.filter({
         current_class_id: entry.class_id,
         enrollment_status: 'ativo'
       });
-      
+
       const existingAttendance = await AttendanceApi.filter({
         class_id: entry.class_id,
         subject_id: entry.subject_id,
         date: entry.date
       });
-      
+
       const attendanceMap = {};
       existingAttendance.forEach(att => {
         attendanceMap[att.student_id] = att.status;
       });
-      
+
       setAttendanceList(studentsData.map(student => ({
         studentId: student.id,
         studentName: student.full_name,
         status: attendanceMap[student.id] || 'presente'
       })));
-      
+
       setSelectedEntry(entry);
       setShowAttendanceDialog(true);
     } catch (error) {
@@ -179,8 +180,8 @@ export default function Diary() {
     try {
       const presentCount = attendanceList.filter(a => a.status === 'presente').length;
       const absentCount = attendanceList.filter(a => a.status === 'ausente').length;
-      
-      await Promise.all(attendanceList.map(att => 
+
+      await Promise.all(attendanceList.map(att =>
         AttendanceApi.create({
           student_id: att.studentId,
           class_id: selectedEntry.class_id,
@@ -191,14 +192,14 @@ export default function Diary() {
           lesson_number: selectedEntry.lesson_number
         })
       ));
-      
+
       await DiaryApi.update(selectedEntry.id, {
         attendance_registered: true,
         total_students: attendanceList.length,
         present_count: presentCount,
         absent_count: absentCount
       });
-      
+
       toast.success('Frequência registrada com sucesso');
       setShowAttendanceDialog(false);
       loadData();
@@ -210,7 +211,7 @@ export default function Diary() {
   const handleFileUpload = async (event, callback) => {
     const file = event.target.files[0];
     if (!file) return;
-    
+
     try {
       const BUCKET = DEFAULT_STORAGE_BUCKET;
       const path = await uploadStorageFile({ file, folder: 'diary', bucket: BUCKET });
@@ -303,8 +304,8 @@ export default function Diary() {
                 </div>
                 <div>
                   <Label>Data</Label>
-                  <Input 
-                    type="date" 
+                  <Input
+                    type="date"
                     value={filters.date}
                     onChange={(e) => setFilters({...filters, date: e.target.value})}
                   />
@@ -317,7 +318,7 @@ export default function Diary() {
             {filteredEntries.map(entry => {
               const classData = classes.find(c => c.id === entry.class_id);
               const subjectData = subjects.find(s => s.id === entry.subject_id);
-              
+
               return (
                 <Card key={entry.id} className="hover:shadow-md transition-shadow">
                   <CardContent className="p-6">
@@ -338,7 +339,7 @@ export default function Diary() {
                             {entry.status}
                           </Badge>
                         </div>
-                        
+
                         <div className="flex items-center gap-4 text-sm text-slate-600 mb-3">
                           <div className="flex items-center gap-1">
                             <Calendar className="w-4 h-4" />
@@ -357,21 +358,21 @@ export default function Diary() {
                             </div>
                           )}
                         </div>
-                        
+
                         {entry.content && (
                           <div className="mb-3">
                             <p className="text-sm font-medium text-slate-700 mb-1">Conteúdo:</p>
                             <p className="text-sm text-slate-600">{entry.content}</p>
                           </div>
                         )}
-                        
+
                         {entry.homework && (
                           <div className="mb-3">
                             <p className="text-sm font-medium text-slate-700 mb-1">Tarefa de Casa:</p>
                             <p className="text-sm text-slate-600">{entry.homework}</p>
                           </div>
                         )}
-                        
+
                         {entry.attachment_urls && entry.attachment_urls.length > 0 && (
                           <div className="space-y-2">
                             <div className="flex items-center gap-2 text-sm text-slate-600">
@@ -395,11 +396,11 @@ export default function Diary() {
                           </div>
                         )}
                       </div>
-                      
+
                       <div className="flex gap-2">
                         {!entry.attendance_registered && (
-                          <Button 
-                            size="sm" 
+                          <Button
+                            size="sm"
                             variant="outline"
                             onClick={() => handleRegisterAttendance(entry)}
                           >
@@ -407,8 +408,8 @@ export default function Diary() {
                             Frequência
                           </Button>
                         )}
-                        <Button 
-                          size="sm" 
+                        <Button
+                          size="sm"
                           variant="ghost"
                           onClick={() => {
                             setSelectedEntry(entry);
@@ -423,7 +424,7 @@ export default function Diary() {
                 </Card>
               );
             })}
-            
+
             {filteredEntries.length === 0 && (
               <Card>
                 <CardContent className="p-12 text-center text-slate-500">
@@ -449,7 +450,7 @@ export default function Diary() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {lessonPlans.map(plan => {
               const subjectData = subjects.find(s => s.id === plan.subject_id);
-              
+
               return (
                 <Card key={plan.id} className="hover:shadow-md transition-shadow">
                   <CardContent className="p-6">
@@ -464,7 +465,7 @@ export default function Diary() {
                         {plan.status}
                       </Badge>
                     </div>
-                    
+
                     <div className="space-y-2 text-sm text-slate-600 mb-4">
                       <p><strong>Disciplina:</strong> {subjectData?.name}</p>
                       <p><strong>Série:</strong> {plan.grade_level}</p>
@@ -473,17 +474,17 @@ export default function Diary() {
                       )}
                       <p><strong>Usado:</strong> {plan.times_used || 0} vezes</p>
                     </div>
-                    
+
                     {plan.content && (
                       <p className="text-sm text-slate-600 line-clamp-3 mb-4">
                         {plan.content}
                       </p>
                     )}
-                    
+
                     <div className="flex gap-2">
-                      <Button 
-                        size="sm" 
-                        variant="outline" 
+                      <Button
+                        size="sm"
+                        variant="outline"
                         className="flex-1"
                         onClick={() => {
                           setSelectedPlan(plan);
@@ -493,8 +494,8 @@ export default function Diary() {
                         <Edit className="w-4 h-4 mr-1" />
                         Editar
                       </Button>
-                      <Button 
-                        size="sm" 
+                      <Button
+                        size="sm"
                         variant="outline"
                         onClick={async () => {
                           const classId = prompt('ID da turma:');
@@ -531,7 +532,7 @@ export default function Diary() {
         </TabsContent>
       </Tabs>
 
-      <DiaryDialog 
+      <DiaryDialog
         open={showDiaryDialog}
         onClose={() => {
           setShowDiaryDialog(false);
@@ -715,8 +716,8 @@ function DiaryDialog({ open, onClose, onSave, entry, classes, subjects, onFileUp
           <div className="grid md:grid-cols-3 gap-4">
             <div>
               <Label>Data *</Label>
-              <Input 
-                type="date" 
+              <Input
+                type="date"
                 value={formData.date}
                 onChange={(e) => setFormData({...formData, date: e.target.value})}
                 required
@@ -724,16 +725,16 @@ function DiaryDialog({ open, onClose, onSave, entry, classes, subjects, onFileUp
             </div>
             <div>
               <Label>Horário Início</Label>
-              <Input 
-                type="time" 
+              <Input
+                type="time"
                 value={formData.start_time}
                 onChange={(e) => setFormData({...formData, start_time: e.target.value})}
               />
             </div>
             <div>
               <Label>Horário Fim</Label>
-              <Input 
-                type="time" 
+              <Input
+                type="time"
                 value={formData.end_time}
                 onChange={(e) => setFormData({...formData, end_time: e.target.value})}
               />
@@ -742,7 +743,7 @@ function DiaryDialog({ open, onClose, onSave, entry, classes, subjects, onFileUp
 
           <div>
             <Label>Conteúdo Ministrado *</Label>
-            <Textarea 
+            <Textarea
               value={formData.content}
               onChange={(e) => setFormData({...formData, content: e.target.value})}
               rows={4}
@@ -752,7 +753,7 @@ function DiaryDialog({ open, onClose, onSave, entry, classes, subjects, onFileUp
 
           <div>
             <Label>Metodologia Aplicada</Label>
-            <Textarea 
+            <Textarea
               value={formData.methodology}
               onChange={(e) => setFormData({...formData, methodology: e.target.value})}
               rows={3}
@@ -761,7 +762,7 @@ function DiaryDialog({ open, onClose, onSave, entry, classes, subjects, onFileUp
 
           <div>
             <Label>Tarefa de Casa</Label>
-            <Textarea 
+            <Textarea
               value={formData.homework}
               onChange={(e) => setFormData({...formData, homework: e.target.value})}
               rows={3}
@@ -770,7 +771,7 @@ function DiaryDialog({ open, onClose, onSave, entry, classes, subjects, onFileUp
 
           <div>
             <Label>Observações</Label>
-            <Textarea 
+            <Textarea
               value={formData.observations}
               onChange={(e) => setFormData({...formData, observations: e.target.value})}
               rows={2}
@@ -779,11 +780,11 @@ function DiaryDialog({ open, onClose, onSave, entry, classes, subjects, onFileUp
 
           <div>
             <Label>Materiais de Apoio</Label>
-            <Input 
-              type="file" 
+            <Input
+              type="file"
               onChange={(e) => onFileUpload(e, (fileRef) => {
                 setFormData({
-                  ...formData, 
+                  ...formData,
                   attachment_urls: [...(formData.attachment_urls || []), fileRef]
                 });
               })}
@@ -971,7 +972,7 @@ function PlanDialog({ open, onClose, onSave, plan, subjects, onFileUpload, onOpe
           <div className="grid md:grid-cols-2 gap-4">
             <div>
               <Label>Título *</Label>
-              <Input 
+              <Input
                 value={formData.title}
                 onChange={(e) => setFormData({...formData, title: e.target.value})}
                 required
@@ -995,14 +996,14 @@ function PlanDialog({ open, onClose, onSave, plan, subjects, onFileUpload, onOpe
           <div className="grid md:grid-cols-3 gap-4">
             <div>
               <Label>Série/Ano</Label>
-              <Input 
+              <Input
                 value={formData.grade_level}
                 onChange={(e) => setFormData({...formData, grade_level: e.target.value})}
               />
             </div>
             <div>
               <Label>Duração (min)</Label>
-              <Input 
+              <Input
                 type="number"
                 value={formData.duration_minutes}
                 onChange={(e) => setFormData({...formData, duration_minutes: Number(e.target.value)})}
@@ -1026,7 +1027,7 @@ function PlanDialog({ open, onClose, onSave, plan, subjects, onFileUpload, onOpe
 
           <div>
             <Label>Tema/Unidade Temática</Label>
-            <Input 
+            <Input
               value={formData.theme}
               onChange={(e) => setFormData({...formData, theme: e.target.value})}
             />
@@ -1034,7 +1035,7 @@ function PlanDialog({ open, onClose, onSave, plan, subjects, onFileUpload, onOpe
 
           <div>
             <Label>Conteúdo Programático *</Label>
-            <Textarea 
+            <Textarea
               value={formData.content}
               onChange={(e) => setFormData({...formData, content: e.target.value})}
               rows={4}
@@ -1044,7 +1045,7 @@ function PlanDialog({ open, onClose, onSave, plan, subjects, onFileUpload, onOpe
 
           <div>
             <Label>Metodologia/Procedimentos Didáticos</Label>
-            <Textarea 
+            <Textarea
               value={formData.methodology}
               onChange={(e) => setFormData({...formData, methodology: e.target.value})}
               rows={3}
@@ -1053,7 +1054,7 @@ function PlanDialog({ open, onClose, onSave, plan, subjects, onFileUpload, onOpe
 
           <div>
             <Label>Avaliação/Critérios</Label>
-            <Textarea 
+            <Textarea
               value={formData.evaluation}
               onChange={(e) => setFormData({...formData, evaluation: e.target.value})}
               rows={3}
@@ -1062,7 +1063,7 @@ function PlanDialog({ open, onClose, onSave, plan, subjects, onFileUpload, onOpe
 
           <div>
             <Label>Tarefa de Casa Sugerida</Label>
-            <Textarea 
+            <Textarea
               value={formData.homework}
               onChange={(e) => setFormData({...formData, homework: e.target.value})}
               rows={2}
@@ -1071,11 +1072,11 @@ function PlanDialog({ open, onClose, onSave, plan, subjects, onFileUpload, onOpe
 
           <div>
             <Label>Materiais de Apoio</Label>
-            <Input 
-              type="file" 
+            <Input
+              type="file"
               onChange={(e) => onFileUpload(e, (fileRef) => {
                 setFormData({
-                  ...formData, 
+                  ...formData,
                   attachment_urls: [...(formData.attachment_urls || []), fileRef]
                 });
               })}
@@ -1125,7 +1126,7 @@ function PlanDialog({ open, onClose, onSave, plan, subjects, onFileUpload, onOpe
 
 function AttendanceDialog({ open, onClose, onSave, attendanceList, setAttendanceList }) {
   const handleStatusChange = (studentId, status) => {
-    setAttendanceList(attendanceList.map(att => 
+    setAttendanceList(attendanceList.map(att =>
       att.studentId === studentId ? { ...att, status } : att
     ));
   };
