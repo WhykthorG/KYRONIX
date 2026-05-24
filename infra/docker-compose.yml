@@ -1,0 +1,26 @@
+services:
+  edugest:
+    build:
+      context: ..
+      dockerfile: infra/Dockerfile
+      args:
+        # Lê do arquivo .env.local automaticamente
+        VITE_SUPABASE_URL: ${VITE_SUPABASE_URL}
+        VITE_SUPABASE_ANON_KEY: ${VITE_SUPABASE_ANON_KEY}
+        VITE_APP_NAME: ${VITE_APP_NAME:-EduGest}
+        VITE_STORAGE_BUCKET: ${VITE_STORAGE_BUCKET:-project-wg-files}
+        VITE_TURN_URLS: ${VITE_TURN_URLS:-}
+        VITE_TURN_USERNAME: ${VITE_TURN_USERNAME:-}
+        VITE_TURN_CREDENTIAL: ${VITE_TURN_CREDENTIAL:-}
+        VITE_WEBRTC_ICE_SERVERS: ${VITE_WEBRTC_ICE_SERVERS:-}
+
+    # Mapeia porta 80 do container para 3000 no host
+    # Acesse em: http://localhost:3000
+    ports:
+      - "3000:80"
+
+    restart: unless-stopped
+
+    # Label útil para identificar o container
+    labels:
+      - "com.edugest.app=web"

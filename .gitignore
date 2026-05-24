@@ -1,0 +1,146 @@
+# Dependencias e build
+node_modules/
+dist/
+coverage/
+.vite/
+
+# Logs e caches
+*.log
+*.err
+*.out
+*.tmp
+*.temp
+*.cache
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Variaveis de ambiente e segredos
+.env
+.env.*
+!.env.example
+!.env*.example
+*.local
+*.secret
+*.secret.*
+*.key
+*.pem
+*.p12
+*.crt
+*.cer
+*.der
+*.pfx
+
+# Diretórios locais de deploy/ferramentas
+.vercel/
+.netlify/
+
+# Artefatos do Cypress
+cypress/downloads/
+.Cypress/
+.cypress/
+cypress/screenshots/
+cypress/videos/
+cypress/reports/
+cypress/results/
+cypress/output/
+cypress/.cache/
+cypress/.cy/
+cypress/.cypress/
+.cypress/
+cypress-run*
+src/cypress/
+src/src/
+
+# IDE e sistema operacional
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Seguranca: credenciais de teste nunca devem ser versionadas
+credenciais_teste.md
+**/credenciais_teste.md
+*_SERVICE_ROLE_KEY
+*.service.key
+
+# Arquivos locais/privados do projeto
+IMPLEMENTACAO_CORRECOES.md
+install.cmd
+MIGRATION_ADMIN_TO_EDGE_FUNCTION.md
+RESUMO_CORRECOES.md
+senior_audit_report.md
+START_HERE.md
+ARQUIVO_REFERENCIAS.md
+DELIVERABLES.md
+AUDIT_REPORT.md
+ownership-sensitive.csv
+security_best_practices_report.md
+erro.txt
+*.bak
+src/syntax-fix-report.json
+
+# Seeds, acessos e dumps locais do Supabase
+supabase/acesso_*.sql
+supabase/seed_*.sql
+supabase/completo.sql
+supabase/a_junção
+
+# Arquivos binários gerados/transientes que não devem entrar no histórico
+plano.rar
+plano2.rar
+**/backup-*.xlsx
+
+# Diretórios de artefato temporário e de experimentos locais
+.codex-temp-ui-ux-pro/
+skill/
+
+# Arquivo de configuração local de ambiente (segredo)
+.env.local
+
+# Arquivos locais e binários adicionais
+codex*
+codex.cmd
+codex.ps1
+TCC*.rar
+patch.txt
+**/*.rar
+**/*.tmp
+**/*.bak
+
+# Diretórios de saída e planejamento local
+output/
+plano/
+plano2/
+
+TODO-zip.md
+clean_conflicts.js
+clean_conflicts_v2.js
+compacta-projeto.bat
+copy_bak.bat
+find-syntax-errors.js
+fix-syntax.js
+fix_conflicts.ps1
+horse_game/Novo(a) Documento de Texto.txt
+manual-fixes.js
+projeto.zip
+zip-project-simple.bat
+zip-project.bat
+zip-project.js
+AUDITORIA_PROJETO_PRODUCAO.md
+awesome-codex-skills
+.awesome-codex-skills/
+
+# Arquivos locais em src/img/video
+src/img/video/Atividade Oracle (1).docx
+src/img/video/Atividade Oracle.docx
+src/img/video/DOC-20260506-WA0051.docx
+src/img/video/OCI-Networking.pptx
+src/img/video/esp32_pinagem_estufa.html
+src/img/video/files.zip
+src/img/video/pdf.pdf
+src/img/video/planilha-1-mih.pdf
+src/img/video/planilha-2-dg.pdf
+src/img/video/planilha-2mih.pdf
+src/img/video/planinha-1-dg.pdf

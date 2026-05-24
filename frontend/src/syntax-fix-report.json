@@ -1,0 +1,876 @@
+{
+  "date": "2026-04-05T06:22:43.682Z",
+  "stats": {
+    "ok": 0,
+    "fixed": 0,
+    "failed": 173,
+    "skipped": 0
+  },
+  "files": [
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\api\\base44Client.js",
+      "status": "failed",
+      "error": "Unexpected token 'export'"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\api\\supabaseApi.js",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\App.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\chat\\ChatHub.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\chat\\ChatWindow.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\chat\\ContactList.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\common\\BulkImportDialog.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\common\\ChangePasswordModal.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\common\\DataTable.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\common\\ErrorBoundary.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\common\\FormFeedback.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\common\\PageHeader.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\common\\StatePanel.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\common\\StatusBadge.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\common\\StudentReportCard.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\common\\ValidatedInput.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\dashboard\\QuickActions.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\dashboard\\RecentActivity.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\dashboard\\StatsCard.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\dashboard\\UpcomingEvents.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\desktop\\DesktopIcon.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\desktop\\DesktopIdleOverlay.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\desktop\\GlobalSearchBar.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\desktop\\MobileShell.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\desktop\\NotificationBar.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\desktop\\StartMenu.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\desktop\\Taskbar.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\desktop\\Window.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\enrollment\\enrollmentUtils.js",
+      "status": "failed",
+      "error": "Unexpected token 'export'"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\enrollment\\enrollmentUtilsDialog.jsx",
+      "status": "failed",
+      "error": "Unexpected token 'export'"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\enrollment\\SectionAcademic.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\enrollment\\SectionAddress.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\enrollment\\SectionAttachments.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\enrollment\\SectionGuardian.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\enrollment\\SectionPersonal.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\examples\\PaginatedListExample.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\examples\\StudentFormExample.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\hooks\\usePermissions.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\student\\StudentGradesView.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\teacher\\CommunicationCenter.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\teacher\\EngagementMetrics.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\teacher\\StudentPerformance.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\teacher\\TeacherAnalytics.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\ui\\accordion.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\ui\\alert-dialog.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\ui\\alert.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\ui\\aspect-ratio.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\ui\\avatar.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\ui\\badge.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\ui\\breadcrumb.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\ui\\button.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\ui\\calendar.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\ui\\card.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\ui\\carousel.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\ui\\chart.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\ui\\checkbox.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\ui\\collapsible.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\ui\\combo-box.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\ui\\command.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\ui\\context-menu.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\ui\\data-table.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\ui\\dialog.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\ui\\drawer.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\ui\\dropdown-menu.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\ui\\form.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\ui\\hover-card.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\ui\\input-otp.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\ui\\input.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\ui\\label.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\ui\\menubar.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\ui\\navigation-menu.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\ui\\pagination.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\ui\\popover.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\ui\\progress.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\ui\\radio-group.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\ui\\resizable.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\ui\\scroll-area.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\ui\\select.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\ui\\separator.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\ui\\sheet.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\ui\\sidebar.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\ui\\skeleton.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\ui\\slider.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\ui\\sonner.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\ui\\switch.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\ui\\table.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\ui\\tabs.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\ui\\textarea.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\ui\\toast.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\ui\\toaster.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\ui\\toggle-group.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\ui\\toggle.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\ui\\tooltip.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\ui\\use-toast.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\usermanagement\\PermissionPanel.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\usermanagement\\ProfileCard.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\usermanagement\\UserRoleDialog.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\components\\UserNotRegisteredError.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\hooks\\use-mobile.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\hooks\\useFormSubmit.js",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\hooks\\useGlobalSearchNavigation.js",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\hooks\\useIsMobile.js",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\hooks\\useUserInactivity.js",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\Layout.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\lib\\app-params.js",
+      "status": "failed",
+      "error": "Unexpected token 'export'"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\lib\\appManifest.js",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\lib\\appRegistry.js",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\lib\\auditClient.js",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\lib\\auditLog.js",
+      "status": "failed",
+      "error": "Unexpected token 'export'"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\lib\\auditLog.jsx",
+      "status": "failed",
+      "error": "Unexpected token 'export'"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\lib\\AuthContext.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\lib\\calendarExport.js",
+      "status": "failed",
+      "error": "Unexpected token 'export'"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\lib\\ClientRuntimeObservability.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\lib\\contracts\\access.js",
+      "status": "failed",
+      "error": "Unexpected token 'export'"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\lib\\contracts\\assignments.js",
+      "status": "failed",
+      "error": "Unexpected token 'export'"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\lib\\contracts\\attendance.js",
+      "status": "failed",
+      "error": "Unexpected token 'export'"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\lib\\contracts\\auth.js",
+      "status": "failed",
+      "error": "Unexpected token 'export'"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\lib\\contracts\\enrollment.js",
+      "status": "failed",
+      "error": "Unexpected token 'export'"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\lib\\contracts\\grades.js",
+      "status": "failed",
+      "error": "Unexpected token 'export'"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\lib\\contracts\\messages.js",
+      "status": "failed",
+      "error": "Unexpected token 'export'"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\lib\\contracts\\notifications.js",
+      "status": "failed",
+      "error": "Unexpected token 'export'"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\lib\\contracts\\observability.js",
+      "status": "failed",
+      "error": "Unexpected token 'export'"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\lib\\contracts\\pdfReports.js",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\lib\\contracts\\settings.js",
+      "status": "failed",
+      "error": "Unexpected token 'export'"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\lib\\contracts\\storage.js",
+      "status": "failed",
+      "error": "Unexpected token 'export'"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\lib\\contracts\\submissions.js",
+      "status": "failed",
+      "error": "Unexpected token 'export'"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\lib\\contracts\\systemEvents.js",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\lib\\contracts\\systemExport.js",
+      "status": "failed",
+      "error": "Unexpected token 'export'"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\lib\\globalSearch.js",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\lib\\globalSearchRpc.js",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\lib\\guardianPortalClient.js",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\lib\\NavigationTracker.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\lib\\notificationsClient.js",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\lib\\observabilityClient.js",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\lib\\PageNotFound.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\lib\\pdfReports.js",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\lib\\query-client.js",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\lib\\storageFiles.js",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\lib\\stores\\desktopShellStore.js",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\lib\\supabase.js",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\lib\\supabaseAdmin.js",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\lib\\utils.js",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\lib\\validators.js",
+      "status": "failed",
+      "error": "Unexpected token 'export'"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\lib\\workspaceStateClient.js",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\main.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\pages\\AcademicRecord.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\pages\\Assignments.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\pages\\Attendance.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\pages\\Classes.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\pages\\Dashboard.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\pages\\Desktop.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\pages\\Diary.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\pages\\Grades.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\pages\\GuardianPortal.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\pages\\LibraryPage.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\pages\\Login.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\pages\\Messages.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\pages\\Occurrences.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\pages\\Registration.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\pages\\Reports.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\pages\\SchoolCalendar.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\pages\\SettingsPage.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\pages\\StudentEnrollment.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\pages\\StudentGoals.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\pages\\StudentHomework.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\pages\\Students.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\pages\\Subjects.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\pages\\TeacherCalendar.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\pages\\TeacherHomework.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\pages\\TeacherPortal.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\pages\\Teachers.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\pages\\UserManagement.jsx",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    },
+    {
+      "file": "C:\\Users\\Home\\Pictures\\TCC_Claude\\projeto\\escola-supabase\\Nova pasta\\src\\pages.config.js",
+      "status": "failed",
+      "error": "Cannot use import statement outside a module"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "@meu-projeto/backend",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "test:routing": "node --test ../tests/api-routing.integration.test.js"
+  }
+}

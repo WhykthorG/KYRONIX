@@ -1,0 +1,27 @@
+{
+  "name": "meu-projeto",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "workspaces": [
+    "frontend",
+    "backend",
+    "shared"
+  ],
+  "scripts": {
+    "dev": "node scripts/vite-dev.mjs",
+    "dev:frontend": "node scripts/vite-dev.mjs",
+    "build": "node scripts/vite-build.mjs",
+    "preview": "node scripts/vite-preview.mjs",
+    "lint": "eslint frontend/src --quiet",
+    "reset:test:auth": "node scripts/reset-test-auth.mjs",
+    "seed:requested-profiles": "node scripts/create-requested-profiles.mjs",
+    "cypress:open": "npm run cypress:open --workspace frontend",
+    "cypress:run": "npm run cypress:run --workspace frontend",
+    "cypress:run:conscious": "npm exec cypress run -- --e2e --spec cypress/e2e/conscious-system.cy.ts",
+    "test:e2e": "npm run cypress:run --workspace frontend",
+    "test:e2e:conscious": "npm run cypress:run:conscious",
+    "test": "node --test tests/auth.integration.test.js tests/audit.integration.test.js tests/chat.contracts.test.js tests/chat-calls.integration.test.js tests/api-routing.integration.test.js tests/enterprise-data.integration.test.js tests/observability.integration.test.js tests/notifications.integration.test.js tests/messages.integration.test.js tests/assignments.integration.test.js tests/grades.integration.test.js tests/attendance.integration.test.js tests/pdf-reports.integration.test.js tests/enrollment.integration.test.js tests/access.integration.test.js tests/guardian-portal.integration.test.js tests/calendar.integration.test.js tests/settings.integration.test.js tests/system-export.integration.test.js tests/storage.integration.test.js tests/premium-foundation.integration.test.js tests/desktop-shell.integration.test.js && node tests/security-proxy.smoke.mjs",
+    "test:security-proxy": "node tests/security-proxy.smoke.mjs"
+  }
+}
