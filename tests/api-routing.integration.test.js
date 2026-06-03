@@ -6,6 +6,7 @@ import { fileURLToPath } from 'node:url';
 
 import { getApiRouteSegments, resolveApiHandlerFromRoot } from '../backend/src/services/apiRouteResolver.js';
 import { createNetlifyRequest, createNetlifyResponse } from '../backend/src/services/netlifyApiBridge.js';
+import { resolveApiHandlerFromManifest } from '../infra/netlify/functions/apiRouteManifest.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -73,6 +74,30 @@ test('Netlify request and response bridges preserve handler-friendly shapes', ()
     },
     body: JSON.stringify({ ok: true }),
   });
+});
+
+test('Netlify static route manifest resolves direct, dynamic and catch-all handlers', async () => {
+  const direct = resolveApiHandlerFromManifest(['chat', 'conversations']);
+  const dynamic = resolveApiHandlerFromManifest(['chat', 'calls', 'abc123', 'join']);
+  const catchAll = resolveApiHandlerFromManifest(['security', 'supabase', 'rest', 'v1', 'students']);
+
+  assert.equal(typeof direct.loadHandler, 'function');
+  assert.equal(typeof await direct.loadHandler(), 'function');
+  assert.deepEqual(direct.params, {});
+  assert.deepEqual(direct.pattern, ['chat', 'conversations']);
+
+  assert.equal(typeof dynamic.loadHandler, 'function');
+  assert.equal(typeof await dynamic.loadHandler(), 'function');
+  assert.equal(dynamic.params.callId, 'abc123');
+  assert.deepEqual(dynamic.pattern, ['chat', 'calls', '[callId]', 'join']);
+
+  assert.equal(typeof catchAll.loadHandler, 'function');
+  assert.equal(typeof await catchAll.loadHandler(), 'function');
+  assert.deepEqual(catchAll.params.path, ['rest', 'v1', 'students']);
+  assert.deepEqual(catchAll.pattern, ['security', 'supabase', '[...path]']);
+
+  assert.equal(resolveApiHandlerFromManifest(['missing', 'route']), null);
+  assert.equal(resolveApiHandlerFromManifest(['security', 'supabase']), null);
 });
 
 test('Netlify route resolution tolerates relative rawUrl values', async () => {

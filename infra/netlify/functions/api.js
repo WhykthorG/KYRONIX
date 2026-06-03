@@ -1,54 +1,6 @@
-// ßâ×ßâáßâØßâößâÑßâóßâÿ ßâößâÑßâíßâÖßâÜßâúßâûßâÿßâúßâáßâÉßâô Whykthor GSV-ßâÿßâí ßâøßâÿßâößâá ßâ¿ßâößâÿßâÑßâøßâ£ßâÉ.
-import fs from 'fs';
-import path from 'path';
-import { pathToFileURL } from 'url';
 import { createNetlifyRequest, createNetlifyResponse } from '../../../backend/src/services/netlifyApiBridge.js';
-import { getApiRouteSegments, resolveApiHandlerFromRoot } from '../../../backend/src/services/apiRouteResolver.js';
-
-function isDirectory(value) {
-  if (!value) {
-    return false;
-  }
-
-  try {
-    return fs.existsSync(value) && fs.statSync(value).isDirectory();
-  } catch {
-    return false;
-  }
-}
-
-function resolveApiRoot() {
-  const runtimeEntryDir = process.argv?.[1]
-    ? path.dirname(process.argv[1])
-    : null;
-
-  const rootCandidates = [
-    process.env.LAMBDA_TASK_ROOT,
-    runtimeEntryDir,
-    process.cwd(),
-  ].filter(Boolean);
-
-  const relativeCandidates = [
-    'backend/src/routes',
-    '../backend/src/routes',
-    '../../backend/src/routes',
-    'src/routes',
-    '../src/routes',
-  ];
-
-  for (const rootCandidate of rootCandidates) {
-    for (const relativeCandidate of relativeCandidates) {
-      const candidate = path.resolve(rootCandidate, relativeCandidate);
-      if (isDirectory(candidate)) {
-        return candidate;
-      }
-    }
-  }
-
-  return path.resolve(process.cwd(), 'backend/src/routes');
-}
-
-const apiRoot = resolveApiRoot();
+import { getApiRouteSegments } from '../../../backend/src/services/apiRouteResolver.js';
+import { resolveApiHandlerFromManifest } from './apiRouteManifest.js';
 
 function buildRequestUrl(event) {
   if (event?.rawUrl) {
@@ -78,9 +30,9 @@ export async function handler(event) {
   try {
     const pathname = resolveRequestPathname(event);
     const segments = getApiRouteSegments(pathname);
-    const resolved = resolveApiHandlerFromRoot(apiRoot, segments);
+    const resolved = resolveApiHandlerFromManifest(segments);
 
-    if (!resolved?.filePath) {
+    if (!resolved?.loadHandler) {
       return {
         statusCode: 404,
         headers: {
@@ -98,8 +50,7 @@ export async function handler(event) {
 
     const res = createNetlifyResponse();
 
-    const imported = await import(pathToFileURL(resolved.filePath).href);
-    const routeHandler = imported?.default;
+    const routeHandler = await resolved.loadHandler();
 
     if (typeof routeHandler !== 'function') {
       return {
@@ -119,7 +70,10 @@ export async function handler(event) {
 
     return res.toNetlifyResponse();
   } catch (error) {
-    console.error('[netlify-api]', error);
+    console.error('[netlify-api]', {
+      message: error?.message,
+      stack: error?.stack,
+    });
 
     return {
       statusCode: 500,
