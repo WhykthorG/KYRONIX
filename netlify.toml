@@ -4,6 +4,9 @@
   publish = "frontend/dist"
   functions = "infra/netlify/functions"
 
+[build.environment]
+  NODE_VERSION = "22"
+
 [functions]
   node_bundler = "esbuild"
   external_node_modules = ["exceljs"]
