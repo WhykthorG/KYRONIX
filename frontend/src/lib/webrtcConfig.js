@@ -1,21 +1,12 @@
 // ßâ×ßâáßâØßâößâÑßâóßâÿ ßâößâÑßâíßâÖßâÜßâúßâûßâÿßâúßâáßâÉßâô Whykthor GSV-ßâÿßâí ßâøßâÿßâößâá ßâ¿ßâößâÿßâÑßâøßâ£ßâÉ.
 import { CHAT_CALL_TYPES } from '../../../shared/src/contracts/chat.js';
 
-const DEFAULT_ICE_SERVERS = Object.freeze([
-  Object.freeze({
-    urls: 'stun:stun.relay.metered.ca:80',
-  }),
-  Object.freeze({
-    urls: [
-      'turn:global.relay.metered.ca:80',
-      'turn:global.relay.metered.ca:80?transport=tcp',
-      'turn:global.relay.metered.ca:443',
-      'turns:global.relay.metered.ca:443?transport=tcp',
-    ],
-    username: '3b2a44d642b81b1532d6f7e9',
-    credential: 'fQA74ax484KGzd/r',
-  }),
-]);
+const STUN_SERVER = Object.freeze({
+  urls: 'stun:stun.l.google.com:19302',
+});
+
+let cachedIceServers = null;
+let fetchPromise = null;
 
 function normalizeIceServerUrls(urls) {
   const normalizedUrls = Array.isArray(urls) ? urls : [urls];
@@ -84,6 +75,61 @@ function parseTurnIceServers({ turnUrls, turnUsername, turnCredential }) {
   }];
 }
 
+async function fetchTurnCredentialsFromServer() {
+  if (cachedIceServers) {
+    return cachedIceServers;
+  }
+
+  if (fetchPromise) {
+    return fetchPromise;
+  }
+
+  fetchPromise = (async () => {
+    try {
+      const { getAccessTokenOrThrow } = await import('./supabase.js');
+      const token = getAccessTokenOrThrow();
+
+      const response = await fetch('/api/chat/turn-credentials', {
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (!response.ok) {
+        console.warn('[webrtc] Failed to fetch TURN credentials:', response.status);
+        return [STUN_SERVER];
+      }
+
+      const data = await response.json();
+      const servers = data.iceServers || [STUN_SERVER];
+      cachedIceServers = servers;
+      return servers;
+    } catch (error) {
+      console.warn('[webrtc] Error fetching TURN credentials:', error);
+      return [STUN_SERVER];
+    }
+  })();
+
+  return fetchPromise;
+}
+
+export async function resolveRtcIceServersAsync(env = import.meta.env) {
+  const configuredIceServers = parseJsonIceServers(env.VITE_WEBRTC_ICE_SERVERS);
+  const turnIceServers = parseTurnIceServers({
+    turnUrls: env.VITE_TURN_URLS,
+    turnUsername: env.VITE_TURN_USERNAME,
+    turnCredential: env.VITE_TURN_CREDENTIAL,
+  });
+
+  if (configuredIceServers.length > 0 || turnIceServers.length > 0) {
+    return [...configuredIceServers, ...turnIceServers];
+  }
+
+  return fetchTurnCredentialsFromServer();
+}
+
 export function resolveRtcIceServers(env = import.meta.env) {
   const configuredIceServers = parseJsonIceServers(env.VITE_WEBRTC_ICE_SERVERS);
   const turnIceServers = parseTurnIceServers({
@@ -97,7 +143,7 @@ export function resolveRtcIceServers(env = import.meta.env) {
     return servers;
   }
 
-  return DEFAULT_ICE_SERVERS;
+  return [STUN_SERVER];
 }
 
 export function hasConfiguredTurnServers(env = import.meta.env) {
@@ -117,6 +163,11 @@ export function getRtcConfigurationDiagnostics(env = import.meta.env) {
       ? null
       : 'TURN nao configurado nem no ambiente nem no fallback. Chamadas 1:1 fora da rede local podem falhar.',
   };
+}
+
+export async function buildRtcConfigurationAsync(env = import.meta.env) {
+  const iceServers = await resolveRtcIceServersAsync(env);
+  return { iceServers };
 }
 
 export function buildRtcConfiguration(env = import.meta.env) {

@@ -6,7 +6,7 @@ import { queryClientInstance } from '@/lib/query-client';
 import { pagesConfig } from './routes/index.js';
 import { getAppByPage } from '@/lib/appManifest';
 import { BrowserRouter as Router, Route, Routes, Navigate, useLocation, useNavigate } from 'react-router-dom';
-import PageNotFound from './lib/PageNotFound';
+import PageNotFound from '@/components/common/PageNotFound';
 import { AuthProvider, useAuth } from '@/lib/AuthContext';
 import Login from '@/pages/Login';
 import ResetPasswordPage from '@/pages/ResetPassword';
@@ -16,12 +16,12 @@ import { TooltipPreferencesProvider } from '@/components/common/TooltipPreferenc
 import { AlertTriangle } from 'lucide-react';
 import { useState, useEffect, useCallback, Suspense } from 'react';
 import { UserProfileApi } from '@/services/supabaseApi';
-import { usePermissions } from '@/components/hooks/usePermissions';
+import { usePermissions } from '@/hooks/usePermissions';
 import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 import StatePanel from '@/components/common/StatePanel';
 import { canAccessPage as canAccessPageByPermission } from '@shared/contracts/access';
-import ClientRuntimeObservability from '@/lib/ClientRuntimeObservability';
-import NavigationTracker from '@/lib/NavigationTracker';
+import ClientRuntimeObservability from '@/components/desktop/ClientRuntimeObservability';
+import NavigationTracker from '@/components/desktop/NavigationTracker';
 import MobilePage from '@/pages/MobilePage';
 
 const { Pages, Layout, mainPage } = pagesConfig;

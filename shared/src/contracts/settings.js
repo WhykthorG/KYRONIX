@@ -4,7 +4,7 @@ export const SYSTEM_SETTINGS_STORAGE_KEY = 'project-wg:system-settings';
 export const SYSTEM_SETTINGS_UPDATED_EVENT = 'project-wg:system-settings-updated';
 
 export const DEFAULT_SYSTEM_SETTINGS = Object.freeze({
-  schoolName: 'Project WG Escola',
+  schoolName: 'KYRONIX S.E.N.O Escola',
   schoolEmail: 'contato@projectwg.com.br',
   schoolPhone: '(11) 99999-9999',
   schoolAddress: 'Rua da Educacao, 123 - Centro',

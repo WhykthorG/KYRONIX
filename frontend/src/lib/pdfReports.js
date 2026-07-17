@@ -41,7 +41,7 @@ function createPdfDocument({ reportTitle, reportSubtitle = '', layoutOptions = {
   doc.setProperties({
     title: reportTitle,
     subject: reportSubtitle || reportTitle,
-    creator: 'EduGest',
+    creator: 'KYRONIX S.E.N.O',
   });
 
   const drawPageChrome = () => {
@@ -449,4 +449,52 @@ export function generateAttendanceListPdf({
   });
 
   pdf.save(filename || `${sanitizePdfFilename(`lista-presenca-${className}-${date}`)}.pdf`);
+}
+
+export function generateCertificatePdf({
+  studentName,
+  certificateType,
+  certificateTitle,
+  description,
+  issueDate,
+  validUntil,
+  seriesNumber,
+  issuedBy,
+  layoutOptions = {},
+  filename,
+}) {
+  const pdf = createPdfDocument({
+    reportTitle: certificateTitle || 'Certificado',
+    reportSubtitle: `Aluno: ${studentName}`,
+    layoutOptions,
+  });
+
+  pdf.writeInfoGrid([
+    { label: 'Tipo', value: certificateType },
+    { label: 'Aluno', value: studentName },
+    { label: 'Data de Emissão', value: formatDate(issueDate) },
+    { label: 'Valido até', value: validUntil ? formatDate(validUntil) : 'Sem validade' },
+    { label: 'Nº Série', value: seriesNumber || '—' },
+    { label: 'Emitido por', value: issuedBy || '—' },
+  ], 3);
+
+  if (description) {
+    pdf.writeSectionTitle('Descrição');
+    pdf.writeParagraph(description);
+  }
+
+  pdf.writeSectionTitle('Declaração');
+  pdf.writeParagraph(
+    `Declaramos para os devidos fins que o(a) aluno(a) ${studentName} ` +
+    `${certificateType === 'conclusao' ? 'concluiu com sucesso o curso' : 'possui o presente documento'} ` +
+    `emitido em ${formatDate(issueDate)}.`
+  );
+
+  if (seriesNumber) {
+    pdf.writeSectionTitle('Autenticação');
+    pdf.writeParagraph(`Nº de série: ${seriesNumber}`);
+    pdf.writeParagraph(`Data de emissão: ${formatDate(issueDate)}`);
+  }
+
+  pdf.save(filename || `${sanitizePdfFilename(`certificado-${studentName}-${certificateType}`)}.pdf`);
 }

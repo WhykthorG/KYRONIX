@@ -17,14 +17,15 @@ import {
 import { Switch } from "@/components/ui/switch";
 import { Badge } from "@/components/ui/badge";
 // @ts-ignore
-import { Calendar, ChevronLeft, ChevronRight, MapPin, Clock, Trash2, Search } from 'lucide-react';
+import { Calendar, ChevronLeft, ChevronRight, MapPin, Clock, Trash2, Search, Download } from 'lucide-react';
 import { toast } from 'sonner';
 import { format, startOfMonth, endOfMonth, eachDayOfInterval, isSameMonth, isSameDay, addMonths, subMonths, isToday } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 import { cn } from "@/lib/utils";
 import { EventApi } from '@/services/supabaseApi';
-import { usePermissions } from '@/components/hooks/usePermissions';
+import { usePermissions } from '@/hooks/usePermissions';
 import { useGlobalSearchNavigation } from '@/hooks/useGlobalSearchNavigation';
+import { generateCalendarIcs } from '@/lib/calendarExport';
 
 export default function SchoolCalendar({ globalSearch }) {
   const [currentMonth, setCurrentMonth] = useState(new Date());
@@ -182,6 +183,39 @@ export default function SchoolCalendar({ globalSearch }) {
     },
   });
 
+  const handleExportICS = () => {
+    try {
+      const icsEntries = events.map((event) => ({
+        id: event.id,
+        title: event.title || 'Evento',
+        description: event.description || '',
+        location: event.location || '',
+        start: event.start_date,
+        end: event.end_date || event.start_date,
+        allDay: event.all_day || false,
+      }));
+
+      const icsContent = generateCalendarIcs({
+        calendarName: 'Calendario Escolar - EduGest',
+        entries: icsEntries,
+      });
+
+      const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `calendario-escolar-${format(new Date(), 'yyyy-MM-dd')}.ics`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+
+      toast.success('Calendario exportado com sucesso!');
+    } catch (error) {
+      toast.error('Erro ao exportar calendario.');
+    }
+  };
+
   return (
     <div className="space-y-6">
       <
@@ -193,7 +227,11 @@ export default function SchoolCalendar({ globalSearch }) {
         subtitle="Gerencie eventos e datas importantes"
         action={canCreateEvents ? () => { setSelectedEvent(null); setFormData({}); setShowForm(true); } : undefined}
         actionLabel={canCreateEvents ? "Novo Evento" : undefined}
-      />
+      >
+        <Button variant="outline" size="sm" onClick={handleExportICS}>
+          <Download className="w-4 h-4 mr-2" /> Exportar ICS
+        </Button>
+      </PageHeader>
 
       <div className="app-search-field max-w-xl">
         <Search className="w-4 h-4 text-muted-foreground" />

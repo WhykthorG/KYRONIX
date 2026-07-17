@@ -10,7 +10,7 @@ import {
   filterWorkspaceForProfile,
   normalizeWindowsForShell,
   serializeWindowsForStorage,
-} from '@/lib/workspaceStateClient';
+} from '@/services/workspaceStateClient';
 
 const WORKSPACE_PERSIST_DEBOUNCE_MS = 1_000;
 

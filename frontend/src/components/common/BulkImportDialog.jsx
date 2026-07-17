@@ -59,11 +59,11 @@ export default function BulkImportDialog({
           });
         });
       } else if (ext === 'xlsx' || ext === 'xls') {
-        const XLSX = await import('xlsx');
+        const ExcelJS = await import('exceljs');
         const ab = await file.arrayBuffer();
-        const wb = XLSX.read(ab, { type: 'array' });
-        const ws = wb.Sheets[wb.SheetNames[0]];
-        const data = XLSX.utils.sheet_to_json(ws, { defval: '' });
+        const wb = new ExcelJS.Workbook(); await wb.xlsx.load(ab);
+        const ws = wb.worksheets[0];
+        const data = []; const headers = []; ws.eachRow((row, rowNumber) => { if (rowNumber === 1) { row.eachCell((cell) => headers.push(cell.value)); } else { const obj = {}; row.eachCell((cell, colNumber) => { obj[headers[colNumber - 1]] = cell.value; }); data.push(obj); } });
         if (!data.length) { setErrors(['Nenhum dado encontrado na planilha.']); }
         else { setRows(data); setStep('preview'); }
       } else {

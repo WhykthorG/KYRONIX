@@ -6,6 +6,15 @@ export const NOTIFICATION_EVENT_TYPES = Object.freeze({
   DOCUMENT_PENDING: 'document_pending',
   MESSAGE_POSTED: 'message_posted',
   ACCESS_RESET: 'access_reset',
+  GRADE_POSTED: 'grade_posted',
+  ATTENDANCE_ISSUE: 'attendance_issue',
+  PAYMENT_DUE: 'payment_due',
+  ASSIGNMENT_DEADLINE: 'assignment_deadline',
+  SCHEDULE_CHANGED: 'schedule_changed',
+  LIBRARY_LOAN_DUE: 'library_loan_due',
+  TCC_UPDATE: 'tcc_update',
+  INTERNSHIP_UPDATE: 'internship_update',
+  EXAM_SCHEDULED: 'exam_scheduled',
 });
 
 export const NOTIFICATION_CHANNELS = Object.freeze({
@@ -39,6 +48,15 @@ const NOTIFICATION_PREFERENCE_KEYS = Object.freeze({
   [NOTIFICATION_EVENT_TYPES.DOCUMENT_PENDING]: 'notifyDocumentPending',
   [NOTIFICATION_EVENT_TYPES.MESSAGE_POSTED]: 'notifyMessagePosted',
   [NOTIFICATION_EVENT_TYPES.ACCESS_RESET]: 'notifyAccessReset',
+  [NOTIFICATION_EVENT_TYPES.GRADE_POSTED]: 'notifyGradePosted',
+  [NOTIFICATION_EVENT_TYPES.ATTENDANCE_ISSUE]: 'notifyAttendanceIssue',
+  [NOTIFICATION_EVENT_TYPES.PAYMENT_DUE]: 'notifyPaymentDue',
+  [NOTIFICATION_EVENT_TYPES.ASSIGNMENT_DEADLINE]: 'notifyAssignmentDeadline',
+  [NOTIFICATION_EVENT_TYPES.SCHEDULE_CHANGED]: 'notifyScheduleChanged',
+  [NOTIFICATION_EVENT_TYPES.LIBRARY_LOAN_DUE]: 'notifyLibraryLoanDue',
+  [NOTIFICATION_EVENT_TYPES.TCC_UPDATE]: 'notifyTccUpdate',
+  [NOTIFICATION_EVENT_TYPES.INTERNSHIP_UPDATE]: 'notifyInternshipUpdate',
+  [NOTIFICATION_EVENT_TYPES.EXAM_SCHEDULED]: 'notifyExamScheduled',
 });
 
 const SENSITIVE_METADATA_PATTERNS = [
@@ -142,6 +160,60 @@ export function getNotificationPresentation(eventType) {
         actionApp: null,
         actionLabel: null,
       };
+    case NOTIFICATION_EVENT_TYPES.GRADE_POSTED:
+      return {
+        icon: '📝',
+        actionApp: 'grades',
+        actionLabel: 'Ver notas',
+      };
+    case NOTIFICATION_EVENT_TYPES.ATTENDANCE_ISSUE:
+      return {
+        icon: '⚠️',
+        actionApp: 'attendance',
+        actionLabel: 'Ver frequencia',
+      };
+    case NOTIFICATION_EVENT_TYPES.PAYMENT_DUE:
+      return {
+        icon: '💰',
+        actionApp: null,
+        actionLabel: null,
+      };
+    case NOTIFICATION_EVENT_TYPES.ASSIGNMENT_DEADLINE:
+      return {
+        icon: '📋',
+        actionApp: 'assignments',
+        actionLabel: 'Ver atividades',
+      };
+    case NOTIFICATION_EVENT_TYPES.SCHEDULE_CHANGED:
+      return {
+        icon: '📅',
+        actionApp: 'schoolcalendar',
+        actionLabel: 'Ver calendario',
+      };
+    case NOTIFICATION_EVENT_TYPES.LIBRARY_LOAN_DUE:
+      return {
+        icon: '📚',
+        actionApp: 'library',
+        actionLabel: 'Ver biblioteca',
+      };
+    case NOTIFICATION_EVENT_TYPES.TCC_UPDATE:
+      return {
+        icon: '📄',
+        actionApp: 'tcc_projects',
+        actionLabel: 'Ver TCC',
+      };
+    case NOTIFICATION_EVENT_TYPES.INTERNSHIP_UPDATE:
+      return {
+        icon: '💼',
+        actionApp: 'internships',
+        actionLabel: 'Ver estagios',
+      };
+    case NOTIFICATION_EVENT_TYPES.EXAM_SCHEDULED:
+      return {
+        icon: '📝',
+        actionApp: 'schoolcalendar',
+        actionLabel: 'Ver calendario',
+      };
     default:
       return {
         icon: '🔔',
@@ -215,6 +287,151 @@ export function buildNotificationTemplate({
       const actorName = normalizeString(payload.actorName, 'A equipe da escola');
       const title = 'Acesso redefinido';
       const body = `${actorName} redefiniu seu acesso ao sistema. Use o fluxo seguro de recuperacao para definir uma nova senha.`;
+
+      return {
+        title,
+        body,
+        emailSubject: title,
+        emailText: body,
+        actionApp: presentation.actionApp,
+        actionLabel: presentation.actionLabel,
+      };
+    }
+
+    case NOTIFICATION_EVENT_TYPES.GRADE_POSTED: {
+      const studentName = normalizeString(payload.studentName, 'Aluno');
+      const subjectName = normalizeString(payload.subjectName, 'Disciplina');
+      const grade = payload.grade != null ? String(payload.grade) : '--';
+      const title = 'Nota lancada';
+      const body = `Nota ${grade} lancada para ${studentName} na disciplina ${subjectName}.`;
+
+      return {
+        title,
+        body,
+        emailSubject: title,
+        emailText: body,
+        actionApp: presentation.actionApp,
+        actionLabel: presentation.actionLabel,
+      };
+    }
+
+    case NOTIFICATION_EVENT_TYPES.ATTENDANCE_ISSUE: {
+      const studentName = normalizeString(payload.studentName, 'Aluno');
+      const className = normalizeString(payload.className, 'Turma');
+      const absenceCount = payload.absenceCount || 0;
+      const title = 'Alerta de frequencia';
+      const body = `${studentName} possui ${absenceCount} falta(s) na turma ${className}. Atencao ao limite de faltas.`;
+
+      return {
+        title,
+        body,
+        emailSubject: title,
+        emailText: body,
+        actionApp: presentation.actionApp,
+        actionLabel: presentation.actionLabel,
+      };
+    }
+
+    case NOTIFICATION_EVENT_TYPES.ASSIGNMENT_DEADLINE: {
+      const assignmentTitle = normalizeString(payload.assignmentTitle, 'Atividade');
+      const dueDate = normalizeString(payload.dueDate, 'em breve');
+      const title = 'Prazo de atividade proximo';
+      const body = `A atividade "${assignmentTitle}" vence ${dueDate}. Nao esqueca de entregar.`;
+
+      return {
+        title,
+        body,
+        emailSubject: title,
+        emailText: body,
+        actionApp: presentation.actionApp,
+        actionLabel: presentation.actionLabel,
+      };
+    }
+
+    case NOTIFICATION_EVENT_TYPES.SCHEDULE_CHANGED: {
+      const title = 'Horario alterado';
+      const body = 'O horario da turma foi atualizado. Verifique o calendario escolar.';
+
+      return {
+        title,
+        body,
+        emailSubject: title,
+        emailText: body,
+        actionApp: presentation.actionApp,
+        actionLabel: presentation.actionLabel,
+      };
+    }
+
+    case NOTIFICATION_EVENT_TYPES.LIBRARY_LOAN_DUE: {
+      const itemName = normalizeString(payload.itemName, 'Material');
+      const dueDate = normalizeString(payload.dueDate, 'em breve');
+      const title = 'Devolucao de biblioteca pendente';
+      const body = `O material "${itemName}" deve ser devolvido ate ${dueDate}.`;
+
+      return {
+        title,
+        body,
+        emailSubject: title,
+        emailText: body,
+        actionApp: presentation.actionApp,
+        actionLabel: presentation.actionLabel,
+      };
+    }
+
+    case NOTIFICATION_EVENT_TYPES.TCC_UPDATE: {
+      const tccTitle = normalizeString(payload.tccTitle, 'Projeto TCC');
+      const updateType = normalizeString(payload.updateType, 'atualizacao');
+      const title = 'Atualizacao no TCC';
+      const body = `O projeto "${tccTitle}" recebeu uma ${updateType}.`;
+
+      return {
+        title,
+        body,
+        emailSubject: title,
+        emailText: body,
+        actionApp: presentation.actionApp,
+        actionLabel: presentation.actionLabel,
+      };
+    }
+
+    case NOTIFICATION_EVENT_TYPES.INTERNSHIP_UPDATE: {
+      const studentName = normalizeString(payload.studentName, 'Aluno');
+      const updateType = normalizeString(payload.updateType, 'atualizacao');
+      const title = 'Atualizacao de estagio';
+      const body = `Estagio de ${studentName} recebeu uma ${updateType}.`;
+
+      return {
+        title,
+        body,
+        emailSubject: title,
+        emailText: body,
+        actionApp: presentation.actionApp,
+        actionLabel: presentation.actionLabel,
+      };
+    }
+
+    case NOTIFICATION_EVENT_TYPES.EXAM_SCHEDULED: {
+      const examTitle = normalizeString(payload.examTitle, 'Avaliacao');
+      const examDate = normalizeString(payload.examDate, 'em breve');
+      const className = normalizeString(payload.className, 'Turma');
+      const title = 'Avaliacao agendada';
+      const body = `${examTitle} agendada para ${examDate} na turma ${className}.`;
+
+      return {
+        title,
+        body,
+        emailSubject: title,
+        emailText: body,
+        actionApp: presentation.actionApp,
+        actionLabel: presentation.actionLabel,
+      };
+    }
+
+    case NOTIFICATION_EVENT_TYPES.PAYMENT_DUE: {
+      const amount = payload.amount != null ? `R$ ${Number(payload.amount).toFixed(2)}` : '';
+      const dueDate = normalizeString(payload.dueDate, 'em breve');
+      const title = 'Pagamento pendente';
+      const body = `Pagamento${amount ? ` no valor de ${amount}` : ''} com vencimento em ${dueDate}.`;
 
       return {
         title,

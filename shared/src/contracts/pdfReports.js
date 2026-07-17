@@ -4,9 +4,9 @@ import { buildStudentReportCardRows, normalizeGradeStatus } from './grades.js';
 
 
 export const DEFAULT_PDF_LAYOUT_OPTIONS = Object.freeze({
-  headerTitle: 'EduGest',
+  headerTitle: 'KYRONIX S.E.N.O',
   headerSubtitle: 'Relatorios escolares',
-  footerLeft: 'Gerado automaticamente pelo EduGest',
+  footerLeft: 'Gerado automaticamente pelo KYRONIX S.E.N.O',
   footerRight: '',
 });
 

@@ -6,15 +6,9 @@ import { toast } from 'sonner';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
-import { Switch } from '@/components/ui/switch';
 import { AppSettingsApi, UserProfileApi } from '@/services/supabaseApi';
-import { useDesktopShellStore } from '@/lib/stores/desktopShellStore';
+import { useDesktopShellStore } from '@/stores/desktopShellStore';
 import { useAuth } from '@/lib/AuthContext';
-import {
-  getShellBackgroundAssets,
-  getShellBackgroundOption,
-} from '@/lib/shellBackground';
-import { useUserShellBackgroundPreference } from '@/lib/userShellBackground';
 import {
   AVATAR_IMAGE_OPTIMIZATION_DEFAULTS,
   OPTIMIZABLE_IMAGE_MIME_TYPES,
@@ -84,7 +78,6 @@ function StartMenu({
   profileType,
   user,
   reducedMotion = false,
-  blockAnimatedBackground = false,
 }) {
   const { logout } = useAuth();
   const queryClient = useQueryClient();
@@ -122,15 +115,6 @@ function StartMenu({
     staleTime: 60 * 1000,
   });
   const allowStudentPhotoUpload = systemSettings?.allow_student_photo_upload ?? true;
-  const profileKey = currentProfile?.id || user?.email || user?.id || 'guest';
-  const {
-    backgroundMode,
-    backgroundAssetId,
-    setBackgroundMode,
-    setBackgroundSelection,
-  } = useUserShellBackgroundPreference(profileKey);
-  const backgroundAssets = useMemo(() => getShellBackgroundAssets(backgroundMode), [backgroundMode]);
-  const selectedBackgroundOption = getShellBackgroundOption(backgroundMode, backgroundAssetId);
 
   const updateAvatarMutation = useMutation({
     mutationFn: async (avatarUrl) => {
@@ -647,99 +631,6 @@ function StartMenu({
                   A foto deste perfil e ajustada pela secretaria ou administracao.
                 </p>
               )}
-            </div>
-
-            <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-              <p className="text-sm font-semibold text-slate-900">Plano de fundo do meu perfil</p>
-              <p className="mt-1 text-xs text-slate-500">
-                A escolha fica salva só para sua conta.
-              </p>
-
-              <div className="mt-4 flex items-center justify-between gap-4 rounded-xl border border-slate-200 bg-white px-4 py-3">
-                <div className="min-w-0">
-                  <p className="text-sm font-semibold text-slate-900">
-                    {backgroundMode === 'animado' ? 'Animado' : 'Estatico'}
-                  </p>
-                  <p className="mt-1 text-xs text-slate-500">
-                    {backgroundMode === 'animado'
-                      ? 'Usa videos animados como fundo.'
-                      : 'Usa imagens fixas como fundo.'}
-                  </p>
-                </div>
-
-                <div className="flex items-center gap-2">
-                  <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500">
-                    Estatico
-                  </span>
-                  <Switch
-                    disabled={blockAnimatedBackground}
-                    checked={backgroundMode === 'animado'}
-                    onCheckedChange={(checked) => {
-                      if (blockAnimatedBackground) return;
-                      setBackgroundMode(checked ? 'animado' : 'estatico');
-                    }}
-                    aria-label="Alternar fundo animado ou estatico"
-                  />
-                  <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500">
-                    Animado
-                  </span>
-                </div>
-              </div>
-
-              <div className="mt-3 grid grid-cols-2 gap-2">
-                {backgroundAssets.map((option) => {
-                  const isSelected = selectedBackgroundOption?.id === option.id;
-
-                  return (
-                    <button
-                      key={option.id}
-                      type="button"
-                      disabled={blockAnimatedBackground && option.type === 'animado'}
-                      onClick={() => {
-                        if (blockAnimatedBackground && option.type === 'animado') return;
-                        setBackgroundSelection(option.type, option.id);
-                      }}
-                      className={[
-                        'overflow-hidden rounded-xl border text-left transition-all',
-                        blockAnimatedBackground && option.type === 'animado'
-                          ? 'opacity-50 cursor-not-allowed'
-                          : '',
-                        isSelected
-                          ? 'border-slate-400 bg-slate-100'
-                          : 'border-slate-200 bg-white hover:bg-slate-100',
-                      ].join(' ')}
-                    >
-                      <div className="relative aspect-[4/3] overflow-hidden bg-slate-200">
-                        {option.assetType === 'video' ? (
-                          <video
-                            src={option.source}
-                            className="h-full w-full object-cover"
-                            muted
-                            loop
-                            autoPlay
-                            playsInline
-                            aria-hidden="true"
-                          />
-                        ) : (
-                          <img
-                            src={option.source}
-                            alt=""
-                            aria-hidden="true"
-                            className="h-full w-full object-cover"
-                          />
-                        )}
-                        <div className="absolute inset-0 bg-black/10" />
-                        <span className="absolute left-2 top-2 rounded-full border border-white/20 bg-black/35 px-2 py-0.5 text-[9px] font-semibold uppercase tracking-[0.12em] text-white">
-                          {option.type === 'animado' ? 'Animado' : 'Estático'}
-                        </span>
-                      </div>
-                      <div className="p-2">
-                        <p className="text-xs font-semibold text-slate-900">{option.label}</p>
-                      </div>
-                    </button>
-                  );
-                })}
-              </div>
             </div>
 
           </div>

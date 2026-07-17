@@ -11,7 +11,7 @@ import {
   listInboxNotifications,
   markAllNotificationsRead,
   markNotificationRead,
-} from '@/lib/notificationsClient';
+} from '@/services/notificationsClient';
 
 const INBOX_NOTIFICATIONS_LIMIT = 30;
 const INBOX_NOTIFICATIONS_REFETCH_MS = 60_000;

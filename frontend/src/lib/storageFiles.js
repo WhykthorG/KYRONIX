@@ -1,6 +1,6 @@
 // Þ®▓Úáàþø«Õ«îÕà¿þö▒ Whykthor GSV Þú¢õ¢£
 import { supabase } from '@/lib/supabase';
-import { logAuditEvent } from '@/lib/auditClient';
+import { logAuditEvent } from '@/services/auditClient';
 import { AUDIT_EVENT_TYPES } from '@shared/auditLog';
 import {
   DEFAULT_STORAGE_BUCKET as FALLBACK_STORAGE_BUCKET,
@@ -119,6 +119,36 @@ export function diffRemovedStorageFileReferences(previousValues, nextValues, buc
 
 export async function uploadStorageFile({ file, folder, bucket = DEFAULT_STORAGE_BUCKET }) {
   const normalizedBucket = normalizeBucket(bucket);
+
+  // Validação MIME no servidor antes do upload
+  try {
+    const { getAccessTokenOrThrow } = await import('./supabase.js');
+    const token = getAccessTokenOrThrow();
+
+    const validationResponse = await fetch('/api/storage/validate', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        mimeType: file?.type || 'application/octet-stream',
+        fileSize: file?.size || 0,
+        fileName: file?.name || 'unknown',
+      }),
+    });
+
+    if (!validationResponse.ok) {
+      const errorData = await validationResponse.json().catch(() => ({}));
+      throw new Error(errorData.message || 'Tipo de arquivo nao permitido.');
+    }
+  } catch (validationError) {
+    if (validationError.message?.includes('nao permitido') || validationError.message?.includes('excede')) {
+      throw validationError;
+    }
+    console.warn('[storage] Falha na validacao MIME; continuando com upload.', validationError);
+  }
+
   let optimizationResult = { file, optimized: false, reason: 'skipped' };
 
   if (shouldOptimizeImageBeforeUpload(file)) {

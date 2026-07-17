@@ -1,6 +1,6 @@
 # Þ®▓Úáàþø«Õ«îÕà¿þö▒ Whykthor GSV Þú¢õ¢£
 services:
-  edugest:
+  kyronix:
     build:
       context: ..
       dockerfile: infra/Dockerfile
@@ -8,7 +8,7 @@ services:
         # Lê do arquivo .env.local automaticamente
         VITE_SUPABASE_URL: ${VITE_SUPABASE_URL}
         VITE_SUPABASE_ANON_KEY: ${VITE_SUPABASE_ANON_KEY}
-        VITE_APP_NAME: ${VITE_APP_NAME:-EduGest}
+        VITE_APP_NAME: ${VITE_APP_NAME:-KYRONIX S.E.N.O}
         VITE_STORAGE_BUCKET: ${VITE_STORAGE_BUCKET:-project-wg-files}
         VITE_TURN_URLS: ${VITE_TURN_URLS:-}
         VITE_TURN_USERNAME: ${VITE_TURN_USERNAME:-}
@@ -24,4 +24,4 @@ services:
 
     # Label útil para identificar o container
     labels:
-      - "com.edugest.app=web"
+      - "com.kyronix.app=web"

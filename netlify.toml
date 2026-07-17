@@ -1,4 +1,4 @@
-# ðƒÐÇð¥ðÁð║Ðé ð┐ð¥ð╗ð¢ð¥ÐüÐéÐîÐÄ ÐÇð░ðÀÐÇð░ð▒ð¥Ðéð░ð¢ ðúð©ð║Ðéð¥ÐÇð¥ð╝ ðôðíðÆ.
+# KYRONIX S.E.N.O — Netlify Configuration
 [build]
   command = "npm run build"
   publish = "frontend/dist"
@@ -6,6 +6,13 @@
 
 [functions]
   node_bundler = "esbuild"
+  included_files = [
+    "backend/src/routes/**",
+    "backend/src/services/**",
+    "backend/src/database/**",
+    "backend/src/middlewares/**",
+    "shared/src/**"
+  ]
 
 [[redirects]]
   from = "/api/*"

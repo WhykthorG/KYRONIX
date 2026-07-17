@@ -1,0 +1,257 @@
+{
+  "common": {
+    "save": "Salvar",
+    "cancel": "Cancelar",
+    "delete": "Excluir",
+    "edit": "Editar",
+    "search": "Buscar",
+    "loading": "Carregando...",
+    "noResults": "Nenhum resultado encontrado",
+    "confirm": "Confirmar",
+    "back": "Voltar",
+    "next": "Próximo",
+    "yes": "Sim",
+    "no": "Não",
+    "close": "Fechar",
+    "add": "Adicionar",
+    "remove": "Remover",
+    "export": "Exportar",
+    "import": "Importar",
+    "filter": "Filtrar",
+    "all": "Todos",
+    "none": "Nenhum",
+    "name": "Nome",
+    "email": "E-mail",
+    "phone": "Telefone",
+    "address": "Endereço",
+    "date": "Data",
+    "status": "Status",
+    "actions": "Ações",
+    "details": "Detalhes",
+    "description": "Descrição",
+    "observations": "Observações",
+    "notes": "Notas"
+  },
+  "auth": {
+    "login": "Entrar",
+    "logout": "Sair",
+    "email": "E-mail",
+    "password": "Senha",
+    "forgotPassword": "Esqueci minha senha",
+    "resetPassword": "Redefinir senha",
+    "sendResetLink": "Enviar link de redefinição",
+    "loginError": "E-mail ou senha incorretos",
+    "fillFields": "Preencha e-mail e senha",
+    "accessControlled": "Acesso controlado",
+    "centralizedOperation": "Operação centralizada",
+    "welcome": "Bem-vindo ao EduGest",
+    "loginSubtitle": "Entre para acompanhar matrículas, atividades, frequência e muito mais."
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "students": "Alunos",
+    "teachers": "Professores",
+    "classes": "Turmas",
+    "subjects": "Disciplinas",
+    "grades": "Notas",
+    "attendance": "Chamada",
+    "assignments": "Atividades",
+    "calendar": "Calendário",
+    "messages": "Comunicados",
+    "library": "Biblioteca",
+    "reports": "Relatórios",
+    "settings": "Configurações",
+    "internships": "Estágios",
+    "companies": "Empresas Conveniadas",
+    "tcc": "TCC / Projeto Integrador",
+    "laboratories": "Laboratórios",
+    "assessments": "Avaliações e Conselho",
+    "courses": "Cursos e Séries",
+    "certificates": "Certificados",
+    "examCalendar": "Calendário de Provas",
+    "myInternship": "Meu Estágio",
+    "myTcc": "Meu TCC",
+    "mySchedule": "Minha Grade"
+  },
+  "status": {
+    "active": "Ativo",
+    "inactive": "Inativo",
+    "pending": "Pendente",
+    "completed": "Concluído",
+    "cancelled": "Cancelado",
+    "approved": "Aprovado",
+    "reproved": "Reprovado",
+    "inProgress": "Em Andamento",
+    "available": "Disponível",
+    "inUse": "Em Uso",
+    "maintenance": "Manutenção",
+    "locked": "Trancado",
+    "evaded": "Evadido",
+    "transferred": "Transferido",
+    "graduated": "Formado",
+    "suspended": "Suspensa",
+    "activeStatus": "Ativa",
+    "draft": "Rascunho",
+    "published": "Publicado",
+    "scheduled": "Agendada",
+    "confirmed": "Confirmada",
+    "rejected": "Rejeitada"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "Visão geral do sistema escolar",
+    "totalStudents": "Total de Alunos",
+    "teachers": "Professores",
+    "activeClasses": "Turmas Ativas",
+    "gradesPosted": "Notas Lançadas",
+    "activeInternships": "Estágios Ativos",
+    "tccInProgress": "TCCs em Andamento",
+    "averageAttendance": "Frequência Média",
+    "studentsAtRisk": "Alunos em Risco",
+    "upcomingExams": "Próximas Provas",
+    "quickActions": "Ações Rápidas"
+  },
+  "students": {
+    "title": "Alunos",
+    "subtitle": "Gerencie os alunos cadastrados",
+    "newStudent": "Novo Aluno",
+    "personalData": "Dados Pessoais",
+    "address": "Endereço",
+    "guardian": "Responsável",
+    "academic": "Acadêmico",
+    "enrollment": "Matrícula"
+  },
+  "teachers": {
+    "title": "Professores",
+    "subtitle": "Gerencie os professores",
+    "newTeacher": "Novo Professor"
+  },
+  "classes": {
+    "title": "Turmas",
+    "subtitle": "Gerencie as turmas escolares",
+    "newClass": "Nova Turma"
+  },
+  "subjects": {
+    "title": "Disciplinas",
+    "subtitle": "Gerencie as disciplinas",
+    "newSubject": "Nova Disciplina"
+  },
+  "grades": {
+    "title": "Notas",
+    "subtitle": "Lançamento e consulta de notas",
+    "bimester": "Bimestre",
+    "average": "Média",
+    "situation": "Situação"
+  },
+  "attendance": {
+    "title": "Chamada",
+    "subtitle": "Registro de frequência",
+    "present": "Presente",
+    "absent": "Ausente",
+    "justified": "Justificado",
+    "late": "Atrasado"
+  },
+  "assignments": {
+    "title": "Atividades",
+    "subtitle": "Gerencie atividades e tarefas",
+    "newAssignment": "Nova Atividade"
+  },
+  "settings": {
+    "title": "Configurações",
+    "subtitle": "Configurações do sistema",
+    "general": "Geral",
+    "notifications": "Notificações",
+    "security": "Segurança",
+    "export": "Exportação",
+    "schoolName": "Nome da Escola",
+    "language": "Idioma"
+  },
+  "internships": {
+    "title": "Estágios Supervisionados",
+    "subtitle": "Gerencie estágios e empresas conveniadas",
+    "newInternship": "Novo Estágio",
+    "company": "Empresa",
+    "supervisor": "Supervisor",
+    "hoursRequired": "Horas Necessárias",
+    "hoursCompleted": "Horas Cumpridas",
+    "progress": "Progresso"
+  },
+  "tcc": {
+    "title": "TCC / Projeto Integrador",
+    "subtitle": "Gerencie projetos de TCC",
+    "newProject": "Novo Projeto",
+    "advisor": "Orientador",
+    "phase": "Fase",
+    "members": "Integrantes"
+  },
+  "laboratories": {
+    "title": "Laboratórios",
+    "subtitle": "Gerencie laboratórios e equipamentos",
+    "newLab": "Novo Laboratório",
+    "reservations": "Reservas",
+    "equipment": "Equipamentos",
+    "capacity": "Capacidade"
+  },
+  "courses": {
+    "title": "Cursos e Séries",
+    "subtitle": "Gerencie cursos e séries",
+    "newCourse": "Novo Curso",
+    "newSeries": "Nova Série",
+    "duration": "Duração",
+    "totalHours": "Carga Horária"
+  },
+  "certificates": {
+    "title": "Certificados",
+    "subtitle": "Emissão de certificados",
+    "newCertificate": "Novo Certificado",
+    "issueDate": "Data de Emissão",
+    "validUntil": "Válido até",
+    "seriesNumber": "Nº Série",
+    "issue": "Emitir"
+  },
+  "reports": {
+    "title": "Relatórios",
+    "subtitle": "Análises e indicadores",
+    "students": "Alunos",
+    "grades": "Notas",
+    "attendance": "Frequência",
+    "evasion": "Evasão",
+    "workload": "Carga Horária"
+  },
+  "examCalendar": {
+    "title": "Calendário de Avaliações",
+    "subtitle": "Agendamento de provas e avaliações",
+    "newExam": "Agendar Avaliação",
+    "examType": "Tipo de Avaliação",
+    "upcoming": "Próximas Avaliações"
+  },
+  "guardianPortal": {
+    "title": "Portal do Responsável",
+    "subtitle": "Acompanhe os dados dos alunos vinculados",
+    "grades": "Notas e frequência",
+    "messages": "Recados",
+    "documents": "Documentos",
+    "agenda": "Agenda"
+  },
+  "studentPortal": {
+    "myInternship": "Meu Estágio",
+    "myTcc": "Meu TCC",
+    "mySchedule": "Minha Grade de Horários"
+  },
+  "toast": {
+    "saved": "Salvo com sucesso!",
+    "deleted": "Removido com sucesso!",
+    "updated": "Atualizado com sucesso!",
+    "error": "Erro ao processar",
+    "loading": "Processando...",
+    "exported": "Exportado com sucesso!",
+    "created": "Criado com sucesso!",
+    "sent": "Enviado com sucesso!"
+  },
+  "validation": {
+    "required": "Campo obrigatório",
+    "invalidEmail": "E-mail inválido",
+    "minLength": "Mínimo de {{min}} caracteres",
+    "maxLength": "Máximo de {{max}} caracteres"
+  }
+}

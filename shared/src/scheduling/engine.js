@@ -407,7 +407,9 @@ function findReplacementSlot(entry, entries, context = {}) {
 
 function buildSuggestions(entries = [], conflicts = [], context = {}) {
   const suggestions = [];
+  const occupancyIndexes = buildOccupancyIndexes(entries);
 
+  // 1. Move entry suggestions for conflicts
   conflicts.forEach((conflict) => {
     const relatedEntry = entries.find((entry) => (
       entry.class_id === conflict.class_id
@@ -426,7 +428,7 @@ function buildSuggestions(entries = [], conflicts = [], context = {}) {
       conflict,
       type: SCHEDULE_SUGGESTION_TYPES.MOVE_ENTRY,
       title: 'Mover aula para outro encaixe',
-      description: `Mover a aula para ${replacementSlot.dayOfWeek}/${replacementSlot.lessonIndex} reduz o conflito detectado.`,
+      description: `Mover a aula para ${getWeekDayLabel(replacementSlot.dayOfWeek)} ${replacementSlot.lessonIndex}ª aula reduz o conflito detectado.`,
       impactScore: 12,
       operationPayload: {
         type: 'move_entry',
@@ -460,6 +462,88 @@ function buildSuggestions(entries = [], conflicts = [], context = {}) {
     }));
   });
 
+  // 2. Swap entries suggestions - find pairs that could swap to resolve conflicts
+  const teacherEntries = new Map();
+  entries.forEach((entry) => {
+    if (!entry.teacher_id) return;
+    if (!teacherEntries.has(entry.teacher_id)) {
+      teacherEntries.set(entry.teacher_id, []);
+    }
+    teacherEntries.get(entry.teacher_id).push(entry);
+  });
+
+  teacherEntries.forEach((teacherEntryList, teacherId) => {
+    for (let i = 0; i < teacherEntryList.length; i++) {
+      for (let j = i + 1; j < teacherEntryList.length; j++) {
+        const entry1 = teacherEntryList[i];
+        const entry2 = teacherEntryList[j];
+
+        // Only suggest swap if they're on the same day but different classes
+        if (entry1.day_of_week === entry2.day_of_week && entry1.class_id !== entry2.class_id) {
+          // Check if swapping would reduce teacher gaps
+          const gapsBefore = getTeacherGaps(entries, teacherId, entry1.day_of_week, entry1.shift_id);
+          const gapsAfter = getTeacherGaps(entries, teacherId, entry2.day_of_week, entry2.shift_id);
+
+          if (gapsAfter < gapsBefore) {
+            suggestions.push(createSuggestion({
+              type: SCHEDULE_SUGGESTION_TYPES.SWAP_ENTRIES,
+              title: 'Trocar aulas entre turmas',
+              description: `Trocar ${entry1.class_id}/${entry1.subject_id} com ${entry2.class_id}/${entry2.subject_id} no mesmo dia pode reduzir janelas.`,
+              impactScore: 8,
+              operationPayload: {
+                type: 'swap_entries',
+                entry1: { class_id: entry1.class_id, subject_id: entry1.subject_id, teacher_id: entry1.teacher_id, shift_id: entry1.shift_id, day_of_week: entry1.day_of_week, lesson_index: entry1.lesson_index },
+                entry2: { class_id: entry2.class_id, subject_id: entry2.subject_id, teacher_id: entry2.teacher_id, shift_id: entry2.shift_id, day_of_week: entry2.day_of_week, lesson_index: entry2.lesson_index },
+              },
+            }));
+          }
+        }
+      }
+    }
+  });
+
+  // 3. Rebalance day suggestions - find days with too many lessons
+  const dayLoad = new Map();
+  entries.forEach((entry) => {
+    const day = entry.day_of_week;
+    dayLoad.set(day, (dayLoad.get(day) || 0) + 1);
+  });
+
+  const avgLoad = entries.length / 5;
+  dayLoad.forEach((load, day) => {
+    if (load > avgLoad * 1.5) {
+      const dayEntries = entries.filter((e) => e.day_of_week === day);
+      const lightestDay = [...dayLoad.entries()].sort((a, b) => a[1] - b[1])[0];
+
+      if (lightestDay && lightestDay[1] < avgLoad * 0.75) {
+        const entryToMove = dayEntries[dayEntries.length - 1];
+        suggestions.push(createSuggestion({
+          type: SCHEDULE_SUGGESTION_TYPES.REBALANCE_DAY,
+          title: 'Redistribuir aulas do dia',
+          description: `Mover 1 aula de ${getWeekDayLabel(day)} para ${getWeekDayLabel(lightestDay[0])} equilibra a carga.`,
+          impactScore: 6,
+          operationPayload: {
+            type: 'move_entry',
+            selector: {
+              class_id: entryToMove.class_id,
+              subject_id: entryToMove.subject_id,
+              teacher_id: entryToMove.teacher_id,
+              shift_id: entryToMove.shift_id,
+              day_of_week: entryToMove.day_of_week,
+              lesson_index: entryToMove.lesson_index,
+            },
+            target: {
+              shift_id: entryToMove.shift_id,
+              day_of_week: lightestDay[0],
+              lesson_index: entryToMove.lesson_index,
+              environment_id: entryToMove.environment_id,
+            },
+          },
+        }));
+      }
+    }
+  });
+
   return suggestions;
 }
 
@@ -476,6 +560,64 @@ function runAutoFixPass(entries = [], suggestions = []) {
   });
 
   return { entries: currentEntries, applied };
+}
+
+// Simulated Annealing for schedule optimization
+function simulatedAnnealing(entries, context, maxIterations = 1000, initialTemp = 100, coolingRate = 0.995) {
+  let currentEntries = [...entries];
+  let currentScore = computeScheduleMetrics(currentEntries, [], context).final_score;
+  let bestEntries = [...currentEntries];
+  let bestScore = currentScore;
+  let temperature = initialTemp;
+
+  for (let i = 0; i < maxIterations; i++) {
+    // Pick two random entries from different days/classes
+    if (currentEntries.length < 2) break;
+
+    const idx1 = Math.floor(Math.random() * currentEntries.length);
+    let idx2 = Math.floor(Math.random() * currentEntries.length);
+    while (idx2 === idx1 && currentEntries.length > 1) {
+      idx2 = Math.floor(Math.random() * currentEntries.length);
+    }
+
+    const entry1 = currentEntries[idx1];
+    const entry2 = currentEntries[idx2];
+
+    // Only swap if they're on different days (meaningful swap)
+    if (entry1.day_of_week === entry2.day_of_week && entry1.class_id === entry2.class_id) {
+      temperature *= coolingRate;
+      continue;
+    }
+
+    // Create swapped version
+    const swappedEntries = currentEntries.map((entry, idx) => {
+      if (idx === idx1) {
+        return { ...entry, day_of_week: entry2.day_of_week, lesson_index: entry2.lesson_index };
+      }
+      if (idx === idx2) {
+        return { ...entry, day_of_week: entry1.day_of_week, lesson_index: entry1.lesson_index };
+      }
+      return entry;
+    });
+
+    const newScore = computeScheduleMetrics(swappedEntries, [], context).final_score;
+    const delta = newScore - currentScore;
+
+    // Accept or reject
+    if (delta > 0 || Math.random() < Math.exp(delta / temperature)) {
+      currentEntries = swappedEntries;
+      currentScore = newScore;
+
+      if (currentScore > bestScore) {
+        bestEntries = [...currentEntries];
+        bestScore = currentScore;
+      }
+    }
+
+    temperature *= coolingRate;
+  }
+
+  return { entries: bestEntries, score: bestScore };
 }
 
 export function computeScheduleMetrics(entries = [], conflicts = [], context = {}) {
@@ -707,9 +849,13 @@ export function generateSchoolSchedule(context = {}) {
   const allConflicts = [...initial.conflicts, ...detectedConflicts];
   const suggestions = buildSuggestions(initial.entries, allConflicts, normalized);
   const autoFix = runAutoFixPass(initial.entries, suggestions);
-  const optimizedConflicts = detectConflicts(autoFix.entries, normalized);
+
+  // Apply simulated annealing for further optimization
+  const annealed = simulatedAnnealing(autoFix.entries, normalized);
+
+  const optimizedConflicts = detectConflicts(annealed.entries, normalized);
   const combinedConflicts = [...allConflicts, ...optimizedConflicts];
-  const metrics = computeScheduleMetrics(autoFix.entries, combinedConflicts, normalized);
+  const metrics = computeScheduleMetrics(annealed.entries, combinedConflicts, normalized);
   const status = computeGenerationStatus({
     validation,
     entries: autoFix.entries,
@@ -718,7 +864,7 @@ export function generateSchoolSchedule(context = {}) {
   });
 
   const detailedSummary = summarizeDetailedGeneration({
-    entries: autoFix.entries,
+    entries: annealed.entries,
     conflicts: combinedConflicts,
     suggestions,
     metrics,
@@ -728,7 +874,7 @@ export function generateSchoolSchedule(context = {}) {
   return {
     validation,
     context: normalized,
-    entries: autoFix.entries,
+    entries: annealed.entries,
     conflicts: combinedConflicts,
     suggestions,
     autoFixes: autoFix.applied,
@@ -736,7 +882,7 @@ export function generateSchoolSchedule(context = {}) {
     metrics,
     summary: {
       ...summarizeGeneration({
-        entries: autoFix.entries,
+        entries: annealed.entries,
         conflicts: combinedConflicts,
         qualityScore: metrics.final_score,
       }),

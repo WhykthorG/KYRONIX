@@ -325,6 +325,74 @@ export const ScheduleEntryApi = createEntityApi('schedule_entries');
 export const ScheduleConflictApi = createEntityApi('schedule_conflicts');
 export const ScheduleSuggestionApi = createEntityApi('schedule_suggestions');
 export const OptimizationSettingApi = createEntityApi('optimization_settings');
+export const ScheduleVersionApi = createEntityApi('schedule_versions');
+
+export const InternshipApi = createEntityApi('internships');
+export const InternshipCompanyApi = createEntityApi('internship_companies');
+export const InternshipSupervisorApi = createEntityApi('internship_supervisors');
+export const InternshipDiaryApi = createEntityApi('internship_diary');
+export const InternshipEvaluationApi = createEntityApi('internship_evaluations');
+
+export const TccProjectApi = createEntityApi('tcc_projects');
+export const TccMemberApi = createEntityApi('tcc_members');
+export const TccDeliveryApi = createEntityApi('tcc_deliveries');
+export const TccBancaApi = createEntityApi('tcc_bancas');
+export const TccOrientationApi = createEntityApi('tcc_orientations');
+
+export const LaboratoryApi = createEntityApi('laboratories');
+export const LabReservationApi = createEntityApi('lab_reservations');
+export const LabEquipmentApi = createEntityApi('lab_equipment');
+export const LabMaterialLoanApi = createEntityApi('lab_material_loans');
+export const LabUsageLogApi = createEntityApi('lab_usage_logs');
+
+export const CourseApi = createEntityApi('courses');
+export const SeriesApi = createEntityApi('series');
+export const ClassSeriesApi = createEntityApi('class_series');
+export const CertificateApi = createEntityApi('certificates');
+
+export const LibraryReservationApi = createEntityApi('library_reservations');
+export const LibraryFineApi = createEntityApi('library_fines');
+
+export const SecondChanceApi = createEntityApi('second_chances');
+export const ClassCouncilApi = createEntityApi('class_councils');
+export const CouncilDecisionApi = createEntityApi('council_decisions');
+
+export const UserManagementApi = {
+  async batchOperation(action, profileIds, reason) {
+    const { getAccessTokenOrThrow } = await import('../lib/supabase.js');
+    const token = await getAccessTokenOrThrow();
+    const response = await fetch('/api/admin/users/batch', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ action, profileIds, reason }),
+    });
+    if (!response.ok) {
+      const error = await response.json().catch(() => ({}));
+      throw new Error(error.message || 'Erro na operação em lote.');
+    }
+    return response.json();
+  },
+  async updateProfile(profileId, data) {
+    const { getAccessTokenOrThrow } = await import('../lib/supabase.js');
+    const token = await getAccessTokenOrThrow();
+    const response = await fetch('/api/admin/users/profile-update', {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ profileId, ...data }),
+    });
+    if (!response.ok) {
+      const error = await response.json().catch(() => ({}));
+      throw new Error(error.message || 'Erro ao atualizar perfil.');
+    }
+    return response.json();
+  },
+};
 
 export const base44 = {
   entities: {
@@ -366,6 +434,30 @@ export const base44 = {
     ScheduleConflict: ScheduleConflictApi,
     ScheduleSuggestion: ScheduleSuggestionApi,
     OptimizationSetting: OptimizationSettingApi,
+    Internship: InternshipApi,
+    InternshipCompany: InternshipCompanyApi,
+    InternshipSupervisor: InternshipSupervisorApi,
+    InternshipDiary: InternshipDiaryApi,
+    InternshipEvaluation: InternshipEvaluationApi,
+    TccProject: TccProjectApi,
+    TccMember: TccMemberApi,
+    TccDelivery: TccDeliveryApi,
+    TccBanca: TccBancaApi,
+    TccOrientation: TccOrientationApi,
+    Laboratory: LaboratoryApi,
+    LabReservation: LabReservationApi,
+    LabEquipment: LabEquipmentApi,
+    LabMaterialLoan: LabMaterialLoanApi,
+    LabUsageLog: LabUsageLogApi,
+    Course: CourseApi,
+    Series: SeriesApi,
+    ClassSeries: ClassSeriesApi,
+    Certificate: CertificateApi,
+    LibraryReservation: LibraryReservationApi,
+    LibraryFine: LibraryFineApi,
+    SecondChance: SecondChanceApi,
+    ClassCouncil: ClassCouncilApi,
+    CouncilDecision: CouncilDecisionApi,
   },
   auth: {
     async me() {

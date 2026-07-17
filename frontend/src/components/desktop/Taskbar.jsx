@@ -9,17 +9,20 @@ import {
   Pin,
   PinOff,
   Loader2,
+  Globe,
 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { DesktopContextMenu } from '@/components/desktop/DesktopContextMenu';
 import StartMenu from '@/components/desktop/StartMenu';
 import { toast } from 'sonner';
 import { useAuth } from '@/lib/AuthContext';
+import { cn } from '@/lib/utils';
 import {
   dismissNotificationById,
   listInboxNotifications,
   markAllNotificationsRead,
   markNotificationRead,
-} from '@/lib/notificationsClient';
+} from '@/services/notificationsClient';
 import { getNotificationPresentation } from '@shared/contracts/notifications';
 import { getWindowPreviewSnapshot, requestWindowPreviewCapture } from '@/components/desktop/Window';
 import { useNow } from '@/hooks/useNow';
@@ -39,7 +42,7 @@ const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 
 const formatNotificationTime = (iso) => {
   const date = new Date(iso);
-  return date.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+  return date.toLocaleTimeString(i18n.language, { hour: '2-digit', minute: '2-digit' });
 };
 
 function getPreviewPosition(anchorRect) {
@@ -73,11 +76,81 @@ function normalizeStoredPreview(windowId) {
   };
 }
 
+const LanguageSelector = memo(function LanguageSelector() {
+  const { i18n } = useTranslation();
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
+  const languages = [
+    { code: 'pt-BR', label: 'Português', flag: '🇧🇷' },
+    { code: 'en', label: 'English', flag: '🇺🇸' },
+    { code: 'es', label: 'Español', flag: '🇪🇸' },
+  ];
+
+  const currentLanguage = languages.find((l) => l.code === i18n.language) || languages[0];
+
+  const handleLanguageChange = useCallback((langCode) => {
+    i18n.changeLanguage(langCode);
+    setIsOpen(false);
+  }, [i18n]);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  return (
+    <div className="relative" ref={dropdownRef}>
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="flex items-center gap-1 px-2 py-1 rounded-lg text-white/70 hover:text-white hover:bg-white/10 transition-all text-xs"
+        title="Idioma"
+      >
+        <Globe className="w-4 h-4" />
+        <span className="hidden sm:inline">{currentLanguage.flag}</span>
+      </button>
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 10 }}
+            className="absolute bottom-full right-0 mb-2 w-40 bg-slate-800 border border-white/10 rounded-lg shadow-xl overflow-hidden z-50"
+          >
+            {languages.map((lang) => (
+              <button
+                key={lang.code}
+                onClick={() => handleLanguageChange(lang.code)}
+                className={cn(
+                  "w-full flex items-center gap-2 px-3 py-2 text-sm text-left transition-colors",
+                  i18n.language === lang.code
+                    ? "bg-indigo-600 text-white"
+                    : "text-white/80 hover:bg-white/10"
+                )}
+              >
+                <span>{lang.flag}</span>
+                <span>{lang.label}</span>
+              </button>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+});
+
 const TaskbarClock = memo(function TaskbarClock() {
+  const { i18n } = useTranslation();
   const now = useNow();
   const currentTime = useMemo(
-    () => now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' }),
-    [now]
+    () => now.toLocaleTimeString(i18n.language, { hour: '2-digit', minute: '2-digit' }),
+    [now, i18n.language]
   );
 
   return (
@@ -406,7 +479,6 @@ function Taskbar({
   startMenuApps = [],
   profileType,
   shellUser,
-  blockAnimatedBackground = false,
   disableWindowPreviews = false,
   reducedMotion = false,
 }) {
@@ -743,9 +815,9 @@ function Taskbar({
               }`}
             >
               <div className="w-5 h-5 rounded bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
-                <span className="text-[10px] font-bold">E</span>
+                <span className="text-[10px] font-bold">K</span>
               </div>
-              <span className="hidden sm:block">Project WG</span>
+              <span className="hidden sm:block">KYRONIX</span>
             </button>
 
 
@@ -768,6 +840,13 @@ function Taskbar({
 
         <div className="flex items-center justify-self-end min-w-0">
           <TaskbarClock />
+
+          <div className="w-px h-6 bg-white/20 mx-1" />
+
+          {/* Language Selector */}
+          <div className="relative flex-shrink-0">
+            <LanguageSelector />
+          </div>
 
           <div className="w-px h-6 bg-white/20 mx-1" />
 
@@ -827,7 +906,6 @@ function Taskbar({
                 profileType={profileType}
                 user={shellUser}
                 reducedMotion={reducedMotion}
-                blockAnimatedBackground={blockAnimatedBackground}
               />
             </div>
           </div>

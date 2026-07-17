@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 
 import MobileShellRoot from '@/components/mobile-shell/MobileShellRoot';
-import { usePermissions } from '@/components/hooks/usePermissions';
+import { usePermissions } from '@/hooks/usePermissions';
 import { useAuth } from '@/lib/AuthContext';
 import { buildCanonicalMobileModules } from '@/lib/mocks/mobileShell';
 
@@ -19,10 +19,10 @@ function formatNameFromEmail(email) {
 function buildViewerFromUser(user) {
   if (!user) {
     return {
-      name: 'Project WG',
+      name: 'KYRONIX S.E.N.O',
       role: 'Operação Escolar',
       campus: 'Shell Mobile',
-      avatarFallback: 'WG',
+      avatarFallback: 'KY',
     };
   }
 

@@ -1,7 +1,7 @@
 // ðƒÐÇð¥ðÁð║Ðé ð┐ð¥ð╗ð¢ð¥ÐüÐéÐîÐÄ ÐÇð░ðÀÐÇð░ð▒ð¥Ðéð░ð¢ ðúð©ð║Ðéð¥ÐÇð¥ð╝ ðôðíðÆ.
 import React, { createContext, useReducer, useContext, useEffect } from 'react';
 import { getSessionSafely, setSupabaseAccessToken, supabase } from '@/lib/supabase';
-import { logAuditEvent } from '@/lib/auditClient';
+import { logAuditEvent } from '@/services/auditClient';
 import { AUDIT_EVENT_TYPES } from '@shared/auditLog';
 
 const AuthContext = createContext();
@@ -93,7 +93,9 @@ export const AuthProvider = ({ children }) => {
       );
     }
 
-    handleSession(data.session);
+    // NOTE: handleSession() is NOT called here.
+    // onAuthStateChange listener will handle the session update asynchronously,
+    // which prevents a race condition that unmounts Login before handleSubmit finishes.
 
     logAuditEvent({
       eventType: AUDIT_EVENT_TYPES.AUTH_LOGIN,

@@ -94,7 +94,7 @@ function buildIcsEvent(entry) {
   return lines;
 }
 
-export function buildIcsCalendar(entries = [], { calendarName = 'Calendario', prodId = '-//Project WG//Calendario//PT-BR' } = {}) {
+export function buildIcsCalendar(entries = [], { calendarName = 'Calendario', prodId = '-//KYRONIX//Calendario//PT-BR' } = {}) {
   const normalizedEntries = entries
     .map((entry, index) => normalizeCalendarEntry(entry, index))
     .filter(Boolean);
@@ -134,4 +134,8 @@ export function buildCalendarFilename(baseName = 'calendario-professor', now = n
   ].join('');
 
   return `${safeBaseName}-${stamp}.ics`;
+}
+
+export function generateCalendarIcs({ calendarName = 'Calendario', entries = [] } = {}) {
+  return buildIcsCalendar(entries, { calendarName });
 }

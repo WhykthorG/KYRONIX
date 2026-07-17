@@ -1,0 +1,257 @@
+{
+  "common": {
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "search": "Buscar",
+    "loading": "Cargando...",
+    "noResults": "No se encontraron resultados",
+    "confirm": "Confirmar",
+    "back": "Volver",
+    "next": "Siguiente",
+    "yes": "Sí",
+    "no": "No",
+    "close": "Cerrar",
+    "add": "Agregar",
+    "remove": "Eliminar",
+    "export": "Exportar",
+    "import": "Importar",
+    "filter": "Filtrar",
+    "all": "Todos",
+    "none": "Ninguno",
+    "name": "Nombre",
+    "email": "Correo electrónico",
+    "phone": "Teléfono",
+    "address": "Dirección",
+    "date": "Fecha",
+    "status": "Estado",
+    "actions": "Acciones",
+    "details": "Detalles",
+    "description": "Descripción",
+    "observations": "Observaciones",
+    "notes": "Notas"
+  },
+  "auth": {
+    "login": "Iniciar sesión",
+    "logout": "Cerrar sesión",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "forgotPassword": "Olvidé mi contraseña",
+    "resetPassword": "Restablecer contraseña",
+    "sendResetLink": "Enviar enlace de restablecimiento",
+    "loginError": "Correo electrónico o contraseña incorrectos",
+    "fillFields": "Complete correo electrónico y contraseña",
+    "accessControlled": "Acceso controlado",
+    "centralizedOperation": "Operación centralizada",
+    "welcome": "Bienvenido a EduGest",
+    "loginSubtitle": "Inicie sesión para seguir inscripciones, actividades, asistencia y más."
+  },
+  "nav": {
+    "dashboard": "Panel",
+    "students": "Estudiantes",
+    "teachers": "Profesores",
+    "classes": "Clases",
+    "subjects": "Asignaturas",
+    "grades": "Calificaciones",
+    "attendance": "Asistencia",
+    "assignments": "Tareas",
+    "calendar": "Calendario",
+    "messages": "Comunicados",
+    "library": "Biblioteca",
+    "reports": "Informes",
+    "settings": "Configuración",
+    "internships": "Pasantías",
+    "companies": "Empresas Asociadas",
+    "tcc": "TCC / Proyecto Integrador",
+    "laboratories": "Laboratorios",
+    "assessments": "Evaluaciones y Consejo",
+    "courses": "Cursos y Series",
+    "certificates": "Certificados",
+    "examCalendar": "Calendario de Exámenes",
+    "myInternship": "Mi Pasantía",
+    "myTcc": "Mi TCC",
+    "mySchedule": "Mi Horario"
+  },
+  "status": {
+    "active": "Activo",
+    "inactive": "Inactivo",
+    "pending": "Pendiente",
+    "completed": "Completado",
+    "cancelled": "Cancelado",
+    "approved": "Aprobado",
+    "reproved": "Reprobado",
+    "inProgress": "En Progreso",
+    "available": "Disponible",
+    "inUse": "En Uso",
+    "maintenance": "Mantenimiento",
+    "locked": "Bloqueado",
+    "evaded": "Evadido",
+    "transferred": "Transferido",
+    "graduated": "Graduado",
+    "suspended": "Suspendido",
+    "activeStatus": "Activo",
+    "draft": "Borrador",
+    "published": "Publicado",
+    "scheduled": "Programado",
+    "confirmed": "Confirmado",
+    "rejected": "Rechazado"
+  },
+  "dashboard": {
+    "title": "Panel",
+    "subtitle": "Resumen del sistema escolar",
+    "totalStudents": "Total de Estudiantes",
+    "teachers": "Profesores",
+    "activeClasses": "Clases Activas",
+    "gradesPosted": "Calificaciones Publicadas",
+    "activeInternships": "Pasantías Activas",
+    "tccInProgress": "TCC en Progreso",
+    "averageAttendance": "Asistencia Promedio",
+    "studentsAtRisk": "Estudiantes en Riesgo",
+    "upcomingExams": "Próximos Exámenes",
+    "quickActions": "Acciones Rápidas"
+  },
+  "students": {
+    "title": "Estudiantes",
+    "subtitle": "Gestionar estudiantes registrados",
+    "newStudent": "Nuevo Estudiante",
+    "personalData": "Datos Personales",
+    "address": "Dirección",
+    "guardian": "Tutor",
+    "academic": "Académico",
+    "enrollment": "Inscripción"
+  },
+  "teachers": {
+    "title": "Profesores",
+    "subtitle": "Gestionar profesores",
+    "newTeacher": "Nuevo Profesor"
+  },
+  "classes": {
+    "title": "Clases",
+    "subtitle": "Gestionar clases escolares",
+    "newClass": "Nueva Clase"
+  },
+  "subjects": {
+    "title": "Asignaturas",
+    "subtitle": "Gestionar asignaturas",
+    "newSubject": "Nueva Asignatura"
+  },
+  "grades": {
+    "title": "Calificaciones",
+    "subtitle": "Registro y consulta de calificaciones",
+    "bimester": "Bimestre",
+    "average": "Promedio",
+    "situation": "Situación"
+  },
+  "attendance": {
+    "title": "Asistencia",
+    "subtitle": "Registro de asistencia",
+    "present": "Presente",
+    "absent": "Ausente",
+    "justified": "Justificado",
+    "late": "Tardanza"
+  },
+  "assignments": {
+    "title": "Tareas",
+    "subtitle": "Gestionar actividades y tareas",
+    "newAssignment": "Nueva Tarea"
+  },
+  "settings": {
+    "title": "Configuración",
+    "subtitle": "Configuración del sistema",
+    "general": "General",
+    "notifications": "Notificaciones",
+    "security": "Seguridad",
+    "export": "Exportación",
+    "schoolName": "Nombre de la Escuela",
+    "language": "Idioma"
+  },
+  "internships": {
+    "title": "Pasantías",
+    "subtitle": "Gestionar pasantías y empresas asociadas",
+    "newInternship": "Nueva Pasantía",
+    "company": "Empresa",
+    "supervisor": "Supervisor",
+    "hoursRequired": "Horas Requeridas",
+    "hoursCompleted": "Horas Completadas",
+    "progress": "Progreso"
+  },
+  "tcc": {
+    "title": "TCC / Proyecto Integrador",
+    "subtitle": "Gestionar proyectos TCC",
+    "newProject": "Nuevo Proyecto",
+    "advisor": "Asesor",
+    "phase": "Fase",
+    "members": "Miembros"
+  },
+  "laboratories": {
+    "title": "Laboratorios",
+    "subtitle": "Gestionar laboratorios y equipos",
+    "newLab": "Nuevo Laboratorio",
+    "reservations": "Reservas",
+    "equipment": "Equipos",
+    "capacity": "Capacidad"
+  },
+  "courses": {
+    "title": "Cursos y Series",
+    "subtitle": "Gestionar cursos y series",
+    "newCourse": "Nuevo Curso",
+    "newSeries": "Nueva Serie",
+    "duration": "Duración",
+    "totalHours": "Horas Totales"
+  },
+  "certificates": {
+    "title": "Certificados",
+    "subtitle": "Emisión de certificados",
+    "newCertificate": "Nuevo Certificado",
+    "issueDate": "Fecha de Emisión",
+    "validUntil": "Válido hasta",
+    "seriesNumber": "Nº Serie",
+    "issue": "Emitir"
+  },
+  "reports": {
+    "title": "Informes",
+    "subtitle": "Análisis e indicadores",
+    "students": "Estudiantes",
+    "grades": "Calificaciones",
+    "attendance": "Asistencia",
+    "evasion": "Evasión",
+    "workload": "Carga Horaria"
+  },
+  "examCalendar": {
+    "title": "Calendario de Evaluaciones",
+    "subtitle": "Programación de exámenes y evaluaciones",
+    "newExam": "Programar Evaluación",
+    "examType": "Tipo de Evaluación",
+    "upcoming": "Próximas Evaluaciones"
+  },
+  "guardianPortal": {
+    "title": "Portal del Tutor",
+    "subtitle": "Seguimiento de datos de estudiantes vinculados",
+    "grades": "Calificaciones y asistencia",
+    "messages": "Mensajes",
+    "documents": "Documentos",
+    "agenda": "Agenda"
+  },
+  "studentPortal": {
+    "myInternship": "Mi Pasantía",
+    "myTcc": "Mi TCC",
+    "mySchedule": "Mi Horario"
+  },
+  "toast": {
+    "saved": "¡Guardado exitosamente!",
+    "deleted": "¡Eliminado exitosamente!",
+    "updated": "¡Actualizado exitosamente!",
+    "error": "Error al procesar",
+    "loading": "Procesando...",
+    "exported": "¡Exportado exitosamente!",
+    "created": "¡Creado exitosamente!",
+    "sent": "¡Enviado exitosamente!"
+  },
+  "validation": {
+    "required": "Campo obligatorio",
+    "invalidEmail": "Correo electrónico inválido",
+    "minLength": "Mínimo {{min}} caracteres",
+    "maxLength": "Máximo {{max}} caracteres"
+  }
+}

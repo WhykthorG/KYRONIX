@@ -159,48 +159,50 @@
     --shadow-soft: 0 14px 38px hsl(var(--primitive-slate-950) / 0.28);
   }
 
-  html {
-    min-height: 100%;
-    scroll-behavior: smooth;
-  }
+  @layer base {
+    * {
+      @apply border-border;
+    }
 
-  * {
-    @apply border-border;
-  }
+    html {
+      min-height: 100%;
+      scroll-behavior: smooth;
+    }
 
-  body {
-    min-height: 100vh;
-    font-family: var(--font-body);
-    background: var(--page-shell-gradient);
-    @apply bg-background text-foreground antialiased;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+    body {
+      min-height: 100vh;
+      font-family: var(--font-body);
+      background: var(--page-shell-gradient);
+      @apply bg-background text-foreground antialiased;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: var(--font-display);
-    letter-spacing: -0.02em;
-  }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: var(--font-display);
+      letter-spacing: -0.02em;
+    }
 
-  code,
-  pre {
-    font-family: var(--font-mono);
-  }
+    code,
+    pre {
+      font-family: var(--font-mono);
+    }
 
-  ::selection {
-    background: hsl(var(--primary) / 0.18);
-    color: hsl(var(--foreground));
-  }
+    ::selection {
+      background: hsl(var(--primary) / 0.18);
+      color: hsl(var(--foreground));
+    }
 
-  :focus-visible {
-    outline: none;
-    box-shadow: 0 0 0 4px hsl(var(--ring) / 0.18);
+    :focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 4px hsl(var(--ring) / 0.18);
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {

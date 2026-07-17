@@ -1,0 +1,257 @@
+{
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "search": "Search",
+    "loading": "Loading...",
+    "noResults": "No results found",
+    "confirm": "Confirm",
+    "back": "Back",
+    "next": "Next",
+    "yes": "Yes",
+    "no": "No",
+    "close": "Close",
+    "add": "Add",
+    "remove": "Remove",
+    "export": "Export",
+    "import": "Import",
+    "filter": "Filter",
+    "all": "All",
+    "none": "None",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "address": "Address",
+    "date": "Date",
+    "status": "Status",
+    "actions": "Actions",
+    "details": "Details",
+    "description": "Description",
+    "observations": "Observations",
+    "notes": "Notes"
+  },
+  "auth": {
+    "login": "Login",
+    "logout": "Logout",
+    "email": "Email",
+    "password": "Password",
+    "forgotPassword": "Forgot password",
+    "resetPassword": "Reset password",
+    "sendResetLink": "Send reset link",
+    "loginError": "Invalid email or password",
+    "fillFields": "Please fill in email and password",
+    "accessControlled": "Access controlled",
+    "centralizedOperation": "Centralized operation",
+    "welcome": "Welcome to EduGest",
+    "loginSubtitle": "Login to track enrollments, activities, attendance and more."
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "students": "Students",
+    "teachers": "Teachers",
+    "classes": "Classes",
+    "subjects": "Subjects",
+    "grades": "Grades",
+    "attendance": "Attendance",
+    "assignments": "Assignments",
+    "calendar": "Calendar",
+    "messages": "Messages",
+    "library": "Library",
+    "reports": "Reports",
+    "settings": "Settings",
+    "internships": "Internships",
+    "companies": "Partner Companies",
+    "tcc": "TCC / Integrative Project",
+    "laboratories": "Laboratories",
+    "assessments": "Assessments & Council",
+    "courses": "Courses & Series",
+    "certificates": "Certificates",
+    "examCalendar": "Exam Calendar",
+    "myInternship": "My Internship",
+    "myTcc": "My TCC",
+    "mySchedule": "My Schedule"
+  },
+  "status": {
+    "active": "Active",
+    "inactive": "Inactive",
+    "pending": "Pending",
+    "completed": "Completed",
+    "cancelled": "Cancelled",
+    "approved": "Approved",
+    "reproved": "Reproved",
+    "inProgress": "In Progress",
+    "available": "Available",
+    "inUse": "In Use",
+    "maintenance": "Maintenance",
+    "locked": "Locked",
+    "evaded": "Evaded",
+    "transferred": "Transferred",
+    "graduated": "Graduated",
+    "suspended": "Suspended",
+    "activeStatus": "Active",
+    "draft": "Draft",
+    "published": "Published",
+    "scheduled": "Scheduled",
+    "confirmed": "Confirmed",
+    "rejected": "Rejected"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "School system overview",
+    "totalStudents": "Total Students",
+    "teachers": "Teachers",
+    "activeClasses": "Active Classes",
+    "gradesPosted": "Grades Posted",
+    "activeInternships": "Active Internships",
+    "tccInProgress": "TCC in Progress",
+    "averageAttendance": "Average Attendance",
+    "studentsAtRisk": "Students at Risk",
+    "upcomingExams": "Upcoming Exams",
+    "quickActions": "Quick Actions"
+  },
+  "students": {
+    "title": "Students",
+    "subtitle": "Manage registered students",
+    "newStudent": "New Student",
+    "personalData": "Personal Data",
+    "address": "Address",
+    "guardian": "Guardian",
+    "academic": "Academic",
+    "enrollment": "Enrollment"
+  },
+  "teachers": {
+    "title": "Teachers",
+    "subtitle": "Manage teachers",
+    "newTeacher": "New Teacher"
+  },
+  "classes": {
+    "title": "Classes",
+    "subtitle": "Manage school classes",
+    "newClass": "New Class"
+  },
+  "subjects": {
+    "title": "Subjects",
+    "subtitle": "Manage subjects",
+    "newSubject": "New Subject"
+  },
+  "grades": {
+    "title": "Grades",
+    "subtitle": "Grade entry and consultation",
+    "bimester": "Bimester",
+    "average": "Average",
+    "situation": "Situation"
+  },
+  "attendance": {
+    "title": "Attendance",
+    "subtitle": "Attendance tracking",
+    "present": "Present",
+    "absent": "Absent",
+    "justified": "Justified",
+    "late": "Late"
+  },
+  "assignments": {
+    "title": "Assignments",
+    "subtitle": "Manage activities and tasks",
+    "newAssignment": "New Assignment"
+  },
+  "settings": {
+    "title": "Settings",
+    "subtitle": "System settings",
+    "general": "General",
+    "notifications": "Notifications",
+    "security": "Security",
+    "export": "Export",
+    "schoolName": "School Name",
+    "language": "Language"
+  },
+  "internships": {
+    "title": "Internships",
+    "subtitle": "Manage internships and partner companies",
+    "newInternship": "New Internship",
+    "company": "Company",
+    "supervisor": "Supervisor",
+    "hoursRequired": "Required Hours",
+    "hoursCompleted": "Completed Hours",
+    "progress": "Progress"
+  },
+  "tcc": {
+    "title": "TCC / Integrative Project",
+    "subtitle": "Manage TCC projects",
+    "newProject": "New Project",
+    "advisor": "Advisor",
+    "phase": "Phase",
+    "members": "Members"
+  },
+  "laboratories": {
+    "title": "Laboratories",
+    "subtitle": "Manage laboratories and equipment",
+    "newLab": "New Laboratory",
+    "reservations": "Reservations",
+    "equipment": "Equipment",
+    "capacity": "Capacity"
+  },
+  "courses": {
+    "title": "Courses & Series",
+    "subtitle": "Manage courses and series",
+    "newCourse": "New Course",
+    "newSeries": "New Series",
+    "duration": "Duration",
+    "totalHours": "Total Hours"
+  },
+  "certificates": {
+    "title": "Certificates",
+    "subtitle": "Certificate issuance",
+    "newCertificate": "New Certificate",
+    "issueDate": "Issue Date",
+    "validUntil": "Valid until",
+    "seriesNumber": "Series Number",
+    "issue": "Issue"
+  },
+  "reports": {
+    "title": "Reports",
+    "subtitle": "Analysis and indicators",
+    "students": "Students",
+    "grades": "Grades",
+    "attendance": "Attendance",
+    "evasion": "Evasion",
+    "workload": "Workload"
+  },
+  "examCalendar": {
+    "title": "Exam Calendar",
+    "subtitle": "Exam and assessment scheduling",
+    "newExam": "Schedule Exam",
+    "examType": "Exam Type",
+    "upcoming": "Upcoming Exams"
+  },
+  "guardianPortal": {
+    "title": "Guardian Portal",
+    "subtitle": "Track linked student data",
+    "grades": "Grades & Attendance",
+    "messages": "Messages",
+    "documents": "Documents",
+    "agenda": "Agenda"
+  },
+  "studentPortal": {
+    "myInternship": "My Internship",
+    "myTcc": "My TCC",
+    "mySchedule": "My Schedule"
+  },
+  "toast": {
+    "saved": "Saved successfully!",
+    "deleted": "Deleted successfully!",
+    "updated": "Updated successfully!",
+    "error": "Error processing",
+    "loading": "Processing...",
+    "exported": "Exported successfully!",
+    "created": "Created successfully!",
+    "sent": "Sent successfully!"
+  },
+  "validation": {
+    "required": "Required field",
+    "invalidEmail": "Invalid email",
+    "minLength": "Minimum {{min}} characters",
+    "maxLength": "Maximum {{max}} characters"
+  }
+}
