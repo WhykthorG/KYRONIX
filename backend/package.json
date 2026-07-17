@@ -3,6 +3,9 @@
   "private": true,
   "version": "2026.07.1",
   "type": "module",
+  "dependencies": {
+    "exceljs": "^4.4.0"
+  },
   "scripts": {
     "test:routing": "node --test ../tests/api-routing.integration.test.js"
   }

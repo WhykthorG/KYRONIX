@@ -6,6 +6,7 @@
 
 [functions]
   node_bundler = "esbuild"
+  external_node_modules = ["exceljs"]
   included_files = [
     "backend/src/routes/**",
     "backend/src/services/**",

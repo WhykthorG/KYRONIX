@@ -8,7 +8,10 @@
     "backend",
     "shared"
   ],
-    "scripts": {
+  "dependencies": {
+    "exceljs": "^4.4.0"
+  },
+  "scripts": {
     "dev": "node scripts/vite-dev.mjs",
     "dev:frontend": "node scripts/vite-dev.mjs",
     "build": "node scripts/vite-build.mjs",
