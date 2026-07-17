@@ -8,6 +8,9 @@
     "backend",
     "shared"
   ],
+  "dependencies": {
+    "xlsx": "^0.18.5"
+  },
   "scripts": {
     "dev": "node scripts/vite-dev.mjs",
     "dev:frontend": "node scripts/vite-dev.mjs",
