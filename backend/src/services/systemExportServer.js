@@ -1,5 +1,5 @@
-// ðƒÐÇð¥ðÁð║Ðé ð┐ð¥ð╗ð¢ð¥ÐüÐéÐîÐÄ ÐÇð░ðÀÐÇð░ð▒ð¥Ðéð░ð¢ ðúð©ð║Ðéð¥ÐÇð¥ð╝ ðôðíðÆ.
-import * as XLSX from 'xlsx';
+// System Export Server — Whyktor GSV
+import ExcelJS from 'exceljs';
 
 import {
   buildSystemExportFilename,
@@ -52,7 +52,7 @@ function formatScalar(value) {
 
 export function flattenExportRecord(record = {}, prefix = '', target = {}) {
   for (const [key, value] of Object.entries(record || {})) {
-    const nextKey = prefix ? `${prefix}.${key}` : key;
+    const nextKey = prefix ? ${prefix}. : key;
 
     if (Array.isArray(value)) {
       target[nextKey] = value.length ? JSON.stringify(value) : '[]';
@@ -94,7 +94,7 @@ function isMissingCreatedAtError(error) {
 }
 
 async function fetchDatasetBatch(serviceClient, dataset, from, to, withCreatedAtOrder = true) {
-  const safeTableName = assertSafeIdentifier(dataset.tableName, 'Tabela de exportação');
+  const safeTableName = assertSafeIdentifier(dataset.tableName, 'Tabela de exportacao');
   let query = serviceClient
     .from(safeTableName)
     .select('*');
@@ -192,8 +192,16 @@ export function buildExportManifestRows({
 
 function appendJsonSheet(workbook, sheetName, rows) {
   const normalizedRows = normalizeRowsForExport(rows);
-  const sheet = XLSX.utils.json_to_sheet(normalizedRows);
-  XLSX.utils.book_append_sheet(workbook, sheet, sanitizeSheetName(sheetName));
+  const sheet = workbook.addWorksheet(sanitizeSheetName(sheetName));
+  
+  if (normalizedRows.length > 0) {
+    const headers = Object.keys(normalizedRows[0]);
+    sheet.addRow(headers);
+    
+    for (const row of normalizedRows) {
+      sheet.addRow(headers.map(h => row[h] ?? ''));
+    }
+  }
 }
 
 function normalizeDatasetErrorMessage(error, dataset) {
@@ -202,7 +210,7 @@ function normalizeDatasetErrorMessage(error, dataset) {
   }
 
   const message = error?.message || String(error);
-  return dataset?.tableName ? `${dataset.tableName}: ${message}` : message;
+  return dataset?.tableName ? ${dataset.tableName}:  : message;
 }
 
 export async function buildSystemExportFile({
@@ -256,14 +264,22 @@ export async function buildSystemExportFile({
     const datasetExport = await fetchDatasetRows(serviceClient, dataset);
 
     if (datasetExport.status !== 'exportado') {
-      const error = new Error(`A tabela ${dataset.tableName} nao esta disponivel para exportacao.`);
+      const error = new Error(A tabela  nao esta disponivel para exportacao.);
       error.statusCode = 409;
       throw error;
     }
 
     const normalizedRows = normalizeRowsForExport(datasetExport.rows);
-    const sheet = XLSX.utils.json_to_sheet(normalizedRows);
-    const csv = XLSX.utils.sheet_to_csv(sheet);
+    
+    // Generate CSV manually
+    let csv = '';
+    if (normalizedRows.length > 0) {
+      const headers = Object.keys(normalizedRows[0]);
+      csv = headers.join(',') + '\n';
+      for (const row of normalizedRows) {
+        csv += headers.map(h => "").join(',') + '\n';
+      }
+    }
 
     return {
       contentType: CSV_CONTENT_TYPE,
@@ -272,7 +288,7 @@ export async function buildSystemExportFile({
         datasetKey: dataset.key,
         now,
       }),
-      body: Buffer.from(`\uFEFF${csv}`, 'utf8'),
+      body: Buffer.from(\uFEFF, 'utf8'),
       manifestRows: buildExportManifestRows({
         exportedAt,
         requestedBy,
@@ -296,12 +312,9 @@ export async function buildSystemExportFile({
     };
   }
 
-  const workbook = XLSX.utils.book_new();
-  XLSX.utils.book_append_sheet(
-    workbook,
-    XLSX.utils.aoa_to_sheet([['manifesto_exportacao_em_processamento']]),
-    MANIFEST_SHEET_NAME,
-  );
+  const workbook = new ExcelJS.Workbook();
+  const manifestSheet = workbook.addWorksheet(MANIFEST_SHEET_NAME);
+  manifestSheet.addRow(['manifesto_exportacao_em_processamento']);
 
   const manifestDatasets = [];
 
@@ -335,14 +348,25 @@ export async function buildSystemExportFile({
     });
   }
 
-  workbook.Sheets[MANIFEST_SHEET_NAME] = XLSX.utils.json_to_sheet(
-    buildExportManifestRows({
-      exportedAt,
-      requestedBy,
-      format: safeFormat,
-      datasets: manifestDatasets,
-    }),
-  );
+  // Update manifest sheet with actual data
+  workbook.removeWorksheet(manifestSheet.id);
+  const finalManifestSheet = workbook.addWorksheet(MANIFEST_SHEET_NAME);
+  const manifestRows = buildExportManifestRows({
+    exportedAt,
+    requestedBy,
+    format: safeFormat,
+    datasets: manifestDatasets,
+  });
+  
+  if (manifestRows.length > 0) {
+    const headers = Object.keys(manifestRows[0]);
+    finalManifestSheet.addRow(headers);
+    for (const row of manifestRows) {
+      finalManifestSheet.addRow(headers.map(h => row[h] ?? ''));
+    }
+  }
+
+  const buffer = await workbook.xlsx.writeBuffer();
 
   return {
     contentType: XLSX_CONTENT_TYPE,
@@ -351,11 +375,7 @@ export async function buildSystemExportFile({
       datasetKey: selectedDatasets.length === 1 ? selectedDatasets[0].key : null,
       now,
     }),
-    body: XLSX.write(workbook, {
-      type: 'buffer',
-      bookType: 'xlsx',
-      compression: true,
-    }),
+    body: Buffer.from(buffer),
     manifestRows: buildExportManifestRows({
       exportedAt,
       requestedBy,
